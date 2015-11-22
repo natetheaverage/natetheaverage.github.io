@@ -28,8 +28,9 @@ export default  {
     
     data() {
         return {
+            //g3YoP735cgISv7HavatpB88UwcYr5E9Q
             //behanceToken: 'OYlVWtJWfgjkrpRxNT0hODcsG3oLw3S1',
-            //behancePortfolio: this.$resource('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q'),
+            behancePortfolio: this.$resource('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q'),
         }
     },
     methods: {
@@ -38,10 +39,15 @@ export default  {
     ready(){
         
         var that = this;
-        $.getJSON("https://api.behance.net/v2/users/natetheaverage/projects?client_id=OYlVWtJWfgjkrpRxNT0hODcsG3oLw3S1&callback=projects",
+       this.$http.get('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q',
             function(json) { 
                 console.log(json)
+            },
+            {
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
             }
+     }
         );
 
         

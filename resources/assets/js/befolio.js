@@ -4,8 +4,13 @@ var Vue = require('vue');
 var app = require('./app');
 Vue.use( require('vue-resource') );
 module.exports = new Vue(app).$mount('#portfolio');  
+//header('Access-Control-Allow-Origin: *');
 //Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
-
+Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
+// allow origin
+//header('Access-Control-Allow-Origin: *');
+// add any additional headers you need to support here
+//header('Access-Control-Allow-Headers: Origin, Content-Type');
 
 
 //========================

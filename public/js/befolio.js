@@ -11217,29 +11217,34 @@ module.exports = Watcher
 //     $('#shotsByPlayerId').html(html.join(''));
 // }, {page: 1, per_page: 9});
 
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
-exports["default"] = {
+exports['default'] = {
 
     data: function data() {
         return {
+            //g3YoP735cgISv7HavatpB88UwcYr5E9Q
             //behanceToken: 'OYlVWtJWfgjkrpRxNT0hODcsG3oLw3S1',
-            //behancePortfolio: this.$resource('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q'),
+            behancePortfolio: this.$resource('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q')
         };
     },
     methods: {},
     ready: function ready() {
 
         var that = this;
-        $.getJSON("https://api.behance.net/v2/users/natetheaverage/projects?client_id=OYlVWtJWfgjkrpRxNT0hODcsG3oLw3S1&callback=projects", function (json) {
+        this.$http.get('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q', function (json) {
             console.log(json);
+        }, {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
         });
     }
 };
-module.exports = exports["default"];
+module.exports = exports['default'];
 
 },{}],78:[function(require,module,exports){
 //require('vueify-insert-css');
@@ -11250,7 +11255,13 @@ var Vue = require('vue');
 var app = require('./app');
 Vue.use(require('vue-resource'));
 module.exports = new Vue(app).$mount('#portfolio');
+//header('Access-Control-Allow-Origin: *');
 //Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
+Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
+// allow origin
+//header('Access-Control-Allow-Origin: *');
+// add any additional headers you need to support here
+//header('Access-Control-Allow-Headers: Origin, Content-Type');
 
 //========================
 //Follow button
