@@ -39,7 +39,7 @@ export default  {
     ready(){
         
         var that = this;
-        this.$http.get('http://api.behance.net/v2/users/natetheaverage/projects?client_id=OYlVWtJWfgjkrpRxNT0hODcsG3oLw3S1',
+        this.$http.get('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q',
        
             function(json) { 
                 console.log(json)

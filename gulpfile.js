@@ -12,7 +12,7 @@ require('laravel-elixir-stylus');
  */
 
 elixir(function(mix) {
-    mix.stylus('app.styl')
+    mix.style('app.styl')
     .browserify('befolio.js')
     .browserSync();
 });
