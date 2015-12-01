@@ -5,8 +5,8 @@
 <!-- ===========================
 THEME INFO
 =========================== -->
-<meta name="description" content="Come bare witness to Nate 'The Average' Leite and his freakish abillity to blend his brain and heart into a puree for the world to sip on.">
-<meta name="keywords" content="Natetheaverage, web design, web development, performance, Mirror Man, theatrical direction, the box, the act, white rabbit, lamp, web, php, html 5, mysql, boss, calyx, make up, special effects, masks, sculpting, maker, laravel, wordpress, denver, colorado, mirror man edc, white rabbit beyond wonderland">
+<meta name="description" content="Come bare witness to NateTheAverage (Nathan Leite) and his freakish abillity to blend his brain, heart and soul into a puree for the world to sip on.">
+<meta name="keywords" content="Natetheaverage, web design, web development, performance, Mirror Man, theatrical direction, the box, the act, white rabbit, lamp, web, php, html 5, mysql, boss, make up, special effects, masks, sculpting, director, laravel, wordpress, denver, colorado, mirror man edc, white rabbit beyond wonderland">
 <meta name="author" content="NateTheAverage">
 
 <meta id="token" name="token" value="{!! csrf_token() !!}">
@@ -33,6 +33,7 @@ STYLESHEETS
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/app.css">
     
 <!-- ===========================
 ICONS: 
