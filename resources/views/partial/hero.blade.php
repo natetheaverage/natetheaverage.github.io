@@ -9,4 +9,4 @@ HERO AREA
     
     {{-- Featured image on the Hero area  --}}
     <img class="heroshot wow bounceInUp" data-wow-duration="4s" src="img/hero-img.png" alt="Featured Work">            
-</div>{{--HERO AREA END --}}screencast
+</div>{{--HERO AREA END --}}
