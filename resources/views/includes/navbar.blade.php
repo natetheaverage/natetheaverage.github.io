@@ -13,7 +13,7 @@ NAVBAR START
               </button>
               
                  <a class="navbar-logo" href="#hero">
-                  <span class="brandicon"><img src="/img/logos/NTA-sm-120x90.png" /></span>
+                  <span class="brandicon"><img src="/img/logos/NTA-sm-60x45.jpg" /></span>
                   {{-- <span class="brandname">NTA</span> --}}
               </a>
           </div>
