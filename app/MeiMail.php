@@ -18,6 +18,22 @@ class MeiMail extends Model
      *
      * @var array
      */
-    protected $fillable = ['from', 'to', 'subject', 'content'];
+    protected $fillable = [
+    	'recipient',
+			'sender',
+			'from',
+			'subject',
+			'body_plain',
+			'stripped_text',
+			'stripped_signature',
+			'body_html',
+			'stripped_html',
+			'attachments',
+			'timestamp',
+			'token',
+			'signature',
+			'message_headers',
+			'content_id_map',
+    ];
 
 }
