@@ -45,7 +45,7 @@ class MailController extends Controller
         if($count >= 0){
             for ($x = 0; $x <= $count; $x++) {
                 $destinationPath = '../storage/uploads/mail/';
-                $file = $m['attachment-'.$x];
+                $file = $m['attachment-1'];
                 $request->file($file)->move($destinationPath);
             };
         };
