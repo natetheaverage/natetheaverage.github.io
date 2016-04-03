@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\MeiMail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -45,7 +46,7 @@ class MailController extends Controller
         $m = MeiMail::create([
             'from'=>$request->sender
         ]);
-         return HttpResponse('OK');
+        return Response('OK');
     }
 
     /**
