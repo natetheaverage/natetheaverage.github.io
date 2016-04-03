@@ -60,7 +60,7 @@ class MailController extends Controller
                //$request = $request->all();
 
         $mail = MeiMail::create( $m );
-        dd($m['attachment-1']);
+        dd($m['attachments']);
         return Response('OK');
     }
 
