@@ -50,9 +50,9 @@ class MailController extends Controller
         //     $file = $request->attachment-[$file];
         //     $request->file($file)->move($destinationPath);
         // };
-        $request = $request->all();
+        //$request = $request->all();
 
-        dd($request['body-html']);
+        dd($request->body-html);
 
         $m = MeiMail::create([
             'recipient'             =>$request->recipient,
