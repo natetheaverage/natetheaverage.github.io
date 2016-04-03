@@ -73,7 +73,7 @@ class MailController extends Controller
         Mail::send('mail.test', ['m' => $m], function ($returned) use ($m)  {
             $returned->to($m['sender']);
 
-            $returned->from($m->recipient, $m['from']);
+            $returned->from($m['recipient'], $m['from']);
 
             $returned->subject('Re:'.$m['subject']);
         });
