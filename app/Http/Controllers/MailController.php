@@ -55,12 +55,23 @@ class MailController extends Controller
                 $upload = $m[$file];
 
                 $upload->move($destinationPath, $upload->getClientOriginalName());
+
             };
         };
-               //$request = $request->all();
+        Mail::send('mail.test', ['msg' => $msg], function ($returned) use ($msg)  {
+            $returned->to($m['sender']);
+
+            $returned->from($m->recipient, $m['from']);
+
+            $returned->subject('Re:'.$m['subject']);
+
+            $returned->body('Re:'.$m['body-html']);
+
+
+        });
 
         $mail = MeiMail::create( $m );
-        dd($m['attachments']);
+
         return Response('OK');
     }
 
