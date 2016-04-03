@@ -40,7 +40,8 @@ class MailController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasFile()){
+        $m = $request->all();
+        if($m['attachment-count'] > 0){
         // foreach($request->attachments as $file){
             //$destinationPath = '../storage/uploads/mail/';
         //     $file = $request->attachment-[$file];
@@ -48,7 +49,7 @@ class MailController extends Controller
         };
                //$request = $request->all();
 
-        $m = MeiMail::create( $request->all() );
+        $mail = MeiMail::create( $m );
         return Response('OK');
     }
 
