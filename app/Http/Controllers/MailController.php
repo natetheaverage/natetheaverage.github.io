@@ -51,8 +51,10 @@ class MailController extends Controller
                 $destinationPath = '../storage/uploads/mail/';
                 //     .$m['recipient'].'/'
                 //     .$m['content-id-map']->toJson();
+
                 $upload = $m[$file];//->originalName;
-                $request->file($upload)->move($destinationPath);
+                dd($upload);
+                $request->file('file')->move($destinationPath);
             };
         };
                //$request = $request->all();
