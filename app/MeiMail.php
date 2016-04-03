@@ -28,7 +28,7 @@ class MeiMail extends Model
 			'stripped-signature',
 			'body-html',
 			'stripped-html',
-			'attachments',
+			'attachment-count',
 			'timestamp',
 			'token',
 			'signature',

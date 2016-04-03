@@ -32,7 +32,7 @@ $factory->define(App\MeiMail::class, function (Faker\Generator $faker) {
         'stripped-signature'    => $faker->realText($maxNbChars = 100, $indexSize = 2),
         'body-html'             => '<html><h3>'.$body.'</h3></html>',
         'stripped-html'         => $body,
-        'attachments'           => 2,
+        'attachment-count'      => 2,
         'timestamp'             => $faker->dateTimeAD($max = 'now') ,
         'token'                 => $faker->bothify('##?#??#????#?#?#???#??#???###'),
         'signature'             => $faker->name,

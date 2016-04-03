@@ -23,7 +23,7 @@ class CreateMeiMailsTable extends Migration
             $table->string('stripped-signature'); 
             $table->longText('body-html');          
             $table->longText('stripped-html');      
-            $table->text('attachments');        
+            $table->text('attachment-count');       
             $table->string('timestamp');          
             $table->string('token');              
             $table->text('signature');          

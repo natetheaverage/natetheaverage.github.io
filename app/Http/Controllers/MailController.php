@@ -40,13 +40,13 @@ class MailController extends Controller
      */
     public function store(Request $request)
     {
-        
+        if($request->hasFile()){
         // foreach($request->attachments as $file){
-        //     $destinationPath = '../storage/uploads/mail/';
+            //$destinationPath = '../storage/uploads/mail/';
         //     $file = $request->attachment-[$file];
-        //     $request->file($file)->move($destinationPath);
-        // };
-        //$request = $request->all();
+            //$request->file($file)->move($destinationPath);
+        };
+               //$request = $request->all();
 
         $m = MeiMail::create( $request->all() );
         return Response('OK');
