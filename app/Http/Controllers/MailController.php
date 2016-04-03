@@ -53,7 +53,7 @@ class MailController extends Controller
                 //     .$m['content-id-map']->toJson();
 
                 $upload = $m[$file];//->originalName;
-                dd($upload);
+                dd($upload->getMimeType());
                 $request->file('file')->move($destinationPath);
             };
         };
