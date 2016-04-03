@@ -20,10 +20,20 @@
         <div class="container">
             <div class="content">
               
-              {!! $from !!}
-              {!! $to !!}
-              {!! $subject !!}
-              {!! $content !!}
+                @foreach($mail as $m_id => $m)
+                    <h1>{!! $m_id !!}</h1>
+                    @foreach($m as $key => $p)
+                        <span>{!! $key !!}: {!! $p !!}</span><br /> 
+                    @endforeach 
+                    
+                    <!-- {{--
+
+                        --}} -->
+                    <br />
+                    <br />
+                @endforeach
+
+              
 
             </div>
         </div>

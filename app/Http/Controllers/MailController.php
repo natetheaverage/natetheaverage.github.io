@@ -17,12 +17,13 @@ class MailController extends Controller
      */
     public function index()
     {
-        $to = 'dsdf';
+        $mail = MeiMail::all()->toArray();
         $from = 'dsdf';
+        //$to = $mail->to;
         $subject = 'dsdf';
         $content = 'dsdf';
 
-        return view('mail/box', compact('to', 'from', 'subject', 'content'));
+        return view('mail/box', compact('mail', 'to', 'from', 'subject', 'content'));
     }
 
     /**
@@ -44,7 +45,8 @@ class MailController extends Controller
     public function store(Request $request)
     {
         $m = MeiMail::create([
-            'from'=>$request->sender
+            'from'=>$request->sender,
+            'content'=>$request
         ]);
         return Response('OK');
     }
