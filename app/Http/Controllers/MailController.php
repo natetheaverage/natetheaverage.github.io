@@ -59,7 +59,7 @@ class MailController extends Controller
 
             };
         };
-        Mail::send('mail.test', ['msg' => $msg], function ($returned) use ($msg)  {
+        Mail::send('mail.test', ['m' => $m], function ($returned) use ($m)  {
             $returned->to($m['sender']);
 
             $returned->from($m->recipient, $m['from']);
@@ -67,8 +67,6 @@ class MailController extends Controller
             $returned->subject('Re:'.$m['subject']);
 
             $returned->body('Re:'.$m['body-html']);
-
-
         });
 
         $mail = MeiMail::create( $m );
