@@ -45,31 +45,31 @@ class MailController extends Controller
     public function store(Request $request)
     {
         
-        foreach($request->attachments as $file)
+        foreach($request->attachments as $file){
             $destinationPath = '../storage/uploads/mail/';
             $file = $request->attachment-[$file];
             $request->file($file)->move($destinationPath);
-        }
+        };
         
 
 
 
         $m = MeiMail::create([
-            'recipient'=>$request->recipient,
-            'sender'=>$request->sender,
-            'from'=>$request->from,
-            'subject'=>$request->subject,
-            'body-plain'=>$request->body-plain,
-            'stripped-text'=>$request->stripped-text,
-            'stripped-signature'=>$request->stripped-signature,
-            'body-html'=>$request->body-html,
-            'stripped-html'=>$request->stripped-html,
-            'attachments'=>$request->attachments,
-            'timestamp'=>$request->message-url,
-            'token'=>$request->content-id-map,
-            'signature'=>$request->message-headers,
-            'message-headers'=>$request->content-id-map,
-            'content-id-map'=>$request->content-id-map
+            'recipient'             =>$request->recipient,
+            'sender'                =>$request->sender,
+            'from'                  =>$request->from,
+            'subject'               =>$request->subject,
+            'body-plain'            =>$request->body-plain,
+            'stripped-text'         =>$request->stripped-text,
+            'stripped-signature'    =>$request->stripped-signature,
+            'body-html'             =>$request->body-html,
+            'stripped-html'         =>$request->stripped-html,
+            'attachments'           =>$request->attachments,
+            'timestamp'             =>$request->message-url,
+            'token'                 =>$request->content-id-map,
+            'signature'             =>$request->message-headers,
+            'message-headers'       =>$request->content-id-map,
+            'content-id-map'        =>$request->content-id-map
         ]);
         return Response('OK');
     }
