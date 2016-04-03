@@ -27,7 +27,7 @@ $factory->define(App\MeiMail::class, function (Faker\Generator $faker) {
         'sender'                => $faker->email,
         'from'                  => $faker->name,
         'subject'               => $faker->realText($maxNbChars = 100, $indexSize = 2),
-        'body_plain'            => $body,
+        'body-plain'            => $body,
         'stripped_text'         => $body,
         'stripped_signature'    => $faker->realText($maxNbChars = 100, $indexSize = 2),
         'body_html'             => '<html><h3>'.$body.'</h3></html>',

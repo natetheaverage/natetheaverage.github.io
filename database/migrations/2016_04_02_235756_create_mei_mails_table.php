@@ -18,7 +18,7 @@ class CreateMeiMailsTable extends Migration
             $table->string('sender');             
             $table->string('from');               
             $table->text('subject');            
-            $table->longText('body_plain');         
+            $table->longText('body-plain');         
             $table->longText('stripped_text');      
             $table->string('stripped_signature'); 
             $table->longText('body_html');          

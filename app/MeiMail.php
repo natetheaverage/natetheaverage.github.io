@@ -23,7 +23,7 @@ class MeiMail extends Model
 			'sender',
 			'from',
 			'subject',
-			'body_plain',
+			'body-plain',
 			'stripped_text',
 			'stripped_signature',
 			'body_html',

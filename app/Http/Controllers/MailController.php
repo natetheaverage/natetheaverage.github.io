@@ -17,7 +17,8 @@ class MailController extends Controller
      */
     public function index()
     {
-        $mail = MeiMail::all()->toArray();
+        $mail = MeiMail::first();
+        //dd($mail->body-plain);
         $from = 'dsdf';
         //$to = $mail->to;
         $subject = 'dsdf';
@@ -52,25 +53,26 @@ class MailController extends Controller
         // };
         //$request = $request->all();
 
-        dd($request->body-html);
+        //dd($request->bodyhtml);
 
-        $m = MeiMail::create([
-            'recipient'             =>$request->recipient,
-            'sender'                =>$request->sender,
-            'from'                  =>$request->from,
-            'subject'               =>$request->subject,
-            'body_plain'            =>$request->body-plain,
-            'stripped_text'         =>$request->stripped-text,
-            'stripped_signature'    =>$request->stripped-signature,
-            'body_html'             =>$request->body-html,
-            'stripped_html'         =>$request->stripped-html,
-            'attachments'           =>$request->attachments,
-            'timestamp'             =>$request->message-url,
-            'token'                 =>$request->content-id-map,
-            'signature'             =>$request->message-headers,
-            'message_headers'       =>$request->content-id-map,
-            'content_id_map'        =>$request->content-id-map
-        ]);
+        $m = MeiMail::create(
+            $request->all();
+            // 'recipient'             =>$request->recipient,
+            // 'sender'                =>$request->sender,
+            // 'from'                  =>$request->from,
+            // 'subject'               =>$request->subject,
+            // 'body_plain'            =>$request->body-plain,
+            // 'stripped_text'         =>$request->stripped-text,
+            // 'stripped_signature'    =>$request->stripped-signature,
+            // 'body_html'             =>$request->body-html,
+            // 'stripped_html'         =>$request->stripped-html,
+            // 'attachments'           =>$request->attachments,
+            // 'timestamp'             =>$request->message-url,
+            // 'token'                 =>$request->content-id-map,
+            // 'signature'             =>$request->message-headers,
+            // 'message_headers'       =>$request->content-id-map,
+            // 'content_id_map'        =>$request->content-id-map
+        );
         return Response('OK');
     }
 
