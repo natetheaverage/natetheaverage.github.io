@@ -46,7 +46,7 @@ class MailController extends Controller
     {
         $m = MeiMail::create([
             'from'=>$request->sender,
-            'content'=>$request
+            'content'=>$request->all()
         ]);
         return Response('OK');
     }
