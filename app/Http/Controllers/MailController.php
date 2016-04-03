@@ -41,11 +41,13 @@ class MailController extends Controller
     public function store(Request $request)
     {
         $m = $request->all();
-        if($m['attachment-count'] >= 0){
-        // foreach($request->attachments as $file){
-            //$destinationPath = '../storage/uploads/mail/';
-        //     $file = $request->attachment-[$file];
-            //$request->file($file)->move($destinationPath);
+        $count = $m['attachment-count'];
+        if($count >= 0){
+            for ($x = 0; $x <= $count; $x++) {
+                $destinationPath = '../storage/uploads/mail/';
+                $file = $m['attachment-'.$x];
+                $request->file($file)->move($destinationPath);
+            };
         };
                //$request = $request->all();
 
