@@ -56,7 +56,7 @@ class MailController extends Controller
         //dd($request->bodyhtml);
 
         $m = MeiMail::create(
-            $request->all();
+            $request->all()
             // 'recipient'             =>$request->recipient,
             // 'sender'                =>$request->sender,
             // 'from'                  =>$request->from,
