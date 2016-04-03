@@ -48,13 +48,13 @@ class MailController extends Controller
         $count = $m['attachment-count'];
         if($count >= 0){
             foreach ($attachments as $key=>$file) {
-                $destinationPath = '../storage/uploads/mail/';
-                //     .$m['recipient'].'/'
-                //     .$m['content-id-map']->toJson();
+                $destinationPath = '../storage/uploads/mail/'
+                    .$m['recipient'].'/'
+                    .$key.'/';
 
-                $upload = $m[$file];//->originalName;
-                //dd($upload->getMimeType());
-                $upload->move($destinationPath);
+                $upload = $m[$file];
+
+                $upload->move($destinationPath, $upload->getClientOriginalName());
             };
         };
                //$request = $request->all();
