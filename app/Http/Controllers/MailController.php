@@ -52,7 +52,7 @@ class MailController extends Controller
         // };
         
 
-
+        dd($request->all());
 
         $m = MeiMail::create([
             'recipient'             =>$request->recipient,
