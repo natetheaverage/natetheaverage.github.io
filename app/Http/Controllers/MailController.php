@@ -17,7 +17,7 @@ class MailController extends Controller
      */
     public function index()
     {
-        $mail = MeiMail::all();
+        $mail = MeiMail::all()->toArray();
 
         return view('mail/box', compact('mail'));
     }
