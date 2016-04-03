@@ -18,20 +18,20 @@ class MailController extends Controller
      */
     public function index()
     {
-        $mail = MeiMail::all()->toArray();
+        $m = MeiMail::all()->toArray();
 
-        Mail::send('mail.test', ['$mail' => $mail], function ($returned) use ($mail)  {
-            $returned->to($mail['sender']);
+        Mail::send('mail.test', ['$m' => $m], function ($returned) use ($m)  {
+            $returned->to($m['sender']);
 
-            $returned->from($mail->recipient, $mail['from']);
+            $returned->from($m->recipient, $m['from']);
 
-            $returned->subject('Re:'.$mail['subject']);
+            $returned->subject('Re:'.$m['subject']);
 
-            $returned->body('Re:'.$mail['body-html']);
+            $returned->body('Re:'.$m['body-html']);
         });
 
 
-        return view('mail/box', compact('mail'));
+        return view('mail/box', compact('m'));
     }
 
     /**

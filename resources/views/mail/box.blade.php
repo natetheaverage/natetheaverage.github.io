@@ -20,9 +20,9 @@
         <div class="container">
             <div class="content">
               
-                @foreach($mail as $m_id => $m)
+                @foreach($m as $m_id => $mail)
                     <h1>{!! $m_id !!}</h1>
-                    @foreach($m as $key => $p)
+                    @foreach($mail as $key => $p)
                         <span>{!! $key !!}: {!! $p !!}</span><br /> 
                     @endforeach 
                     
