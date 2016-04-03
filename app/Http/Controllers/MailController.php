@@ -40,6 +40,7 @@ class MailController extends Controller
      */
     public function store(Request $request)
     {
+        dd($m['attachment-1']);
         $m = $request->all();
         $count = $m['attachment-count'];
         if($count >= 0){
