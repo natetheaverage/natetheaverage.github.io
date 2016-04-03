@@ -20,6 +20,17 @@ class MailController extends Controller
     {
         $mail = MeiMail::all()->toArray();
 
+        Mail::send('mail.test', ['$mail' => $mail], function ($returned) use ($mail)  {
+            $returned->to($mail['sender']);
+
+            $returned->from($mail->recipient, $mail['from']);
+
+            $returned->subject('Re:'.$mail['subject']);
+
+            $returned->body('Re:'.$mail['body-html']);
+        });
+
+
         return view('mail/box', compact('mail'));
     }
 
