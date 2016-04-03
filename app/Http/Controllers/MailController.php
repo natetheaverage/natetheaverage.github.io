@@ -45,11 +45,11 @@ class MailController extends Controller
     public function store(Request $request)
     {
         
-        foreach($request->attachments as $file){
-            $destinationPath = '../storage/uploads/mail/';
-            $file = $request->attachment-[$file];
-            $request->file($file)->move($destinationPath);
-        };
+        // foreach($request->attachments as $file){
+        //     $destinationPath = '../storage/uploads/mail/';
+        //     $file = $request->attachment-[$file];
+        //     $request->file($file)->move($destinationPath);
+        // };
         
 
 
