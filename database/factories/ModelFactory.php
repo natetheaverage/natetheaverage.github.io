@@ -28,16 +28,16 @@ $factory->define(App\MeiMail::class, function (Faker\Generator $faker) {
         'from'                  => $faker->name,
         'subject'               => $faker->realText($maxNbChars = 100, $indexSize = 2),
         'body-plain'            => $body,
-        'stripped_text'         => $body,
-        'stripped_signature'    => $faker->realText($maxNbChars = 100, $indexSize = 2),
-        'body_html'             => '<html><h3>'.$body.'</h3></html>',
-        'stripped_html'         => $body,
+        'stripped-text'         => $body,
+        'stripped-signature'    => $faker->realText($maxNbChars = 100, $indexSize = 2),
+        'body-html'             => '<html><h3>'.$body.'</h3></html>',
+        'stripped-html'         => $body,
         'attachments'           => 2,
         'timestamp'             => $faker->dateTimeAD($max = 'now') ,
         'token'                 => $faker->bothify('##?#??#????#?#?#???#??#???###'),
         'signature'             => $faker->name,
-        'message_headers'       => $faker->realText($maxNbChars = 100, $indexSize = 2),
-        'content_id_map'        => $faker->realText($maxNbChars = 100, $indexSize = 2),
+        'message-headers'       => $faker->realText($maxNbChars = 100, $indexSize = 2),
+        'content-id-map'        => $faker->realText($maxNbChars = 100, $indexSize = 2),
     ];
 });
 

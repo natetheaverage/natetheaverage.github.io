@@ -24,16 +24,16 @@ class MeiMail extends Model
 			'from',
 			'subject',
 			'body-plain',
-			'stripped_text',
-			'stripped_signature',
-			'body_html',
-			'stripped_html',
+			'stripped-text',
+			'stripped-signature',
+			'body-html',
+			'stripped-html',
 			'attachments',
 			'timestamp',
 			'token',
 			'signature',
-			'message_headers',
-			'content_id_map',
+			'message-headers',
+			'content-id-map',
     ];
 
 }

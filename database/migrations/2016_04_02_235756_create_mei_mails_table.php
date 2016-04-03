@@ -19,16 +19,16 @@ class CreateMeiMailsTable extends Migration
             $table->string('from');               
             $table->text('subject');            
             $table->longText('body-plain');         
-            $table->longText('stripped_text');      
-            $table->string('stripped_signature'); 
-            $table->longText('body_html');          
-            $table->longText('stripped_html');      
+            $table->longText('stripped-text');      
+            $table->string('stripped-signature'); 
+            $table->longText('body-html');          
+            $table->longText('stripped-html');      
             $table->text('attachments');        
             $table->string('timestamp');          
             $table->string('token');              
             $table->text('signature');          
-            $table->text('message_headers');    
-            $table->text('content_id_map');     
+            $table->text('message-headers');    
+            $table->text('content-id-map');     
             $table->timestamps();
         });
     }
