@@ -42,17 +42,17 @@ class MailController extends Controller
     {
         $m = $request->all();
 
-        $map = json_decode ($m['content-id-map']);
+        $attachments = json_decode ($m['content-id-map']);
 
         // dd($map);
         $count = $m['attachment-count'];
         if($count >= 0){
-            for ($x = 0; $x <= $count; $x++) {
+            foreach ($attachments as $key=>$file) {
                 $destinationPath = '../storage/uploads/mail/';
                 //     .$m['recipient'].'/'
                 //     .$m['content-id-map']->toJson();
-                $file = $m['attachment-1']->originalName;
-                $request->file($file)->move($destinationPath);
+                $upload = $m[$file];//->originalName;
+                $request->file($upload)->move($destinationPath);
             };
         };
                //$request = $request->all();
