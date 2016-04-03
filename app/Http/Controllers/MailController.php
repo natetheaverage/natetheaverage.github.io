@@ -42,7 +42,7 @@ class MailController extends Controller
     {
         $m = $request->all();
 
-        $map = $m['content-id-map']->toJson();
+        $map = $m['content-id-map'];
 
         dd($map);
         $count = $m['attachment-count'];
