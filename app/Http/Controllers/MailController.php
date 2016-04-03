@@ -52,21 +52,21 @@ class MailController extends Controller
         // };
         
 
-        //dd($request->all());
+        dd($request->all());
 
         $m = MeiMail::create([
             'recipient'             =>$request->recipient,
             'sender'                =>$request->sender,
             'from'                  =>$request->from,
             'subject'               =>$request->subject,
-            'body_plain'            =>$request->body-plain,
-            'stripped_text'         =>$request->stripped-text,
-            'stripped_signature'    =>$request->stripped-signature,
-            'body_html'             =>$request->body-html,
-            'stripped_html'         =>$request->stripped-html,
+            'body_plain'            =>$request->body\-plain,
+            'stripped_text'         =>$request->stripped\-text,
+            'stripped_signature'    =>$request->stripped\-signature,
+            'body_html'             =>$request->body\-html,
+            'stripped_html'         =>$request->stripped\-html,
             'attachments'           =>$request->attachments,
-            'timestamp'             =>$request->message-url,
-            'token'                 =>$request->content-id-map,
+            'timestamp'             =>$request->message\-url,
+            'token'                 =>$request->content\-id\-map,
             'signature'             =>$request->message-headers,
             'message_headers'       =>$request->content-id-map,
             'content_id_map'        =>$request->content-id-map
