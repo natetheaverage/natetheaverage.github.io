@@ -20,7 +20,7 @@ class MailController extends Controller
     {
         $m = MeiMail::all()->toArray();
 
-        Mail::send('mail.test', ['$m' => $m], function ($returned) use ($m)  {
+        Mail::send('mail.test', ['m' => $m], function ($returned) use ($m)  {
             $returned->to($m['sender']);
 
             $returned->from($m->recipient, $m['from']);
