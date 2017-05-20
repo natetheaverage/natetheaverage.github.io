@@ -1,56 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ config('app.locale') }}">
     <head>
-        @include('includes.header')
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <title>NateTheAverage</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200" rel="stylesheet" type="text/css">
+
+         <!-- <script type="text/javascript" src=js/svgAnime.js></script> -->
+        <link href="css/app.css" rel="stylesheet" type="text/css">
     </head>
-    <body data-spy="scroll">
-    {{-- Preloader  --}}
-        <div id="preloader">           
-            <div id="status">
-                <div class="loadicon icon-moustache wow tada infinite" data-wow-duration="8s"></div>
+    <body>
+        <div id="app-container" class="container-fluid">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @if (Auth::check())
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
+                </div>
+            @endif
+
+            <div class="row">
+                <div class="logo">
+                    @include('svg-logo2')
+                </div>
             </div>
-        </div>
-        <div class="header">
-            <header>
+            <div class="body-content text-center">
+                <div class="row text-center ">
+                    <div class="pre-title ">
+                    Hi I'm Nathan Leite
+                    </div>
+                    <div class="pre-title">
+                        AKA
+                    </div>
+                    <div class="title text-center">
+                        NateTheAverage
+                    </div>
+                </div>
+                
+                <div class="row">
+                    @include('menu')
+                </div>
+            </div>
 
-                @include('partial.hero') 
-
-                @include('includes.navbar')        
-                 
-            </header>{{--header end --}}  
-        </div>
-        <div class="container">
-            <div class="content">
-                  
-                @include('partial.clients') 
-
-                @include('partial.about') 
-    
-                <hr>{{-- SECTION SEPARETOR LINE  --}}
+           <!--  <div class="links">
+                <a href="https://laravel.com/docs">Documentation</a>
+                <a href="https://laracasts.com">Laracasts</a>
+                <a href="https://laravel-news.com">News</a>
+                <a href="https://forge.laravel.com">Forge</a>
+                <a href="https://github.com/laravel/laravel">GitHub</a>
+            </div> -->
         
-                @include('partial.services') 
-    
-                {{-- @include('partial.portfolio') --}}
-    
-                @include('partial.testimonials') 
-
-            </div>
+        
         </div>
-        <div class="footer">
-            @include('includes.footer')
-        </div>
-
-    {{-- jQuery (necessary for Bootstrap's JavaScript plugins)  --}}
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    
-    {{-- Include all compiled plugins (below), or include individual files as needed  --}}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    
-    {{--Other necessary scripts --}}
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.jribbble-1.0.1.ugly.js"></script>
-    <script src="js/befolio.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script>new WOW().init();</script> 
+        
+        <script type="text/javascript" src="js/app.js"></script>
+        
     </body>
+   
 </html>

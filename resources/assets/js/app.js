@@ -1,52 +1,76 @@
 
-//import Post from './components/Post.vue';
-//==========================================================
-//Replace srizon with your dribbble username
-//==========================================================
-// $.jribbble.getShotsByPlayerId('natetheaverage', function (playerShots) {
-//     var html = [];
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+require('./bootstrap');
+ 
+import anime from 'animejs'
 
 
-// //========================
-// //PORTFOLIO SETUP
-// //========================
-//     $.each(playerShots.shots, function (i, shot) {
-//         html.push('<li><a href="' + shot.url + '">');
-//         html.push('<img src="' + shot.image_teaser_url + '" ');
-//         html.push('alt="' + shot.title + '"></a>');
-//         html.push('<h3><a href="' + shot.url + '">' + shot.title + '</h3>');
-//         html.push('<div class="likecount"><span class="icon-heart"></span> ' + shot.likes_count + '</div>');
-//         html.push('<div class="commentcount"><span class="icon-bubbles"></span> ' + shot.comments_count + '</a></li></div>');
-//     });
+window.Vue = require('vue');
 
-//     $('#shotsByPlayerId').html(html.join(''));
-// }, {page: 1, per_page: 9});
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+// import AnimateLogo from './svgAnime.js'
+// const animateLogo = new AnimateLogo()
+// const activateLogo = animateLogo
+// Vue.component('animateLogo', animateLogo)
+// const $AL = require('./svgAnime.js')
 
+// Vue.component('example', require('./components/Example.vue'));
 
+const app = new Vue({
+    el: '#app-container'
+});
 
-export default  {
-    
-    data() {
-        return {
-            //g3YoP735cgISv7HavatpB88UwcYr5E9Q
-            //behanceToken: 'OYlVWtJWfgjkrpRxNT0hODcsG3oLw3S1',
-            behancePortfolio: this.$resource('http://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q&callback=bang'),
-        }
-    },
-    methods: {
-
-    },
-    ready(){
+const colors = ['#16F0F0', '#00FF00', '#FFFF00', '#FF14AB', '#16F0F0']
+let pathEls = document.querySelectorAll('path');
+let colorNumber = anime.random(0, 3);
+  for (var i = 0; i < pathEls.length; i++) {
+      let pathEl = pathEls[i];
+      let offset = anime.setDashoffset(pathEl);
+      
+      // pathEl.setAttribute('fill', colors[anime.random(0, 4)]);
+      pathEl.setAttribute('stroke-dashoffset', offset);
+      const timeline = anime.timeline({
         
-        var that = this;
-        this.$http.get('https://api.behance.net/v2/users/natetheaverage/projects?client_id=g3YoP735cgISv7HavatpB88UwcYr5E9Q',
-       
-            function(json) { 
-                console.log(json)
-            }
-     
-        );
+      });
+      timeline.add({
+        targets: pathEl,
+        // delay: 4000,
+        duration: 10,//anime.random(1000, 5000),
+        update: pathEl.setAttribute('fill', '#000'),
+        // opacity: 0,
+        //loop: true,
+        direction: 'alternate',
+        easing: 'easeInOutExpo'
+      })
+      .add({
+        targets: pathEl,
+        update: pathEl.setAttribute('stroke', colors[colorNumber]),
+        strokeDashoffset: [offset, 0],
+        duration: 3000,//anime.random(1000, 5000),
+        delay: 1000,//anime.random(0, 2000),
+        easing: 'easeInOutSine',
+        loop: true,
+        direction: 'alternate',
+      })
+      .add({
+        targets: pathEl,
+        delay: 4000,
+        duration: 2000,//anime.random(1000, 5000),
+        backgroundColor:  colors[colorNumber+1],
+        // opacity: 0,
+        // loop: true,
+        direction: 'alternate',
+        easing: 'easeInOutExpo'
+      });
+  }
 
-        
-    }
-}
+
+
