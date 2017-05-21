@@ -1,15 +1,65 @@
 /*menu.styl*/
-
 .menu 
   margin-top 25%
-  ul li
-    text-align left
-    list-style none
-    span
-      font-size 32px
-      text-decoration underline
+  span
+    display block
+    font-size 24px
+  ul 
+    -webkit-padding-start 0
+    li
+      font-family: Courier New, Courier, monospace
+      list-style: none
+      span
+        font-size 32px
+        text-decoration underline
+      ul
+        -webkit-padding-start 0
+        li
+          text-decoration none
+          font-size 14px
+          font-family monospace
+          // margin 0 20%
+.filters
+  display inline-flex
+  font-family monospace
+
+@media screen and (max-width: 400px) 
+  body
+    max-width: 400px
+  .menu
+    ul 
+      -webkit-padding-start 0
+      li
+        font-family: 'railway' 400
+        span
+          font-size 18px
+          text-decoration underline
+        ul 
+          -webkit-padding-start 0
+          li
+            text-decoration none
+            font-size 14px
+            font-family monospace
+            // margin 0 20%
+        .filters
+          display flex
+          width 100%
+          font-family monospace
+
+  @media screen and (min-width: 800px)
+    .menu 
+    margin-top 25%
     ul li
-      text-decoration none
-      font-size 14px
+      font-family: 'railway' 400
+      span
+        font-size 32px
+        text-decoration underline
+      ul li
+        text-decoration none
+        font-size 14px
+        font-family monospace
+        // margin 0 20%
+    .filters
+      display flex
+      width 100%
       font-family monospace
-      // margin 0 20%

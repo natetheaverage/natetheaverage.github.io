@@ -6825,19 +6825,95 @@ body {
 .anim path {
   stroke-width: 8;
 }
+.video-js {
+  width: 100%;
+}
 .menu {
   margin-top: 25%;
 }
+.menu span {
+  display: block;
+  font-size: 24px;
+}
+.menu ul {
+  -webkit-padding-start: 0;
+}
 .menu ul li {
-  text-align: left;
+  font-family: Courier New, Courier, monospace;
   list-style: none;
 }
 .menu ul li span {
   font-size: 32px;
   text-decoration: underline;
 }
+.menu ul li ul {
+  -webkit-padding-start: 0;
+}
 .menu ul li ul li {
   text-decoration: none;
   font-size: 14px;
   font-family: monospace;
+}
+.filters {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: monospace;
+}
+@media screen and (max-width: 400px) {
+  body {
+    max-width: 400px;
+  }
+  .menu ul {
+    -webkit-padding-start: 0;
+  }
+  .menu ul li {
+    font-family: 'railway' 400;
+  }
+  .menu ul li span {
+    font-size: 18px;
+    text-decoration: underline;
+  }
+  .menu ul li ul {
+    -webkit-padding-start: 0;
+  }
+  .menu ul li ul li {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: monospace;
+  }
+  .menu ul li .filters {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    font-family: monospace;
+  }
+}
+@media screen and (max-width: 400px) and (min-width: 800px) {
+  .menu,
+  margin-top 25%,
+  ul li {
+    font-family: 'railway' 400;
+  }
+  .menu span,
+  margin-top 25% span,
+  ul li span {
+    font-size: 32px;
+    text-decoration: underline;
+  }
+  .menu ul li,
+  margin-top 25% ul li,
+  ul li ul li {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: monospace;
+  }
+  .filters {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    font-family: monospace;
+  }
 }

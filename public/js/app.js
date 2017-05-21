@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ 	return __webpack_require__(__webpack_require__.s = 54);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -471,7 +471,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(41)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44)))
 
 /***/ }),
 /* 2 */
@@ -905,7 +905,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(48)
+var listToStyles = __webpack_require__(51)
 
 /*
 type StyleObject = {
@@ -1141,18 +1141,18 @@ module.exports = g;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_animejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(34);
+__webpack_require__(37);
 
 
 
-window.Vue = __webpack_require__(49);
+window.Vue = __webpack_require__(52);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -1165,7 +1165,7 @@ window.Vue = __webpack_require__(49);
 // Vue.component('animateLogo', animateLogo)
 // const $AL = require('./svgAnime.js')
 
-Vue.component('example', __webpack_require__(42));
+Vue.component('example', __webpack_require__(45));
 
 
 Vue.component('MainMenu', __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue___default.a);
@@ -1174,7 +1174,7 @@ var app = new Vue({
   el: '#app-container'
 });
 
-var lanime = __webpack_require__(35);
+var lanime = __webpack_require__(38);
 
 /***/ }),
 /* 13 */
@@ -2060,6 +2060,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bin_menuNorm_js__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bin_menuNerdy_js__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bin_menuFantastical_js__ = __webpack_require__(34);
 //
 //
 //
@@ -2089,70 +2092,220 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "Main-Menu",
+    name: "MainMenu",
     data: function data() {
         return {
-            items: {
-                "Mask and Costume": {},
-
-                "Clothing Design and Printing": "{}",
-
-                "Performance Arts": "{}"
-
-            }
+            visibility: 'norm',
+            filteredMenu: []
         };
+    },
+
+    computed: {
+        MenuOptions: function MenuOptions() {
+            for (var i in __WEBPACK_IMPORTED_MODULE_0__bin_menuNorm_js__["a" /* default */]) {
+                if (this.visibility == 'norm') {
+                    this.filteredMenu.push(__WEBPACK_IMPORTED_MODULE_0__bin_menuNorm_js__["a" /* default */][i].norm);
+                } else if (this.visibility == 'nerdy') {
+                    this.filteredMenu.push(__WEBPACK_IMPORTED_MODULE_0__bin_menuNorm_js__["a" /* default */][i].nerd);
+                } else if (this.visibility == 'fantastical') {
+                    this.filteredMenu.push(__WEBPACK_IMPORTED_MODULE_0__bin_menuNorm_js__["a" /* default */][i].fantastical);
+                }
+            }
+        }
     }
 });
 
 /***/ }),
 /* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// json
+/* unused harmony default export */ var _unused_webpack_default_export = ({
+    "Fitting Room One": {
+        "Armory": "costume/production",
+        "Costumery": "costume/contract",
+        "Stuff and things . ..ry": "costume/alacart"
+    },
+    "Inking Textiles": {
+        "I like to do drawerings": "clothing/design",
+        "The digital squid": "clothing/print",
+        "So - a needle pulling thread": "clothing/handmade"
+    },
+    "Acting like your Acting": {
+        "Im whatever you want": "performance/for-hire",
+        "I gots wardrobe": "performance/wardrobe",
+        "prosthitic everything": "performance/makeup",
+        "Circus R Us": "performance/talent",
+        "Direction. But which? buttwhich??": "performance/direction",
+        "Lemme show you somtin": "performance/workshops",
+        "Canned heat in my heels": "performance/dance"
+    },
+    "00100011 00100001": {
+        "I am not making AI": "technology/app-development",
+        "Skynet dev ops": "technology/machine",
+        "You want a thing made?": "technology/prototype",
+        "Whizz Bang OMG DRONES!!!": "technology/quadrocopters",
+        "Interwebs Fuckery": "technology/fuckery"
+    },
+    "Lets Build Big Shit!": {
+        "Climable art": "large/installation",
+        "Real Treehouses": "large/treehouse",
+        "PopUps but HUGE": "large/pop-ups",
+        "Moving art": "large/art-cars",
+        "Set design & scene building ": "large/set-design"
+    },
+    "Self Exploitation": {
+        "Shirtcocking the floppyshop": "fuckshitstack/shirt-cocking",
+        "Wearing things, but probably not": "fuckshitstack/naked-not-the-drink-more-like-no-cloths",
+        "Rules are made to be broken": "fuckshitstack/no-touching-policy",
+        "Titty Tutor": "fuckshitstack/learn-stuff-from-a-naked-guy"
+    }
+});
+
+/***/ }),
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// json
+/* unused harmony default export */ var _unused_webpack_default_export = ({
+    "M16 R&D": {
+        "Short run mask and prop collections": "costume/production",
+        "Quartermaster for hire": "costume/contract",
+        "Cosplay alacart services": "costume/alacart"
+    },
+    "Garment Inking": {
+        "Digital design creation": "clothing/design",
+        "Better than best quality printing": "clothing/print",
+        "Stitch and bitch garments": "clothing/handmade"
+    },
+    "All the World is a Stage": {
+        "I will play dress up and become that thing...": "performance/for-hire",
+        "Help you dress up your friends": "performance/wardrobe",
+        "Decorating flesh for the occasion": "performance/makeup",
+        "Talent hearding": "performance/talent",
+        "Live show creation/direction": "performance/direction",
+        "Performance workshops & private coaching": "performance/workshops",
+        "DanceDamnit... Janet": "performance/dance"
+    },
+    "Hack The Planet": {
+        "Software development": "technology/app-development",
+        "IOT, Microcontrolers, lasers & lights": "technology/machine",
+        "Contract prototyping": "technology/prototype",
+        "Wizz Bang!!! Quadrocoptor autonomus swarm": "technology/quadrocopters",
+        "All your base are belong to us": "technology/fuckery"
+    },
+    "Mega Scale Creations": {
+        "Installation art": "large/installation",
+        "Large scale treehouse design and build": "large/treehouse",
+        "PopUp things project": "large/pop-ups",
+        "Art cars concepts": "large/art-cars",
+        "Theatrical set design & scene building ": "large/set-design"
+    },
+    "I Are Naked": {
+        "What is Shirtcocking?": "fuckshitstack/shirt-cocking",
+        "Anti-Dressed": "fuckshitstack/naked-not-the-drink-more-like-no-cloths",
+        "No Touchie": "fuckshitstack/no-touching-policy",
+        "Learn you good": "fuckshitstack/learn-stuff-from-a-naked-guy"
+    }
+
+});
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// json
+/* harmony default export */ __webpack_exports__["a"] = ([{
+    norm: {
+        title: "Masks, Costumes, & Props",
+        content: [{
+            name: "My line of masks and props made in short run batches",
+            url: "costume/production",
+            info: "data lists etc..."
+        }, {
+            name: "Hire me to make you a custom costume",
+            url: "costume/contract",
+            info: "blaaaaaa"
+        }, {
+            name: "Prop building and small alacart services",
+            url: "costume/alacart",
+            info: "bladsbhjsh"
+        }]
+    },
+    nerd: {
+        title: "M16 R&D",
+        content: [{
+            name: "Short run mask and prop collections",
+            url: "costume/production",
+            info: "sdfasdfsadf"
+        }, {
+            name: "Quartermaster for hire",
+            url: "costume/contract",
+            info: "sjdhfbsjhdvf"
+        }, {
+            name: "Cosplay alacart services",
+            url: "costume/alacart",
+            info: "sdjkhfbgsjihkdf"
+        }]
+    }
+}, {
+    "Clothing Design and Printing services": {
+        "T-shirt digital design": "clothing/design",
+        "Professinal in house fabric printing": "clothing/print",
+        "Hand made garments": "clothing/handmade"
+    }
+}, {
+    "Performance Arts": {
+        "Hire me to perform a characture for you": "performance/for-hire",
+        "Wardrobe services": "performance/wardrobe",
+        "SFX makeup design and application": "performance/makeup",
+        "Talent acquisition for events": "performance/talent",
+        "Artistic theatrical design, direction and management": "performance/direction",
+        "Performance coaching, & review (workshops or private)": "performance/workshops",
+        "I just gota dance": "performance/dance"
+    }
+}, {
+    "Technology Services": {
+        "App development (software for many platforms)": "technology/app-development",
+        "Machine development": "technology/machine",
+        "Prototype creation": "technology/prototype",
+        "My autonomus flying robot projects": "technology/quadrocopters",
+        "Fun internet stuff I create and like": "technology/fuckery"
+    }
+}, {
+    "Instalation Art & Other Large Builds": {
+        "Installation art": "large/installation",
+        "Large scale treehouse design and build": "large/treehouse",
+        "PopUp things project": "large/pop-ups",
+        "Art car design and development": "large/art-cars",
+        "Theatrical set design & scene building ": "large/set-design"
+    }
+}, {
+    "*-*Sensored*-*": {
+        "*-*Sensored1*-*": "fuckshitstack/shirt-cocking",
+        "*-*Sensored2*-*": "fuckshitstack/naked-not-the-drink-more-like-no-cloths",
+        "*-*Sensored3*-*": "fuckshitstack/no-touching-policy",
+        "*-*Sensored4*-*": "fuckshitstack/learn-stuff-from-a-naked-guy"
+    }
+
+}]);
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(40);
+window._ = __webpack_require__(43);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -2161,9 +2314,9 @@ window._ = __webpack_require__(40);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(39);
+  window.$ = window.jQuery = __webpack_require__(42);
 
-  __webpack_require__(36);
+  __webpack_require__(39);
 } catch (e) {}
 
 /**
@@ -2206,10 +2359,9 @@ if (token) {
 // });
 
 /***/ }),
-/* 35 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 var anime = __webpack_require__(2);
 
 var colors = ['#16F0F0', '#00FF00', '#FFFF00', '#FF14AB', '#16F0F0'];
@@ -2256,7 +2408,7 @@ module.exports = function () {
 }();
 
 /***/ }),
-/* 36 */
+/* 39 */
 /***/ (function(module, exports) {
 
 /*!
@@ -4639,21 +4791,21 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 37 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
 exports.push([module.i, "", ""]);
 
 /***/ }),
-/* 38 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
 exports.push([module.i, "", ""]);
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -14913,7 +15065,7 @@ return jQuery;
 
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -32002,10 +32154,10 @@ return jQuery;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(51)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(53)(module)))
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -32195,18 +32347,18 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(46)
+__webpack_require__(49)
 
 var Component = __webpack_require__(9)(
   /* script */
   __webpack_require__(32),
   /* template */
-  __webpack_require__(44),
+  __webpack_require__(47),
   /* scopeId */
   null,
   /* cssModules */
@@ -32233,18 +32385,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(47)
+__webpack_require__(50)
 
 var Component = __webpack_require__(9)(
   /* script */
   __webpack_require__(33),
   /* template */
-  __webpack_require__(45),
+  __webpack_require__(48),
   /* scopeId */
   null,
   /* cssModules */
@@ -32271,7 +32423,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32290,7 +32442,7 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32298,12 +32450,44 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "menu"
   }, [_c('div', {
     staticClass: "title"
-  }, [_vm._v("MENU")]), _vm._v(" "), _vm._l((_vm.items), function(item) {
-    return _c('div', [_c('ul', [_vm._v("\ne                ")])])
-  }), _vm._v(" "), _vm._m(0)], 2)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', [_c('li', [_c('span', [_vm._v("Mask and Costume")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Short run, known characture line. (for the nerds)")]), _vm._v(" "), _c('li', [_vm._v("Custom commission builds. (for the elite nerds)")]), _vm._v(" "), _c('li', [_vm._v("Cosplay alacart services")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Clothing Design and Printing")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Tee shirt design (boring and not boring)")]), _vm._v(" "), _c('li', [_vm._v("Fabric printing (in house highest quality fast!!!)")]), _vm._v(" "), _c('li', [_vm._v("Hand made garments")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Performance Arts")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Play dress up and become that thing...")]), _vm._v(" "), _c('li', [_vm._v("Help you dress up your friends")]), _vm._v(" "), _c('li', [_vm._v("Decorating flesh for the occasion")]), _vm._v(" "), _c('li', [_vm._v("Talent hearding (Oh power of grayskull give me sight beyond sight, Avengers mount up)")]), _vm._v(" "), _c('li', [_vm._v("Live show artistic direction")]), _vm._v(" "), _c('li', [_vm._v("Performer coaching and set review (workshops and private)")]), _vm._v(" "), _c('li', [_vm._v("Dance!!!! (damnitJanet)")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Tech Obsession")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("App development (\"website\" is such a gross word anymore)")]), _vm._v(" "), _c('li', [_vm._v("Machine development ")]), _vm._v(" "), _c('li', [_vm._v("Prototype creation")]), _vm._v(" "), _c('li', [_vm._v("Whizz bang! Autonomus flying robot projects")]), _vm._v(" "), _c('li', [_vm._v("Time for internet fuckery")]), _vm._v(" "), _c('li', [_vm._v("Dance!!!! on a 24 hour, interactive, live streamed, 3d partical render of my shop???")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Instalation Art & Other Large Builds")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("You want to build a what?")]), _vm._v(" "), _c('li', [_vm._v("Large scale treehouse's (they are so fun to be having)")]), _vm._v(" "), _c('li', [_vm._v("PopUp things project (if its cool small than it will be amazing big)")]), _vm._v(" "), _c('li', [_vm._v("Art car! I wanna! for 9 years this project as evaded me")]), _vm._v(" "), _c('li', [_vm._v("Set design &scene building ")]), _vm._v(" "), _c('li', [_vm._v("Dance!!!! with power tools and convert standrd to metric ")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Nakedness")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Partial")]), _vm._v(" "), _c('li', [_vm._v("Complete")]), _vm._v(" "), _c('li', [_vm._v("No touchie (probably negotiable)")]), _vm._v(" "), _c('li', [_vm._v("Shirt cocking/cunting workshops on whatever you want to learn about")])])])])
-}]}
+  }, [_vm._v("MENU")]), _vm._v(" "), _c('span', [_vm._v("How confusing would you like your menu?")]), _vm._v(" "), _c('ul', {
+    staticClass: "filters"
+  }, [_c('li', [_c('button', {
+    on: {
+      "click": function($event) {
+        _vm.visibility = 'norm'
+      }
+    }
+  }, [_vm._v("Normal")])]), _vm._v(" "), _c('li', [_c('button', {
+    on: {
+      "click": function($event) {
+        _vm.visibility = 'nerdy'
+      }
+    }
+  }, [_vm._v("Nerdy")])]), _vm._v(" "), _c('li', [_c('button', {
+    on: {
+      "click": function($event) {
+        _vm.visibility = 'fantastical'
+      }
+    }
+  }, [_vm._v("Fantastical")])])]), _vm._v(" "), _c('ul', [_c('transition-group', {
+    attrs: {
+      "name": "list-complete",
+      "tag": "li"
+    }
+  }, _vm._l((_vm.filteredMenu), function(item) {
+    return _c('li', {
+      key: item,
+      staticClass: "list-complete-item"
+    }, [_c('span', [_vm._v(_vm._s(item.title))]), _vm._v(" "), _c('ul', _vm._l((item.contents), function(item) {
+      return _c('li', [_c('a', {
+        attrs: {
+          "href": _vm.link
+        }
+      }, [_vm._v(_vm._s(item.name))])])
+    }))])
+  }))], 1)])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -32313,13 +32497,13 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(37);
+var content = __webpack_require__(40);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -32339,13 +32523,13 @@ if(false) {
 }
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(38);
+var content = __webpack_require__(41);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -32365,7 +32549,7 @@ if(false) {
 }
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports) {
 
 /**
@@ -32398,7 +32582,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42096,8 +42280,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 50 */,
-/* 51 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -42125,7 +42308,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(12);
