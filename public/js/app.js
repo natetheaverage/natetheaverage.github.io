@@ -2130,8 +2130,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "Main-Menu",
@@ -32301,11 +32299,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "title"
   }, [_vm._v("MENU")]), _vm._v(" "), _vm._l((_vm.items), function(item) {
-    return _c('div', [_c('ul', [_c('li', {
-      domProps: {
-        "textContent": _vm._s(item.title)
-      }
-    })])])
+    return _c('div', [_c('ul', [_vm._v("\ne                ")])])
   }), _vm._v(" "), _vm._m(0)], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('ul', [_c('li', [_c('span', [_vm._v("Mask and Costume")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Short run, known characture line. (for the nerds)")]), _vm._v(" "), _c('li', [_vm._v("Custom commission builds. (for the elite nerds)")]), _vm._v(" "), _c('li', [_vm._v("Cosplay alacart services")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Clothing Design and Printing")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Tee shirt design (boring and not boring)")]), _vm._v(" "), _c('li', [_vm._v("Fabric printing (in house highest quality fast!!!)")]), _vm._v(" "), _c('li', [_vm._v("Hand made garments")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Performance Arts")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Play dress up and become that thing...")]), _vm._v(" "), _c('li', [_vm._v("Help you dress up your friends")]), _vm._v(" "), _c('li', [_vm._v("Decorating flesh for the occasion")]), _vm._v(" "), _c('li', [_vm._v("Talent hearding (Oh power of grayskull give me sight beyond sight, Avengers mount up)")]), _vm._v(" "), _c('li', [_vm._v("Live show artistic direction")]), _vm._v(" "), _c('li', [_vm._v("Performer coaching and set review (workshops and private)")]), _vm._v(" "), _c('li', [_vm._v("Dance!!!! (damnitJanet)")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Tech Obsession")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("App development (\"website\" is such a gross word anymore)")]), _vm._v(" "), _c('li', [_vm._v("Machine development ")]), _vm._v(" "), _c('li', [_vm._v("Prototype creation")]), _vm._v(" "), _c('li', [_vm._v("Whizz bang! Autonomus flying robot projects")]), _vm._v(" "), _c('li', [_vm._v("Time for internet fuckery")]), _vm._v(" "), _c('li', [_vm._v("Dance!!!! on a 24 hour, interactive, live streamed, 3d partical render of my shop???")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Instalation Art & Other Large Builds")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("You want to build a what?")]), _vm._v(" "), _c('li', [_vm._v("Large scale treehouse's (they are so fun to be having)")]), _vm._v(" "), _c('li', [_vm._v("PopUp things project (if its cool small than it will be amazing big)")]), _vm._v(" "), _c('li', [_vm._v("Art car! I wanna! for 9 years this project as evaded me")]), _vm._v(" "), _c('li', [_vm._v("Set design &scene building ")]), _vm._v(" "), _c('li', [_vm._v("Dance!!!! with power tools and convert standrd to metric ")])])]), _vm._v(" "), _c('li', [_c('span', [_vm._v("Nakedness")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("Partial")]), _vm._v(" "), _c('li', [_vm._v("Complete")]), _vm._v(" "), _c('li', [_vm._v("No touchie (probably negotiable)")]), _vm._v(" "), _c('li', [_vm._v("Shirt cocking/cunting workshops on whatever you want to learn about")])])])])

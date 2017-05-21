@@ -4,9 +4,7 @@
     
         <div v-for="item in items">
             <ul>
-                <li v-text="item.title">
-                    <!--<item></item>-->
-                </li>
+e                </li>
             </ul>
         </div>
     
