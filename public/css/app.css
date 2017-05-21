@@ -6839,4 +6839,5 @@ body {
 .menu ul li ul li {
   text-decoration: none;
   font-size: 14px;
+  font-family: monospace;
 }

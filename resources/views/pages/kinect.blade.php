@@ -25,17 +25,19 @@
       }
 
       a {
-        color:#0040ff;
+
+        color: #0040ff;
+
       }
     </style>
   </head>
   <body>
+  
+    <script src="js/three.js"></script>
 
-    <script src="three.js"></script>
+    <script src='js/libs/dat.gui.min.js'></script>
 
-    <script src='../libs/dat.gui.min.js'></script>
-
-    <script src="../Detector.js"></script>
+    <script src="js/Detector.js"></script>
     <script src="js/libs/stats.min.js"></script>
 
 <script id="vs" type="x-shader/x-vertex">
@@ -193,7 +195,8 @@
         }, false );
         video.loop = true;
         video.muted = true;
-        video.src = 'textures/kinect.webm';
+        
+        video.src = 'js/textures/kinect.webm';
         video.setAttribute( 'webkit-playsinline', 'webkit-playsinline' );
         video.play();
 

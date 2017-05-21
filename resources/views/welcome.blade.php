@@ -1,34 +1,12 @@
 <!doctype html>
 <html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-       
-        <title>NateTheAverage</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200" rel="stylesheet" type="text/css">
-
-         <!-- <script type="text/javascript" src=js/svgAnime.js></script> -->
-        <link href="css/app.css" rel="stylesheet" type="text/css">
-    </head>
+    @include('includes.head')
     <body>
         <div id="app-container" class="container-fluid">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
+            @include('includes.loginlinks')
             <div class="row">
                 <div class="logo">
-                    @include('svg-logo2')
+                    @include('parts.svg-logo')
                 </div>
             </div>
             <div class="body-content text-center">
@@ -36,6 +14,7 @@
                     <div class="pre-title ">
                     Hi I'm Nathan Leite
                     </div>
+                        <example></example>
                     <div class="pre-title">
                         AKA
                     </div>
@@ -43,9 +22,29 @@
                         NateTheAverage
                     </div>
                 </div>
+
+                <video
+                    id="my-player"
+                    class="video-js"
+                    controls
+                    preload="auto"
+                    poster="//vjs.zencdn.net/v/oceans.png"
+                    data-setup='{}'>
+                <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
+                <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
+                <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                    </a>
+                </p>
+                </video>
                 
                 <div class="row">
-                    @include('menu')
+                <main-menu></main-menu>
+                    {{-- @include('includes.menu') --}}
                 </div>
             </div>
 
