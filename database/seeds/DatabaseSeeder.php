@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call('CanvasPostTagTableSeeder');
         $this->call('CanvasSettingsTableSeeder');
         $this->call('CanvasTagsTableSeeder');
+        $this->call('CanvasUsersTableSeeder');
     }
 }
