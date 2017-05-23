@@ -32682,7 +32682,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "menu col-xs-11 col-sm-10 col-sm-offset-1 col-md-10"
+    staticClass: "menu "
   }, [_c('div', {
     staticClass: "mm-title"
   }, [_vm._v("How confusing would you like your menu?")]), _vm._v(" "), _c('div', {
