@@ -1,8 +1,13 @@
 /*menu.styl*/
-
 .menu 
-  margin-top 25%
-  text-align left
+  text-align center
+  height 90%
+  width 50%
+  position fixed
+  top 5%
+  left 0px
+  padding 20px 0
+  background-color rgba($brand-green 0.8)
   .mm-title
     font-size 34px
     font-weight 200
@@ -14,21 +19,18 @@
   .btn-group-vertical
     display block
   .m-link
-    max-width 50%
     display block
     text-decoration none !important
     text-align left
     font-size 16px
   .filters
-    display inline-flex
-    flex-grow 5
+    display flex
+    justify-content center
     font-family monospace
-    margin-left 0
     
-
 @media screen and (max-width: 1000px)
   .menu 
-    margin-top 35%
+    // margin-top 35%
     .mm-title
       font-size 32px
     .m-title
@@ -36,15 +38,16 @@
       font-weight 200
       font-size 22px
       text-align left
-    .m-link
-      max-width 60%
   .filters
     display flex
     text-align left
     font-family monospace
+@media screen and (max-width: 800px)
+   .menu 
+    width 100%
 @media screen and (max-width: 600px)
   .menu 
-    margin-top 25%
+    // margin-top 25%
     .mm-title
       font-size 16px
       font-family monospace
@@ -57,10 +60,8 @@
       max-width 100%
       font-size 12px
   .filters
-    display flex
     font-size 14px
-    text-align left
     font-family monospace
-@media screen and (max-width: 600px)
+@media screen and (max-width: 400px)
   .menu 
-    margin-top 75%
+    // margin-top 75%

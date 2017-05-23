@@ -1,6 +1,19 @@
 <template>
-    <div class="menu ">
-        <div class="mm-title">How confusing would you like your menu?</div>
+<div>
+  <button class="clickit btn btn-default"
+  @click="menuOpen = !menuOpen">
+   |||
+  </button>
+<transition
+name="slide"
+v-on:after-enter="ssinit">
+    <div 
+    id="theMenu" 
+    class="menu"
+    v-if="menuOpen"
+    >
+    
+        <div class="mm-title">How confusing would you<br /> like your menu?</div>
         <!--<span></span>-->
         <div class="filters btn-group">
             <button class="btn btn-default"  @click="visibility='norm'">Normal</button>
@@ -23,8 +36,9 @@
                 </div>
             </div>
         </transition-group>
-        <!--</ul>-->
     </div>
+  </transition>
+</div>
 </template>
 
 
@@ -37,7 +51,7 @@ export default {
     data() {
         return {
             visibility: 'norm',
-            
+            menuOpen: false,
         }
     },
     computed: {
@@ -56,11 +70,32 @@ export default {
             return filteredMenu
         },
     },
+    methods: {
+      ssinit: () => {
+        const el = document.querySelector('.menu');
+        SimpleScrollbar.initEl(el);
+      }
+    },
 }
 
 
 
 </script>
 
-<style lang="stylus">  
+<style lang="stylus">
+.clickit
+  top: 5px;
+  left: 5px;
+  padding: 0 10px;
+  font-size: 26px;
+  position: fixed;
+  z-index: 999999999;
+.theMenu
+  position fixed
+.slide-enter-active, .slide-leave-active {
+  transition: all .5s ease
+}
+.slide-enter, .slide-leave-to /* .fade-leave-active in <2.1.8 */ {
+  transform: translateX(-2000px)
+}
 </style>

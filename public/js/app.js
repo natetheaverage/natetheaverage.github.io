@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -832,9 +832,6 @@ module.exports = function() {
 /* 9 */
 /***/ (function(module, exports) {
 
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
 module.exports = function normalizeComponent (
   rawScriptExports,
   compiledTemplate,
@@ -869,12 +866,11 @@ module.exports = function normalizeComponent (
 
   // inject cssModules
   if (cssModules) {
-    var computed = Object.create(options.computed || null)
+    var computed = options.computed || (options.computed = {})
     Object.keys(cssModules).forEach(function (key) {
       var module = cssModules[key]
       computed[key] = function () { return module }
     })
-    options.computed = computed
   }
 
   return {
@@ -1151,6 +1147,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __webpack_require__(35);
 
 
+var ss = __webpack_require__(61);
 
 window.Vue = __webpack_require__(50);
 
@@ -2091,6 +2088,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2099,8 +2110,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: "MainMenu",
     data: function data() {
         return {
-            visibility: 'norm'
-
+            visibility: 'norm',
+            menuOpen: false
         };
     },
 
@@ -2118,6 +2129,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }
             return filteredMenu;
+        }
+    },
+    methods: {
+        ssinit: function ssinit() {
+            var el = document.querySelector('.menu');
+            SimpleScrollbar.initEl(el);
         }
     }
 });
@@ -5030,14 +5047,28 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
+// imports
+
+
+// module
 exports.push([module.i, "", ""]);
+
+// exports
+
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
-exports.push([module.i, "", ""]);
+// imports
+
+
+// module
+exports.push([module.i, "\n.clickit {\n  top: 5px;\n  left: 5px;\n  padding: 0 10px;\n  font-size: 26px;\n  position: fixed;\n  z-index: 999999999;\n}\n.theMenu {\n  position: fixed;\n}\n.slide-enter-active,\n.slide-leave-active {\n  transition: all 0.5s ease;\n}\n.slide-enter,\n.slide-leave-to {\n  -webkit-transform: translateX(-2000px);\n          transform: translateX(-2000px);\n}\n", ""]);
+
+// exports
+
 
 /***/ }),
 /* 40 */
@@ -32681,11 +32712,28 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "menu "
+  return _c('div', [_c('button', {
+    staticClass: "clickit btn btn-default",
+    on: {
+      "click": function($event) {
+        _vm.menuOpen = !_vm.menuOpen
+      }
+    }
+  }, [_vm._v("\n   |||\n  ")]), _vm._v(" "), _c('transition', {
+    attrs: {
+      "name": "slide"
+    },
+    on: {
+      "after-enter": _vm.ssinit
+    }
+  }, [(_vm.menuOpen) ? _c('div', {
+    staticClass: "menu",
+    attrs: {
+      "id": "theMenu"
+    }
   }, [_c('div', {
     staticClass: "mm-title"
-  }, [_vm._v("How confusing would you like your menu?")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("How confusing would you"), _c('br'), _vm._v(" like your menu?")]), _vm._v(" "), _c('div', {
     staticClass: "filters btn-group"
   }, [_c('button', {
     staticClass: "btn btn-default",
@@ -32717,7 +32765,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('div', {
       key: item,
       staticClass: "m-title list-complete-item"
-    }, [_vm._v("\n        " + _vm._s(item.title) + "\n            "), _c('div', {
+    }, [_vm._v("\n            " + _vm._s(item.title) + "\n                "), _c('div', {
       staticClass: "btn-group-vertical",
       attrs: {
         "role": "group"
@@ -32728,9 +32776,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         attrs: {
           "href": item.url
         }
-      }, [_vm._v("\n                " + _vm._s(item.name) + "\n                ")])
+      }, [_vm._v("\n                    " + _vm._s(item.name) + "\n                    ")])
     }))])
-  }))], 1)
+  }))], 1) : _vm._e()])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -32751,13 +32799,13 @@ var content = __webpack_require__(38);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(10)("c043dd54", content, false);
+var update = __webpack_require__(10)("7a5ac761", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5c54bd54\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Example.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5c54bd54\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Example.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5c54bd54!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Example.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5c54bd54!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Example.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -32777,13 +32825,13 @@ var content = __webpack_require__(39);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(10)("224f462e", content, false);
+var update = __webpack_require__(10)("401a289e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-60e49ea3\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Menu.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-60e49ea3\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Menu.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-60e49ea3!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Menu.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-60e49ea3!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Menu.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -42558,6 +42606,50 @@ module.exports = function(module) {
 __webpack_require__(12);
 module.exports = __webpack_require__(13);
 
+
+/***/ }),
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */
+/***/ (function(module, exports) {
+
+!function (a, b) {
+  function d(a) {
+    a.hasOwnProperty("data-simple-scrollbar") || Object.defineProperty(a, "data-simple-scrollbar", new SimpleScrollbar(a));
+  }function e(a, d) {
+    function f(a) {
+      var b = a.pageY - e;e = a.pageY, c(function () {
+        d.el.scrollTop += b / d.scrollRatio;
+      });
+    }function g() {
+      a.classList.remove("ss-grabbed"), b.body.classList.remove("ss-grabbed"), b.removeEventListener("mousemove", f), b.removeEventListener("mouseup", g);
+    }var e;a.addEventListener("mousedown", function (c) {
+      return e = c.pageY, a.classList.add("ss-grabbed"), b.body.classList.add("ss-grabbed"), b.addEventListener("mousemove", f), b.addEventListener("mouseup", g), !1;
+    });
+  }function f(a) {
+    for (this.target = a, this.bar = '<div class="ss-scroll">', this.wrapper = b.createElement("div"), this.wrapper.setAttribute("class", "ss-wrapper"), this.el = b.createElement("div"), this.el.setAttribute("class", "ss-content"), this.wrapper.appendChild(this.el); this.target.firstChild;) {
+      this.el.appendChild(this.target.firstChild);
+    }this.target.appendChild(this.wrapper), this.target.insertAdjacentHTML("beforeend", this.bar), this.bar = this.target.lastChild, e(this.bar, this), this.moveBar(), this.el.addEventListener("scroll", this.moveBar.bind(this)), this.el.addEventListener("mouseenter", this.moveBar.bind(this)), this.target.classList.add("ss-container");var c = window.getComputedStyle(a);"0px" === c.height && "0px" !== c["max-height"] && (a.style.height = c["max-height"]);
+  }function g() {
+    for (var a = b.querySelectorAll("*[ss-container]"), c = 0; c < a.length; c++) {
+      d(a[c]);
+    }
+  }var c = a.requestAnimationFrame || a.setImmediate || function (a) {
+    return setTimeout(a, 0);
+  };f.prototype = { moveBar: function moveBar(a) {
+      var b = this.el.scrollHeight,
+          d = this.el.clientHeight,
+          e = this;this.scrollRatio = d / b, c(function () {
+        e.scrollRatio >= 1 ? e.bar.classList.add("ss-hidden") : (e.bar.classList.remove("ss-hidden"), e.bar.style.cssText = "height:" + 100 * e.scrollRatio + "%; top:" + e.el.scrollTop / b * 100 + "%;right:-" + (e.target.clientWidth - e.bar.clientWidth) + "px;");
+      });
+    } }, b.addEventListener("DOMContentLoaded", g), f.initEl = d, f.initAll = g, a.SimpleScrollbar = f;
+}(window, document);
 
 /***/ })
 /******/ ]);

@@ -6,7 +6,7 @@
 require('./bootstrap');
 
 import anime from 'animejs'
-
+const ss = require('./libs/simple-scrollbar.min.js')
 
 window.Vue = require('vue');
 

@@ -15,4 +15,5 @@
 
          <!-- <script type="text/javascript" src=js/svgAnime.js></script> -->
         <link href="css/app.css" rel="stylesheet" type="text/css">
+        <link href="css/simple-scrollbar.css" rel="stylesheet" type="text/css">
     </head>
