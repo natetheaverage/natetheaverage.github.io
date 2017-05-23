@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     @if(!empty(\Canvas\Models\Settings::disqus()))
         @include('canvas::frontend.blog.partials.disqus')
     @endif
@@ -6,7 +6,20 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <hr>
-                <p class="small">Proudly powered by <a href="https://canvas.toddaustin.io" target="_blank">Canvas</a> &#183; <a href="{!! route('canvas.admin') !!}"><i class="fa fa-lock"></i> Sign In</a>
+                <p class="small">
+                @if (!empty($socialHeaderIconsUser->twitter))
+                <a href="http://twitter.com/{{ $socialHeaderIconsUser->twitter }}" target="_blank" id="social"><i class="fa fa-fw fa-twitter text-muted" style="font-size: 14px"></i></a>
+            @endif
+            @if (!empty($socialHeaderIconsUser->facebook))
+                <a href="http://facebook.com/{{ $socialHeaderIconsUser->facebook }}" target="_blank" id="social"><i class="fa fa-fw fa-facebook text-muted" style="font-size: 14px"></i></a>
+            @endif
+            @if (!empty($socialHeaderIconsUser->github))
+                <a href="http://github.com/{{ $socialHeaderIconsUser->github }}" target="_blank" id="social"><i class="fa fa-fw fa-github text-muted" style="font-size: 14px"></i></a>
+            @endif
+            @if(!empty($socialHeaderIconsUser->linkedin))
+                <a href="http://linkedin.com/in/{{ $socialHeaderIconsUser->linkedin }}" target="_blank" id="social"><i class="fa fa-fw fa-linkedin text-muted" style="font-size: 14px"></i></a>
+            @endif
+                 <a href="{!! route('canvas.admin') !!}"><i class="fa fa-lock"></i> Sign In</a>
                 </p>
             </div>
         </div>

@@ -6759,9 +6759,7 @@ body {
 }
 .body-content {
   width: 100%;
-  position: absolute;
-  top: 100%;
-  margin-top: 25%;
+  margin-top: 75%;
 }
 .full-height {
   height: 100vh;
