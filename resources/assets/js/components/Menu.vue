@@ -1,5 +1,5 @@
 <template>
-    <div class="menu col-xs-11 col-sm-10 col-sm-offset-1 col-md-10">
+    <div class="menu ">
         <div class="mm-title">How confusing would you like your menu?</div>
         <!--<span></span>-->
         <div class="filters btn-group">
