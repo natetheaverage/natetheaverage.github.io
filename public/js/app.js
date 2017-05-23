@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ 	return __webpack_require__(__webpack_require__.s = 53);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -471,7 +471,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(42)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
 
 /***/ }),
 /* 2 */
@@ -901,7 +901,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(49)
+var listToStyles = __webpack_require__(50)
 
 /*
 type StyleObject = {
@@ -1137,7 +1137,7 @@ module.exports = g;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_animejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -1147,9 +1147,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __webpack_require__(35);
 
 
-var ss = __webpack_require__(61);
+var ss = __webpack_require__(36);
 
-window.Vue = __webpack_require__(50);
+window.Vue = __webpack_require__(51);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -1162,7 +1162,7 @@ window.Vue = __webpack_require__(50);
 // Vue.component('animateLogo', animateLogo)
 // const $AL = require('./svgAnime.js')
 
-Vue.component('example', __webpack_require__(43));
+Vue.component('example', __webpack_require__(44));
 
 
 Vue.component('MainMenu', __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue___default.a);
@@ -1171,7 +1171,7 @@ var app = new Vue({
   el: '#app-container'
 });
 
-var lanime = __webpack_require__(36);
+var lanime = __webpack_require__(37);
 
 /***/ }),
 /* 13 */
@@ -2557,7 +2557,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(41);
+window._ = __webpack_require__(42);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -2566,9 +2566,9 @@ window._ = __webpack_require__(41);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(40);
+  window.$ = window.jQuery = __webpack_require__(41);
 
-  __webpack_require__(37);
+  __webpack_require__(38);
 } catch (e) {}
 
 /**
@@ -2612,6 +2612,42 @@ if (token) {
 
 /***/ }),
 /* 36 */
+/***/ (function(module, exports) {
+
+!function (a, b) {
+  function d(a) {
+    a.hasOwnProperty("data-simple-scrollbar") || Object.defineProperty(a, "data-simple-scrollbar", new SimpleScrollbar(a));
+  }function e(a, d) {
+    function f(a) {
+      var b = a.pageY - e;e = a.pageY, c(function () {
+        d.el.scrollTop += b / d.scrollRatio;
+      });
+    }function g() {
+      a.classList.remove("ss-grabbed"), b.body.classList.remove("ss-grabbed"), b.removeEventListener("mousemove", f), b.removeEventListener("mouseup", g);
+    }var e;a.addEventListener("mousedown", function (c) {
+      return e = c.pageY, a.classList.add("ss-grabbed"), b.body.classList.add("ss-grabbed"), b.addEventListener("mousemove", f), b.addEventListener("mouseup", g), !1;
+    });
+  }function f(a) {
+    for (this.target = a, this.bar = '<div class="ss-scroll">', this.wrapper = b.createElement("div"), this.wrapper.setAttribute("class", "ss-wrapper"), this.el = b.createElement("div"), this.el.setAttribute("class", "ss-content"), this.wrapper.appendChild(this.el); this.target.firstChild;) {
+      this.el.appendChild(this.target.firstChild);
+    }this.target.appendChild(this.wrapper), this.target.insertAdjacentHTML("beforeend", this.bar), this.bar = this.target.lastChild, e(this.bar, this), this.moveBar(), this.el.addEventListener("scroll", this.moveBar.bind(this)), this.el.addEventListener("mouseenter", this.moveBar.bind(this)), this.target.classList.add("ss-container");var c = window.getComputedStyle(a);"0px" === c.height && "0px" !== c["max-height"] && (a.style.height = c["max-height"]);
+  }function g() {
+    for (var a = b.querySelectorAll("*[ss-container]"), c = 0; c < a.length; c++) {
+      d(a[c]);
+    }
+  }var c = a.requestAnimationFrame || a.setImmediate || function (a) {
+    return setTimeout(a, 0);
+  };f.prototype = { moveBar: function moveBar(a) {
+      var b = this.el.scrollHeight,
+          d = this.el.clientHeight,
+          e = this;this.scrollRatio = d / b, c(function () {
+        e.scrollRatio >= 1 ? e.bar.classList.add("ss-hidden") : (e.bar.classList.remove("ss-hidden"), e.bar.style.cssText = "height:" + 100 * e.scrollRatio + "%; top:" + e.el.scrollTop / b * 100 + "%;right:-" + (e.target.clientWidth - e.bar.clientWidth) + "px;");
+      });
+    } }, b.addEventListener("DOMContentLoaded", g), f.initEl = d, f.initAll = g, a.SimpleScrollbar = f;
+}(window, document);
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anime = __webpack_require__(2);
@@ -2660,7 +2696,7 @@ module.exports = function () {
 }();
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 /*!
@@ -5043,7 +5079,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
@@ -5057,7 +5093,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
@@ -5071,7 +5107,7 @@ exports.push([module.i, "\n.clickit {\n  top: 5px;\n  left: 5px;\n  padding: 0 1
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -15331,7 +15367,7 @@ return jQuery;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -32420,10 +32456,10 @@ return jQuery;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(51)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(52)(module)))
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -32613,18 +32649,18 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(47)
+__webpack_require__(48)
 
 var Component = __webpack_require__(9)(
   /* script */
   __webpack_require__(32),
   /* template */
-  __webpack_require__(45),
+  __webpack_require__(46),
   /* scopeId */
   null,
   /* cssModules */
@@ -32651,18 +32687,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(48)
+__webpack_require__(49)
 
 var Component = __webpack_require__(9)(
   /* script */
   __webpack_require__(33),
   /* template */
-  __webpack_require__(46),
+  __webpack_require__(47),
   /* scopeId */
   null,
   /* cssModules */
@@ -32689,7 +32725,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32708,7 +32744,7 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32789,13 +32825,13 @@ if (false) {
 }
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(38);
+var content = __webpack_require__(39);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -32815,13 +32851,13 @@ if(false) {
 }
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(39);
+var content = __webpack_require__(40);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -32841,7 +32877,7 @@ if(false) {
 }
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 /**
@@ -32874,7 +32910,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42572,7 +42608,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -42600,56 +42636,12 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(12);
 module.exports = __webpack_require__(13);
 
-
-/***/ }),
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */
-/***/ (function(module, exports) {
-
-!function (a, b) {
-  function d(a) {
-    a.hasOwnProperty("data-simple-scrollbar") || Object.defineProperty(a, "data-simple-scrollbar", new SimpleScrollbar(a));
-  }function e(a, d) {
-    function f(a) {
-      var b = a.pageY - e;e = a.pageY, c(function () {
-        d.el.scrollTop += b / d.scrollRatio;
-      });
-    }function g() {
-      a.classList.remove("ss-grabbed"), b.body.classList.remove("ss-grabbed"), b.removeEventListener("mousemove", f), b.removeEventListener("mouseup", g);
-    }var e;a.addEventListener("mousedown", function (c) {
-      return e = c.pageY, a.classList.add("ss-grabbed"), b.body.classList.add("ss-grabbed"), b.addEventListener("mousemove", f), b.addEventListener("mouseup", g), !1;
-    });
-  }function f(a) {
-    for (this.target = a, this.bar = '<div class="ss-scroll">', this.wrapper = b.createElement("div"), this.wrapper.setAttribute("class", "ss-wrapper"), this.el = b.createElement("div"), this.el.setAttribute("class", "ss-content"), this.wrapper.appendChild(this.el); this.target.firstChild;) {
-      this.el.appendChild(this.target.firstChild);
-    }this.target.appendChild(this.wrapper), this.target.insertAdjacentHTML("beforeend", this.bar), this.bar = this.target.lastChild, e(this.bar, this), this.moveBar(), this.el.addEventListener("scroll", this.moveBar.bind(this)), this.el.addEventListener("mouseenter", this.moveBar.bind(this)), this.target.classList.add("ss-container");var c = window.getComputedStyle(a);"0px" === c.height && "0px" !== c["max-height"] && (a.style.height = c["max-height"]);
-  }function g() {
-    for (var a = b.querySelectorAll("*[ss-container]"), c = 0; c < a.length; c++) {
-      d(a[c]);
-    }
-  }var c = a.requestAnimationFrame || a.setImmediate || function (a) {
-    return setTimeout(a, 0);
-  };f.prototype = { moveBar: function moveBar(a) {
-      var b = this.el.scrollHeight,
-          d = this.el.clientHeight,
-          e = this;this.scrollRatio = d / b, c(function () {
-        e.scrollRatio >= 1 ? e.bar.classList.add("ss-hidden") : (e.bar.classList.remove("ss-hidden"), e.bar.style.cssText = "height:" + 100 * e.scrollRatio + "%; top:" + e.el.scrollTop / b * 100 + "%;right:-" + (e.target.clientWidth - e.bar.clientWidth) + "px;");
-      });
-    } }, b.addEventListener("DOMContentLoaded", g), f.initEl = d, f.initAll = g, a.SimpleScrollbar = f;
-}(window, document);
 
 /***/ })
 /******/ ]);
