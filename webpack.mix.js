@@ -13,4 +13,4 @@ const anime = require('animejs');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .stylus('resources/assets/styl/app.styl', 'public/css')
-    .browserSync('nta-blog.app');
+    .browserSync('natetheaverage.app');

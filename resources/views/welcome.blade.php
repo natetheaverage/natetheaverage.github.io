@@ -9,7 +9,7 @@
                     @include('parts.svg-logo')
                 </div>
             </div>
-            <div class="body-content col-xs-11 col-sm-10 col-sm-offset-1 col-md-10 text-center">
+            <div class="body-content text-center">
                 <div class="row text-center ">
                     <div class="pre-title ">
                     Hi I'm Nathan Leite
