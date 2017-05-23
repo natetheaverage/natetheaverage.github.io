@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config('app.locale') }}">
+<html lang="en">
     @include('includes.head')
     <body>
         <div id="app-container" class="container-fluid">
@@ -9,7 +9,7 @@
                     @include('parts.svg-logo')
                 </div>
             </div>
-            <div class="body-content text-center">
+            <div class="body-content col-xs-11 col-sm-10 col-sm-offset-1 col-md-10 text-center">
                 <div class="row text-center ">
                     <div class="pre-title ">
                     Hi I'm Nathan Leite
@@ -42,7 +42,7 @@
                     </video> --}}
                 </div>
                 
-                <div class="row">
+                <div class="row ">
                 <main-menu></main-menu>
                     {{-- @include('includes.menu') --}}
                 </div>

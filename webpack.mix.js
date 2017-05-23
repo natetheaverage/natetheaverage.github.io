@@ -1,4 +1,3 @@
-
 const { mix } = require('laravel-mix');
 const anime = require('animejs');
 /*
@@ -13,7 +12,5 @@ const anime = require('animejs');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .stylus('resources/assets/styl/app.styl', 'public/css')
-   .browserSync('natetheaverage.app');
-
-
+    .stylus('resources/assets/styl/app.styl', 'public/css')
+    .browserSync('nta-blog.app');

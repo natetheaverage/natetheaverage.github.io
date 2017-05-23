@@ -348,7 +348,7 @@ export default [{
             ],
         },
         fantastical: {
-            name: "Lets Build Big Shit!",
+            title: "Lets Build Big Shit!",
             contents: [{
                     name: "Climable art",
                     url: "large/installation",
