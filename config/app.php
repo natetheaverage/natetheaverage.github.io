@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         Canvas\CanvasServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
     ],
 
     /*

@@ -19,7 +19,8 @@
         "cnvs/paper-dark": "*",
         "doctrine/dbal": "2.5.*",
         "fzaninotto/faker": "~1.4",
-        "predis/predis": "1.1.*"
+        "predis/predis": "1.1.*",
+        "orangehill/iseed": "2.2"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

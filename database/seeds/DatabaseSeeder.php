@@ -12,5 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call('Canvas\DatabaseSeeder');
+        $this->call('CanvasPostsTableSeeder');
+        $this->call('CanvasPostTagTableSeeder');
+        $this->call('CanvasSettingsTableSeeder');
+        $this->call('CanvasTagsTableSeeder');
     }
 }
