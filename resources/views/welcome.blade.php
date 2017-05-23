@@ -14,7 +14,6 @@
                     <div class="pre-title ">
                     Hi I'm Nathan Leite
                     </div>
-                        <example></example>
                     <div class="pre-title">
                         AKA
                     </div>
