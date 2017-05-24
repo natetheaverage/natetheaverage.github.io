@@ -5101,7 +5101,7 @@ exports = module.exports = __webpack_require__(8)();
 
 
 // module
-exports.push([module.i, "\n.clickit {\n  top: 5px;\n  left: 5px;\n  padding: 0 10px;\n  font-size: 26px;\n  position: fixed;\n  z-index: 999999999;\n}\n.theMenu {\n  position: fixed;\n}\n.slide-enter-active,\n.slide-leave-active {\n  transition: all 0.5s ease;\n}\n.slide-enter,\n.slide-leave-to {\n  -webkit-transform: translateX(-2000px);\n          transform: translateX(-2000px);\n}\n", ""]);
+exports.push([module.i, "\n.clickit {\n  top: 5px;\n  left: 5px;\n  padding: 0 10px 5px;\n  font-size: 26px;\n  position: fixed;\n  z-index: 999999999;\n}\n.theMenu {\n  position: fixed;\n}\n.slide-enter-active,\n.slide-leave-active {\n  transition: all 0.5s ease;\n}\n.slide-enter,\n.slide-leave-to {\n  -webkit-transform: translateX(-2000px);\n          transform: translateX(-2000px);\n}\n", ""]);
 
 // exports
 

@@ -86,7 +86,7 @@ export default {
 .clickit
   top: 5px;
   left: 5px;
-  padding: 0 10px;
+  padding: 0 10px 5px;
   font-size: 26px;
   position: fixed;
   z-index: 999999999;
