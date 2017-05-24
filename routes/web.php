@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome')->with();
+    return view('welcome');
 });
 
 Route::get('/kinect', function () {
