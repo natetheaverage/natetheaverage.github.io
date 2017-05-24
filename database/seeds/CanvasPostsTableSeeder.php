@@ -486,6 +486,157 @@ However my shoes are outdated and I want nice ones again.',
                 'updated_at' => '2017-05-22 01:56:06',
                 'published_at' => '2017-05-21 18:50:55',
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'user_id' => 1,
+                'slug' => 'if-your-going-to-read-about-me-it-might-as-well-be-fun',
+                'title' => 'If your going to read about me it might as well be fun!',
+                'subtitle' => 'A bio thats only boring if your reading it on a computer and have things to do.',
+                'content_raw' => 'Ladies and gentlemen, let me introduce:
+A self-proclaimed lover of Dr. Seuss.
+A fantastical man who wears many hats,
+From stilting to dancing, who can resist that?
+Of course, I speak of the artist called Nate
+NateTheAverage, that is, he’s here to create!
+If you dream it, he does it, no matter the task,
+If you need a stilter or costume, just ask!
+He dances, he costumes, with a smile on his face
+He’s never done running an artist’s race.
+Since the 90’s he’s had an urge to perform,
+Unusually talented since the day he was born.
+“That’s all well and fine, but is he really that great?”
+Well, the proof lies below, in the history of Nate.
+He began as a dancer, breakdancing his way
+Into Club Vinyl, the hottest club in its day. (lol, sorry Vinyl…)
+He began to make friends, like Beatport founder, Brad,
+And some other large names also thought he was rad.
+While Nate’s dancing was legend, his career truly took flight
+When a friend with some stilts offered Nate work one night.
+He’d never done it before, but he gave it a try,
+And as it turns out, he’s a stilt kind of guy!
+There was only one problem-stilt costumes are rare,
+So he bought some fabric and went off to his lair.
+Three days later he emerged tired, but a success!
+He’d learned not only to stilt, but to create stilting dress.
+But why stop at stilt costumes, or fabric and thread?
+Why not make some outrageous characters instead?
+One of his first creations, which he holds very dear,
+Is a red and gold phoenix-that likes to be scratched on the ear.
+This creature turned many heads and caught many eyes,
+Soon enough he was offered a lovely surprise.
+A role at Global Dance Festival, in 2006
+A show that began small, but now’s a global hit.
+He continued to stilt, and of course he still danced,
+But two years later, he got his big chance.
+Insomniac Events had heard, but wanted to see
+What Nate could REALLY do, so they brought him to EDC.
+He was a star in Denver, so they brought him to LA
+And he’s performed all over the US since that day.
+He found his way to the desert, to work at Burning Man
+And made a career of making costumes by hand.
+In 2010, Insomniac let another character come about
+A whimsical rabbit, Beyond Wonderland couldn’t be without.
+Following Rabbit came costumes galore:
+From robots, aliens, dogs, sock monkeys and more!
+An explosion of new creations had now made him renown,
+And then he made Mirror Man to try out on the town.
+After weeks of glass cutting, glass gluing, and stress
+It was time to take to the street and perform at his best.
+The people of Pearl Street took pictures and cheered,
+“This costume is the best thing we’ve seen in 10 years!”
+He returned to EDC with his newest creation
+Among the headliners and audience he was an instant sensation.
+Indeed, it’s hard to imagine that reaction could be topped,
+But in 2013 he still hadn’t stopped.
+Mirror Man had a residency at The Box and The Act,
+But he still felt his career had something it lacked.
+Why only perform when you can design and direct?
+Nate was ready to take on his biggest role yet.
+He now acts as co-ringleader for DBA Esque,
+Wrangling all kinds of characters from sweet to grotesque.
+Catering to audiences of Hollywood stars
+DBA created a buzz from near to afar.
+His accomplishments are far too many to list,
+But hopefully by now you get the gist.
+If there’s a job to be done, however big or small
+Nate is your best choice, far greater than all.',
+                'content_html' => '<p>Ladies and gentlemen, let me introduce:
+A self-proclaimed lover of Dr. Seuss.
+A fantastical man who wears many hats,
+From stilting to dancing, who can resist that?
+Of course, I speak of the artist called Nate
+NateTheAverage, that is, he’s here to create!
+If you dream it, he does it, no matter the task,
+If you need a stilter or costume, just ask!
+He dances, he costumes, with a smile on his face
+He’s never done running an artist’s race.
+Since the 90’s he’s had an urge to perform,
+Unusually talented since the day he was born.
+“That’s all well and fine, but is he really that great?”
+Well, the proof lies below, in the history of Nate.
+He began as a dancer, breakdancing his way
+Into Club Vinyl, the hottest club in its day. (lol, sorry Vinyl…)
+He began to make friends, like Beatport founder, Brad,
+And some other large names also thought he was rad.
+While Nate’s dancing was legend, his career truly took flight
+When a friend with some stilts offered Nate work one night.
+He’d never done it before, but he gave it a try,
+And as it turns out, he’s a stilt kind of guy!
+There was only one problem-stilt costumes are rare,
+So he bought some fabric and went off to his lair.
+Three days later he emerged tired, but a success!
+He’d learned not only to stilt, but to create stilting dress.
+But why stop at stilt costumes, or fabric and thread?
+Why not make some outrageous characters instead?
+One of his first creations, which he holds very dear,
+Is a red and gold phoenix-that likes to be scratched on the ear.
+This creature turned many heads and caught many eyes,
+Soon enough he was offered a lovely surprise.
+A role at Global Dance Festival, in 2006
+A show that began small, but now’s a global hit.
+He continued to stilt, and of course he still danced,
+But two years later, he got his big chance.
+Insomniac Events had heard, but wanted to see
+What Nate could REALLY do, so they brought him to EDC.
+He was a star in Denver, so they brought him to LA
+And he’s performed all over the US since that day.
+He found his way to the desert, to work at Burning Man
+And made a career of making costumes by hand.
+In 2010, Insomniac let another character come about
+A whimsical rabbit, Beyond Wonderland couldn’t be without.
+Following Rabbit came costumes galore:
+From robots, aliens, dogs, sock monkeys and more!
+An explosion of new creations had now made him renown,
+And then he made Mirror Man to try out on the town.
+After weeks of glass cutting, glass gluing, and stress
+It was time to take to the street and perform at his best.
+The people of Pearl Street took pictures and cheered,
+“This costume is the best thing we’ve seen in 10 years!”
+He returned to EDC with his newest creation
+Among the headliners and audience he was an instant sensation.
+Indeed, it’s hard to imagine that reaction could be topped,
+But in 2013 he still hadn’t stopped.
+Mirror Man had a residency at The Box and The Act,
+But he still felt his career had something it lacked.
+Why only perform when you can design and direct?
+Nate was ready to take on his biggest role yet.
+He now acts as co-ringleader for DBA Esque,
+Wrangling all kinds of characters from sweet to grotesque.
+Catering to audiences of Hollywood stars
+DBA created a buzz from near to afar.
+His accomplishments are far too many to list,
+But hopefully by now you get the gist.
+If there’s a job to be done, however big or small
+Nate is your best choice, far greater than all.</p>',
+                'page_image' => '/storage/nateProfilePics/IMG_6311.jpg',
+                'meta_description' => 'A biography written in limeric stylings By a dear friend of mine Becca. ',
+                'is_published' => 1,
+                'layout' => 'canvas::frontend.blog.post',
+                'created_at' => '2017-05-24 01:50:41',
+                'updated_at' => '2017-05-24 01:50:41',
+                'published_at' => '2015-02-23 00:39:59',
+            ),
         ));
         
         

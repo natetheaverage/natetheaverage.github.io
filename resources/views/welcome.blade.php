@@ -2,13 +2,11 @@
 <html lang="en">
     @include('includes.head')
     <body>
-{{-- @include('og-title', \Canvas\Models\Settings::blogTitle()) --}}
-{{-- @include('twitter-title', \Canvas\Models\Settings::blogTitle()) --}}
-{{-- @include('og-description', \Canvas\Models\Settings::blogDescription()) --}}
-{{-- @include('twitter-description', \Canvas\Models\Settings::blogDescription()) --}}
       <div id="app-container">
         <div class="container-fluid">
-            {{-- @include('includes.loginlinks') --}}
+            <div>
+              <a href="{!! route('canvas.blog.post.index') !!}" class="btn">Full Directory</a>
+            </div>
             <div class="row">
                 <div class="logo">
                     @include('parts.svg-logo')
