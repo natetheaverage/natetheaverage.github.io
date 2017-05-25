@@ -6820,8 +6820,14 @@ body {
   }
 }
 body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+}
+body .post-page-title {
+  color: #445358;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 34px;
 }
 .menu {
   text-align: center;
