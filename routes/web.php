@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $baseUrl = config('app.url');
+    return view('welcome', compact('baseUrl'));
 });
 
 Route::get('/kinect', function () {

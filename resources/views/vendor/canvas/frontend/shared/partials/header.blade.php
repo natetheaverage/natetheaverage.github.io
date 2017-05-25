@@ -1,7 +1,7 @@
 <div class="container" id="head-c">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <img src="./storage/site-assets/NTA-sm-500x375.png" /><h1><a href="{!! route('canvas.blog.post.index') !!}"></a></h1>
+            <img src="/storage/site-assets/NTA-logo/NTA-sm-blk-120x90.png" /><h1><a href="{!! route('canvas.blog.post.index') !!}"></a></h1>
             <h3>{{ \Canvas\Models\Settings::blogSubTitle() }}</h3>
             @if (!empty($socialHeaderIconsUser->twitter))
                 <a href="http://twitter.com/{{ $socialHeaderIconsUser->twitter }}" target="_blank" id="social"><i class="fa fa-fw fa-twitter text-muted" style="font-size: 14px"></i></a>

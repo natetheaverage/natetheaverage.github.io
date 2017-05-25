@@ -6819,6 +6819,10 @@ body {
     font-weight: 200;
   }
 }
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
 .menu {
   text-align: center;
   height: 90%;
