@@ -9,7 +9,7 @@ class CanvasSettingsTableSeeder extends Seeder
      * Auto generated seed file
      *
      * @return void
-     */ 
+     */
     public function run()
     {
         
@@ -105,7 +105,7 @@ class CanvasSettingsTableSeeder extends Seeder
             array (
                 'id' => 15,
                 'setting_name' => 'active_theme',
-                'setting_value' => 'cnvs-paper-dark',
+                'setting_value' => 'default',
             ),
         ));
         

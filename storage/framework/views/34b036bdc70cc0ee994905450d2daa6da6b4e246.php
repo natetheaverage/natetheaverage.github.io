@@ -5,7 +5,7 @@
       <div id="app-container">
         <div class="container-fluid">
             <div>
-              <a href="<?php echo route('canvas.blog.post.index'); ?>" class="btn">Full Directory</a>
+              <a href="<?php echo route('canvas.blog.post.index'); ?>" class="btn pull-right">Full Directory</a>
             </div>
             <div class="row">
                 <div class="logo">
