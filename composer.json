@@ -1,6 +1,6 @@
 {
-    "name": "cnvs/canvas",
-    "description": "Simple, Powerful Blog Publishing Platform",
+    "name": "NateTheAverage.com",
+    "description": "Laravel based website",
     "keywords": ["php", "laravel", "blog", "canvas"],
     "license": "MIT",
     "authors": [{
