@@ -6829,6 +6829,10 @@ body .post-page-title {
   font-weight: 500;
   margin-top: 34px;
 }
+body .post-preview .post-title {
+  font-weight: 500;
+  font-size: 30px;
+}
 .menu {
   text-align: center;
   height: 90%;
