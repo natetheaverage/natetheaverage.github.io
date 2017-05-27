@@ -34,7 +34,7 @@
           <video
               id="HomePlayer"
               class="video-js vjs-default-skin"
-              width="640" height="360"
+              height="510"
               controls
               data-setup='{"techOrder": ["youtube"],"sources": [{"type": "video/youtube", "src": "https://www.youtube.com/watch?v=u2WMtua24SY"}]}'
             >
