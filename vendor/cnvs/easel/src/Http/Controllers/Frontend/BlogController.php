@@ -28,7 +28,7 @@ class BlogController extends Controller
         $css = Settings::customCSS();
         $js = Settings::customJS();
 
-        return view('welcome', $data, compact('css', 'js', 'socialHeaderIconsUser'));
+        return view($layout, $data, compact('css', 'js', 'socialHeaderIconsUser'));
     }
 
     /**

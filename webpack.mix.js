@@ -1,5 +1,6 @@
 const { mix } = require('laravel-mix');
 const anime = require('animejs');
+// const videoj = require('!style-loader!css-loader!video.js/dist/video-js.css');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,5 +13,6 @@ const anime = require('animejs');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    // .css(videojs, 'public/css')
     .stylus('resources/assets/styl/app.styl', 'public/css')
     .browserSync('natetheaverage.app');

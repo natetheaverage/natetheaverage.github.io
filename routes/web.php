@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'WelcomeController@index')->name('home');
+Route::get('/', 'WelcomeController@index')->name('nta.welcome');
     //return view('welcome', compact('baseUrl'));
 
 Route::get('/kinect', function () {

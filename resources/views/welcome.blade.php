@@ -2,6 +2,7 @@
 <html lang="en">
     @include('includes.head')
     <body>
+    {{-- {!! dd($posts) !!} --}}
       <div id="app-container">
         <div class="container-fluid">
             <div>
@@ -27,20 +28,20 @@
                 </div>
             </div>
             
-            <div class="container-fluid">
-              
-              <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup="{}">
-                <source src="storage/video/video.mp4" type='video/mp4'>
-                <p class="vjs-no-js">
-                  To view this video please enable JavaScript, and consider upgrading to a web browser that
-                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                </p>
-              </video>
 
-          </div>
-
-          
-  <main-menu></main-menu>
+      <div class="container-fluid">
+        <div class="video-player">
+          <video
+              id="HomePlayer"
+              class="video-js vjs-default-skin"
+              width="640" height="360"
+              controls
+              data-setup='{"techOrder": ["youtube"],"sources": [{"type": "video/youtube", "src": "https://www.youtube.com/watch?v=u2WMtua24SY"}]}'
+            >
+          </video>
+        </div>
+      </div>
+      <main-menu></main-menu>
             
     
         
@@ -50,9 +51,11 @@
         
       </div>
       @include('canvas::frontend.shared.partials.footer')
-      <script src="{{ elixir('vendor/canvas/assets/js/frontend.js') }}" charset="utf-8"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-         <script src="http://vjs.zencdn.net/5.19.2/video.js"></script>
+      
+      <script type="text/javascript" src="js/app.js"></script>
+      {{-- <script src="http://vjs.zencdn.net/5.19.2/video.js"></script> --}}
+      {{-- <script src="../node_modules/video.js/dist/video.js"></script>
+      <script src="../dist/Youtube.js"></script> --}}
     </body>
    
 </html>

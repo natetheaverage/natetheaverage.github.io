@@ -13,7 +13,7 @@
 
         <!-- js video player -->
         <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
-        <script src="//vjs.zencdn.net/5.19/video.min.js"></script>
+        {{-- <script src="//vjs.zencdn.net/5.19/video.min.js"></script> --}}
 
          <!-- <script type="text/javascript" src=js/svgAnime.js></script> -->
         <link href="css/app.css" rel="stylesheet" type="text/css">
