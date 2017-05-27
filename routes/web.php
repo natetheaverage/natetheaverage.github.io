@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    $baseUrl = config('app.url');
-    return view('welcome', compact('baseUrl'));
+
+Route::get('/', 'welcomeController@index')->name('home')
+    //return view('welcome', compact('baseUrl'));
 });
 
 Route::get('/kinect', function () {

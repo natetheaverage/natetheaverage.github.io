@@ -1,7 +1,7 @@
 <?php
 
 namespace Canvas\Http\Controllers\Frontend;
-
+ 
 use Auth;
 use Canvas\Models\Tag;
 use Canvas\Models\Post;
@@ -28,7 +28,7 @@ class BlogController extends Controller
         $css = Settings::customCSS();
         $js = Settings::customJS();
 
-        return view($layout, $data, compact('css', 'js', 'socialHeaderIconsUser'));
+        return view('welcome', $data, compact('css', 'js', 'socialHeaderIconsUser'));
     }
 
     /**
