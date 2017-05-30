@@ -6741,6 +6741,18 @@ button.close {
     display: none !important;
   }
 }
+.pad-top {
+  padding-top: 20px;
+}
+.pad-btm {
+  padding-bottom: 20px;
+}
+.pad-top-x2 {
+  padding-top: 40px;
+}
+.pad-btm-x2 {
+  padding-bottom: 40px;
+}
 html,
 body {
   background-color: #fff;
@@ -6750,16 +6762,10 @@ body {
   margin: 0;
 }
 .logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 70%;
+  margin: 0px auto;
 }
 .body-content {
   width: 100%;
-  margin-top: 75%;
 }
 .full-height {
   height: 100vh;
@@ -6775,13 +6781,11 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.position-ref {
-  position: relative;
-}
 .top-right {
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: 18px;
+  z-index: 9999;
 }
 .content {
   text-align: center;
@@ -6805,6 +6809,9 @@ body {
 .title {
   font-size: 72px;
 }
+.description {
+  font-weight: 200;
+}
 @media screen and (max-width: 600px) {
   .title {
     font-size: 46px;
@@ -6819,10 +6826,16 @@ body {
     font-weight: 200;
   }
 }
+.video-container {
+  background-color: #b8b89f;
+  border-top: solid 1px #ff14ab;
+  border-bottom: solid 1px #ff14ab;
+}
 .video-player {
   max-width: 900px;
   text-align: left;
   margin: 200px auto;
+  box-shadow: 3px 3px 3px 3px;
 }
 @media screen and (max-width: 700px) {
   .video-player {
@@ -6860,7 +6873,9 @@ body .post-preview .post-title {
   top: 5%;
   left: 0px;
   padding: 20px 0;
-  background-color: rgba(205,255,0,0.8);
+  background-color: rgba(205,255,0,0.9);
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .menu .mm-title {
   font-size: 34px;
