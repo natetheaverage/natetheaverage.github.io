@@ -2,12 +2,15 @@
 <html lang="en">
     @include('includes.head')
     <body>
-    {{-- {!! dd($posts) !!} --}}
+     
       <div id="app-container">
         <div class="container-fluid">
 
-          <div>
-            <a href="{!! route('canvas.blog.post.index') !!}" class="btn btn-default top-right">List All Pages</a>
+          <div class="top-right">
+            @if($user)
+              <a href="{!! route('canvas.admin') !!}" class="btn btn-default">Controls</a>
+              <a href="{!! route('canvas.blog.post.index') !!}" class="btn btn-default">List All Pages</a>
+            @endif
           </div>
             
           <div class="body-content container-fluid text-center">
@@ -30,7 +33,7 @@
                   A <a href="https://wikipedia.org/wiki/Polymath" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.
                   You have happened upon my profesinal portfolio. Here you will find documentation of my experience as well an index of my profesinal services.
                 </p>
-                            {{ dd($posts) }}
+                            
             </div> 
           </div>
           
@@ -64,6 +67,8 @@
       {{-- <script src="http://vjs.zencdn.net/5.19.2/video.js"></script> --}}
       {{-- <script src="../node_modules/video.js/dist/video.js"></script>
       <script src="../dist/Youtube.js"></script> --}}
+
+      {{ dd($posts) }}
     </body>
    
 </html>

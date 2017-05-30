@@ -15,9 +15,7 @@
 Route::get('/', 'WelcomeController@index')->name('nta.welcome');
     //return view('welcome', compact('baseUrl'));
 
-Route::get('/kinect', function () {
-    return view('kinect');
-});
+Route::get('/etsyLogin', 'WelcomeController@etsyLogin')->name('nta.etsy.login');
 
 Route::group(['prefix' => 'costume'], function () {
     Route::get('production', function () {

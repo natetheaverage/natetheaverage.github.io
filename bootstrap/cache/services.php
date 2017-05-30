@@ -29,6 +29,7 @@
     25 => 'Canvas\\CanvasServiceProvider',
     26 => 'App\\Providers\\RouteServiceProvider',
     27 => 'Orangehill\\Iseed\\IseedServiceProvider',
+    28 => 'SocialiteProviders\\Manager\\ServiceProvider',
   ),
   'eager' => 
   array (
@@ -138,6 +139,7 @@
     'translation.loader' => 'Illuminate\\Translation\\TranslationServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
+    'Laravel\\Socialite\\Contracts\\Factory' => 'SocialiteProviders\\Manager\\ServiceProvider',
   ),
   'when' => 
   array (
@@ -175,6 +177,9 @@
     array (
     ),
     'Illuminate\\Validation\\ValidationServiceProvider' => 
+    array (
+    ),
+    'SocialiteProviders\\Manager\\ServiceProvider' => 
     array (
     ),
   ),
