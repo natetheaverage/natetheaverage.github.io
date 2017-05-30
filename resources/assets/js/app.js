@@ -16,10 +16,9 @@ const vjsyoutube = require('videojs-youtube')
 
 
 //animejs npm module
-import anime from 'animejs'
+// import anime from 'animejs'
 
-//logo animation function
-const lanime = require("./svgAnime.js")
+
 
 // Vue Componant registration
 // Trying to keep it simple this time round
@@ -43,3 +42,6 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app-container'
 });
+
+//logo animation function
+const lanime = require("./svgAnime.js")

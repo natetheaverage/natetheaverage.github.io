@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 164);
+/******/ 	return __webpack_require__(__webpack_require__.s = 169);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2037,7 +2037,7 @@ var _log = __webpack_require__(7);
 
 var _log2 = _interopRequireDefault(_log);
 
-var _tsml = __webpack_require__(38);
+var _tsml = __webpack_require__(41);
 
 var _tsml2 = _interopRequireDefault(_tsml);
 
@@ -2891,7 +2891,7 @@ var $$ = exports.$$ = createQuerier('querySelectorAll');
 
 /* WEBPACK VAR INJECTION */(function(global) {var topLevel = typeof global !== 'undefined' ? global :
     typeof window !== 'undefined' ? window : {}
-var minDoc = __webpack_require__(163);
+var minDoc = __webpack_require__(168);
 
 if (typeof document !== 'undefined') {
     module.exports = document;
@@ -3340,7 +3340,7 @@ exports['default'] = log;
 "use strict";
 
 
-var bind = __webpack_require__(35);
+var bind = __webpack_require__(39);
 
 /*global toString:true*/
 
@@ -4804,11 +4804,11 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _htmlTrackElement = __webpack_require__(139);
+var _htmlTrackElement = __webpack_require__(141);
 
 var _htmlTrackElement2 = _interopRequireDefault(_htmlTrackElement);
 
-var _htmlTrackElementList = __webpack_require__(138);
+var _htmlTrackElementList = __webpack_require__(140);
 
 var _htmlTrackElementList2 = _interopRequireDefault(_htmlTrackElementList);
 
@@ -4816,19 +4816,19 @@ var _mergeOptions = __webpack_require__(9);
 
 var _mergeOptions2 = _interopRequireDefault(_mergeOptions);
 
-var _textTrack = __webpack_require__(25);
+var _textTrack = __webpack_require__(26);
 
 var _textTrack2 = _interopRequireDefault(_textTrack);
 
-var _textTrackList = __webpack_require__(143);
+var _textTrackList = __webpack_require__(145);
 
 var _textTrackList2 = _interopRequireDefault(_textTrackList);
 
-var _videoTrackList = __webpack_require__(49);
+var _videoTrackList = __webpack_require__(52);
 
 var _videoTrackList2 = _interopRequireDefault(_videoTrackList);
 
-var _audioTrackList = __webpack_require__(48);
+var _audioTrackList = __webpack_require__(51);
 
 var _audioTrackList2 = _interopRequireDefault(_audioTrackList);
 
@@ -4842,9 +4842,9 @@ var _log2 = _interopRequireDefault(_log);
 
 var _timeRanges = __webpack_require__(17);
 
-var _buffer = __webpack_require__(50);
+var _buffer = __webpack_require__(53);
 
-var _mediaError = __webpack_require__(42);
+var _mediaError = __webpack_require__(45);
 
 var _mediaError2 = _interopRequireDefault(_mediaError);
 
@@ -5447,7 +5447,7 @@ var Tech = function (_Component) {
     // signals that the Tech is ready at which point Tech.el_ is part of the DOM
     // before inserting the WebVTT script
     if (_document2['default'].body.contains(this.el())) {
-      var vtt = __webpack_require__(146);
+      var vtt = __webpack_require__(148);
 
       // load via require if available and vtt.js script location was not passed in
       // as an option. novtt builds will turn the above require call into an empty object
@@ -6339,7 +6339,7 @@ exports.createTimeRange = createTimeRanges;
 
 exports.__esModule = true;
 
-var _trackButton = __webpack_require__(40);
+var _trackButton = __webpack_require__(43);
 
 var _trackButton2 = _interopRequireDefault(_trackButton);
 
@@ -6347,11 +6347,11 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _textTrackMenuItem = __webpack_require__(24);
+var _textTrackMenuItem = __webpack_require__(25);
 
 var _textTrackMenuItem2 = _interopRequireDefault(_textTrackMenuItem);
 
-var _offTextTrackMenuItem = __webpack_require__(115);
+var _offTextTrackMenuItem = __webpack_require__(117);
 
 var _offTextTrackMenuItem2 = _interopRequireDefault(_offTextTrackMenuItem);
 
@@ -6993,10 +6993,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(31);
+    adapter = __webpack_require__(35);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(31);
+    adapter = __webpack_require__(35);
   }
   return adapter;
 }
@@ -7067,10 +7067,66 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(89)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)))
 
 /***/ }),
 /* 24 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function() {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		var result = [];
+		for(var i = 0; i < this.length; i++) {
+			var item = this[i];
+			if(item[2]) {
+				result.push("@media " + item[2] + "{" + item[1] + "}");
+			} else {
+				result.push(item[1]);
+			}
+		}
+		return result.join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7244,7 +7300,7 @@ exports['default'] = TextTrackMenuItem;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7252,7 +7308,7 @@ exports['default'] = TextTrackMenuItem;
 
 exports.__esModule = true;
 
-var _textTrackCueList = __webpack_require__(140);
+var _textTrackCueList = __webpack_require__(142);
 
 var _textTrackCueList2 = _interopRequireDefault(_textTrackCueList);
 
@@ -7260,7 +7316,7 @@ var _fn = __webpack_require__(1);
 
 var Fn = _interopRequireWildcard(_fn);
 
-var _trackEnums = __webpack_require__(26);
+var _trackEnums = __webpack_require__(27);
 
 var _log = __webpack_require__(7);
 
@@ -7270,7 +7326,7 @@ var _window = __webpack_require__(4);
 
 var _window2 = _interopRequireDefault(_window);
 
-var _track = __webpack_require__(28);
+var _track = __webpack_require__(29);
 
 var _track2 = _interopRequireDefault(_track);
 
@@ -7700,7 +7756,7 @@ exports['default'] = TextTrack;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7773,7 +7829,7 @@ var TextTrackMode = exports.TextTrackMode = {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8013,7 +8069,7 @@ exports['default'] = TrackList;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8162,7 +8218,7 @@ exports['default'] = Track;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8211,7 +8267,1010 @@ function computedStyle(el, prop) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+exports.__esModule = true;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+                                                                                                                                                                                                                                                                               * @file video.js
+                                                                                                                                                                                                                                                                               * @module videojs
+                                                                                                                                                                                                                                                                               */
+
+/* global define */
+
+// Include the built-in techs
+
+
+var _window = __webpack_require__(4);
+
+var _window2 = _interopRequireDefault(_window);
+
+var _document = __webpack_require__(3);
+
+var _document2 = _interopRequireDefault(_document);
+
+var _setup = __webpack_require__(134);
+
+var setup = _interopRequireWildcard(_setup);
+
+var _stylesheet = __webpack_require__(54);
+
+var stylesheet = _interopRequireWildcard(_stylesheet);
+
+var _component = __webpack_require__(0);
+
+var _component2 = _interopRequireDefault(_component);
+
+var _eventTarget = __webpack_require__(19);
+
+var _eventTarget2 = _interopRequireDefault(_eventTarget);
+
+var _events = __webpack_require__(10);
+
+var Events = _interopRequireWildcard(_events);
+
+var _player = __webpack_require__(49);
+
+var _player2 = _interopRequireDefault(_player);
+
+var _plugins = __webpack_require__(130);
+
+var _plugins2 = _interopRequireDefault(_plugins);
+
+var _mergeOptions2 = __webpack_require__(9);
+
+var _mergeOptions3 = _interopRequireDefault(_mergeOptions2);
+
+var _fn = __webpack_require__(1);
+
+var Fn = _interopRequireWildcard(_fn);
+
+var _textTrack = __webpack_require__(26);
+
+var _textTrack2 = _interopRequireDefault(_textTrack);
+
+var _audioTrack = __webpack_require__(139);
+
+var _audioTrack2 = _interopRequireDefault(_audioTrack);
+
+var _videoTrack = __webpack_require__(147);
+
+var _videoTrack2 = _interopRequireDefault(_videoTrack);
+
+var _timeRanges = __webpack_require__(17);
+
+var _formatTime = __webpack_require__(11);
+
+var _formatTime2 = _interopRequireDefault(_formatTime);
+
+var _log = __webpack_require__(7);
+
+var _log2 = _interopRequireDefault(_log);
+
+var _dom = __webpack_require__(2);
+
+var Dom = _interopRequireWildcard(_dom);
+
+var _browser = __webpack_require__(5);
+
+var browser = _interopRequireWildcard(_browser);
+
+var _url = __webpack_require__(21);
+
+var Url = _interopRequireWildcard(_url);
+
+var _obj = __webpack_require__(6);
+
+var _computedStyle = __webpack_require__(30);
+
+var _computedStyle2 = _interopRequireDefault(_computedStyle);
+
+var _extend = __webpack_require__(127);
+
+var _extend2 = _interopRequireDefault(_extend);
+
+var _xhr = __webpack_require__(55);
+
+var _xhr2 = _interopRequireDefault(_xhr);
+
+var _tech = __webpack_require__(16);
+
+var _tech2 = _interopRequireDefault(_tech);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+// HTML5 Element Shim for IE8
+if (typeof HTMLVideoElement === 'undefined' && Dom.isReal()) {
+  _document2['default'].createElement('video');
+  _document2['default'].createElement('audio');
+  _document2['default'].createElement('track');
+}
+
+/**
+ * Doubles as the main function for users to create a player instance and also
+ * the main library object.
+ * The `videojs` function can be used to initialize or retrieve a player.
+  *
+ * @param {string|Element} id
+ *        Video element or video element ID
+ *
+ * @param {Object} [options]
+ *        Optional options object for config/settings
+ *
+ * @param {Component~ReadyCallback} [ready]
+ *        Optional ready callback
+ *
+ * @return {Player}
+ *         A player instance
+ *
+ * @mixes videojs
+ */
+function videojs(id, options, ready) {
+  var tag = void 0;
+
+  // Allow for element or ID to be passed in
+  // String ID
+  if (typeof id === 'string') {
+
+    // Adjust for jQuery ID syntax
+    if (id.indexOf('#') === 0) {
+      id = id.slice(1);
+    }
+
+    // If a player instance has already been created for this ID return it.
+    if (videojs.getPlayers()[id]) {
+
+      // If options or ready funtion are passed, warn
+      if (options) {
+        _log2['default'].warn('Player "' + id + '" is already initialised. Options will not be applied.');
+      }
+
+      if (ready) {
+        videojs.getPlayers()[id].ready(ready);
+      }
+
+      return videojs.getPlayers()[id];
+    }
+
+    // Otherwise get element for ID
+    tag = Dom.getEl(id);
+
+    // ID is a media element
+  } else {
+    tag = id;
+  }
+
+  // Check for a useable element
+  // re: nodeName, could be a box div also
+  if (!tag || !tag.nodeName) {
+    throw new TypeError('The element or ID supplied is not valid. (videojs)');
+  }
+
+  // Element may have a player attr referring to an already created player instance.
+  // If so return that otherwise set up a new player below
+  if (tag.player || _player2['default'].players[tag.playerId]) {
+    return tag.player || _player2['default'].players[tag.playerId];
+  }
+
+  options = options || {};
+
+  videojs.hooks('beforesetup').forEach(function (hookFunction) {
+    var opts = hookFunction(tag, (0, _mergeOptions3['default'])(options));
+
+    if (!(0, _obj.isObject)(opts) || Array.isArray(opts)) {
+      _log2['default'].error('please return an object in beforesetup hooks');
+      return;
+    }
+
+    options = (0, _mergeOptions3['default'])(options, opts);
+  });
+
+  var PlayerComponent = _component2['default'].getComponent('Player');
+  // If not, set up a new player
+  var player = new PlayerComponent(tag, options, ready);
+
+  videojs.hooks('setup').forEach(function (hookFunction) {
+    return hookFunction(player);
+  });
+
+  return player;
+}
+
+/**
+ * An Object that contains lifecycle hooks as keys which point to an array
+ * of functions that are run when a lifecycle is triggered
+ */
+videojs.hooks_ = {};
+
+/**
+ * Get a list of hooks for a specific lifecycle
+ *
+ * @param {string} type
+ *        the lifecyle to get hooks from
+ *
+ * @param {Function} [fn]
+ *        Optionally add a hook to the lifecycle that your are getting.
+ *
+ * @return {Array}
+ *         an array of hooks, or an empty array if there are none.
+ */
+videojs.hooks = function (type, fn) {
+  videojs.hooks_[type] = videojs.hooks_[type] || [];
+  if (fn) {
+    videojs.hooks_[type] = videojs.hooks_[type].concat(fn);
+  }
+  return videojs.hooks_[type];
+};
+
+/**
+ * Add a function hook to a specific videojs lifecycle.
+ *
+ * @param {string} type
+ *        the lifecycle to hook the function to.
+ *
+ * @param {Function|Function[]}
+ *        The function or array of functions to attach.
+ */
+videojs.hook = function (type, fn) {
+  videojs.hooks(type, fn);
+};
+
+/**
+ * Remove a hook from a specific videojs lifecycle.
+ *
+ * @param {string} type
+ *        the lifecycle that the function hooked to
+ *
+ * @param {Function} fn
+ *        The hooked function to remove
+ *
+ * @return {boolean}
+ *         The function that was removed or undef
+ */
+videojs.removeHook = function (type, fn) {
+  var index = videojs.hooks(type).indexOf(fn);
+
+  if (index <= -1) {
+    return false;
+  }
+
+  videojs.hooks_[type] = videojs.hooks_[type].slice();
+  videojs.hooks_[type].splice(index, 1);
+
+  return true;
+};
+
+// Add default styles
+if (_window2['default'].VIDEOJS_NO_DYNAMIC_STYLE !== true && Dom.isReal()) {
+  var style = Dom.$('.vjs-styles-defaults');
+
+  if (!style) {
+    style = stylesheet.createStyleElement('vjs-styles-defaults');
+    var head = Dom.$('head');
+
+    if (head) {
+      head.insertBefore(style, head.firstChild);
+    }
+    stylesheet.setTextContent(style, '\n      .video-js {\n        width: 300px;\n        height: 150px;\n      }\n\n      .vjs-fluid {\n        padding-top: 56.25%\n      }\n    ');
+  }
+}
+
+// Run Auto-load players
+// You have to wait at least once in case this script is loaded after your
+// video in the DOM (weird behavior only with minified version)
+setup.autoSetupTimeout(1, videojs);
+
+/**
+ * Current software version. Follows semver.
+ *
+ * @type {string}
+ */
+videojs.VERSION = '5.19.2';
+
+/**
+ * The global options object. These are the settings that take effect
+ * if no overrides are specified when the player is created.
+ *
+ * @type {Object}
+ */
+videojs.options = _player2['default'].prototype.options_;
+
+/**
+ * Get an object with the currently created players, keyed by player ID
+ *
+ * @return {Object}
+ *         The created players
+ */
+videojs.getPlayers = function () {
+  return _player2['default'].players;
+};
+
+/**
+ * Expose players object.
+ *
+ * @memberOf videojs
+ * @property {Object} players
+ */
+videojs.players = _player2['default'].players;
+
+/**
+ * Get a component class object by name
+ *
+ * @borrows Component.getComponent as videojs.getComponent
+ */
+videojs.getComponent = _component2['default'].getComponent;
+
+/**
+ * Register a component so it can referred to by name. Used when adding to other
+ * components, either through addChild `component.addChild('myComponent')` or through
+ * default children options  `{ children: ['myComponent'] }`.
+ *
+ * > NOTE: You could also just initialize the component before adding.
+ * `component.addChild(new MyComponent());`
+ *
+ * @param {string} name
+ *        The class name of the component
+ *
+ * @param {Component} comp
+ *        The component class
+ *
+ * @return {Component}
+ *         The newly registered component
+ */
+videojs.registerComponent = function (name, comp) {
+  if (_tech2['default'].isTech(comp)) {
+    _log2['default'].warn('The ' + name + ' tech was registered as a component. It should instead be registered using videojs.registerTech(name, tech)');
+  }
+
+  _component2['default'].registerComponent.call(_component2['default'], name, comp);
+};
+
+/**
+ * Get a Tech class object by name
+ *
+ * @borrows Tech.getTech as videojs.getTech
+ */
+videojs.getTech = _tech2['default'].getTech;
+
+/**
+ * Register a Tech so it can referred to by name.
+ * This is used in the tech order for the player.
+ *
+ * @borrows Tech.registerTech as videojs.registerTech
+ */
+videojs.registerTech = _tech2['default'].registerTech;
+
+/**
+ * A suite of browser and device tests from {@link browser}.
+ *
+ * @type {Object}
+ * @private
+ */
+videojs.browser = browser;
+
+/**
+ * Whether or not the browser supports touch events. Included for backward
+ * compatibility with 4.x, but deprecated. Use `videojs.browser.TOUCH_ENABLED`
+ * instead going forward.
+ *
+ * @deprecated since version 5.0
+ * @type {boolean}
+ */
+videojs.TOUCH_ENABLED = browser.TOUCH_ENABLED;
+
+/**
+ * Subclass an existing class
+ * Mimics ES6 subclassing with the `extend` keyword
+ *
+ * @borrows extend:extendFn as videojs.extend
+ */
+videojs.extend = _extend2['default'];
+
+/**
+ * Merge two options objects recursively
+ * Performs a deep merge like lodash.merge but **only merges plain objects**
+ * (not arrays, elements, anything else)
+ * Other values will be copied directly from the second object.
+ *
+ * @borrows merge-options:mergeOptions as videojs.mergeOptions
+ */
+videojs.mergeOptions = _mergeOptions3['default'];
+
+/**
+ * Change the context (this) of a function
+ *
+ * > NOTE: as of v5.0 we require an ES5 shim, so you should use the native
+ * `function() {}.bind(newContext);` instead of this.
+ *
+ * @borrows fn:bind as videojs.bind
+ */
+videojs.bind = Fn.bind;
+
+/**
+ * Create a Video.js player plugin.
+ * Plugins are only initialized when options for the plugin are included
+ * in the player options, or the plugin function on the player instance is
+ * called.
+ *
+ * @borrows plugin:plugin as videojs.plugin
+ */
+videojs.plugin = _plugins2['default'];
+
+/**
+ * Adding languages so that they're available to all players.
+ * Example: `videojs.addLanguage('es', { 'Hello': 'Hola' });`
+ *
+ * @param {string} code
+ *        The language code or dictionary property
+ *
+ * @param {Object} data
+ *        The data values to be translated
+ *
+ * @return {Object}
+ *         The resulting language dictionary object
+ */
+videojs.addLanguage = function (code, data) {
+  var _mergeOptions;
+
+  code = ('' + code).toLowerCase();
+
+  videojs.options.languages = (0, _mergeOptions3['default'])(videojs.options.languages, (_mergeOptions = {}, _mergeOptions[code] = data, _mergeOptions));
+
+  return videojs.options.languages[code];
+};
+
+/**
+ * Log messages
+ *
+ * @borrows log:log as videojs.log
+ */
+videojs.log = _log2['default'];
+
+/**
+ * Creates an emulated TimeRange object.
+ *
+ * @borrows time-ranges:createTimeRanges as videojs.createTimeRange
+ */
+/**
+ * @borrows time-ranges:createTimeRanges as videojs.createTimeRanges
+ */
+videojs.createTimeRange = videojs.createTimeRanges = _timeRanges.createTimeRanges;
+
+/**
+ * Format seconds as a time string, H:MM:SS or M:SS
+ * Supplying a guide (in seconds) will force a number of leading zeros
+ * to cover the length of the guide
+ *
+ * @borrows format-time:formatTime as videojs.formatTime
+ */
+videojs.formatTime = _formatTime2['default'];
+
+/**
+ * Resolve and parse the elements of a URL
+ *
+ * @borrows url:parseUrl as videojs.parseUrl
+ */
+videojs.parseUrl = Url.parseUrl;
+
+/**
+ * Returns whether the url passed is a cross domain request or not.
+ *
+ * @borrows url:isCrossOrigin as videojs.isCrossOrigin
+ */
+videojs.isCrossOrigin = Url.isCrossOrigin;
+
+/**
+ * Event target class.
+ *
+ * @borrows EventTarget as videojs.EventTarget
+ */
+videojs.EventTarget = _eventTarget2['default'];
+
+/**
+ * Add an event listener to element
+ * It stores the handler function in a separate cache object
+ * and adds a generic handler to the element's event,
+ * along with a unique id (guid) to the element.
+ *
+ * @borrows events:on as videojs.on
+ */
+videojs.on = Events.on;
+
+/**
+ * Trigger a listener only once for an event
+ *
+ * @borrows events:one as videojs.one
+ */
+videojs.one = Events.one;
+
+/**
+ * Removes event listeners from an element
+ *
+ * @borrows events:off as videojs.off
+ */
+videojs.off = Events.off;
+
+/**
+ * Trigger an event for an element
+ *
+ * @borrows events:trigger as videojs.trigger
+ */
+videojs.trigger = Events.trigger;
+
+/**
+ * A cross-browser XMLHttpRequest wrapper. Here's a simple example:
+ *
+ * @param {Object} options
+ *        settings for the request.
+ *
+ * @return {XMLHttpRequest|XDomainRequest}
+ *         The request object.
+ *
+ * @see https://github.com/Raynos/xhr
+ */
+videojs.xhr = _xhr2['default'];
+
+/**
+ * TextTrack class
+ *
+ * @borrows TextTrack as videojs.TextTrack
+ */
+videojs.TextTrack = _textTrack2['default'];
+
+/**
+ * export the AudioTrack class so that source handlers can create
+ * AudioTracks and then add them to the players AudioTrackList
+ *
+ * @borrows AudioTrack as videojs.AudioTrack
+ */
+videojs.AudioTrack = _audioTrack2['default'];
+
+/**
+ * export the VideoTrack class so that source handlers can create
+ * VideoTracks and then add them to the players VideoTrackList
+ *
+ * @borrows VideoTrack as videojs.VideoTrack
+ */
+videojs.VideoTrack = _videoTrack2['default'];
+
+/**
+ * Determines, via duck typing, whether or not a value is a DOM element.
+ *
+ * @borrows dom:isEl as videojs.isEl
+ */
+videojs.isEl = Dom.isEl;
+
+/**
+ * Determines, via duck typing, whether or not a value is a text node.
+ *
+ * @borrows dom:isTextNode as videojs.isTextNode
+ */
+videojs.isTextNode = Dom.isTextNode;
+
+/**
+ * Creates an element and applies properties.
+ *
+ * @borrows dom:createEl as videojs.createEl
+ */
+videojs.createEl = Dom.createEl;
+
+/**
+ * Check if an element has a CSS class
+ *
+ * @borrows dom:hasElClass as videojs.hasClass
+ */
+videojs.hasClass = Dom.hasElClass;
+
+/**
+ * Add a CSS class name to an element
+ *
+ * @borrows dom:addElClass as videojs.addClass
+ */
+videojs.addClass = Dom.addElClass;
+
+/**
+ * Remove a CSS class name from an element
+ *
+ * @borrows dom:removeElClass as videojs.removeClass
+ */
+videojs.removeClass = Dom.removeElClass;
+
+/**
+ * Adds or removes a CSS class name on an element depending on an optional
+ * condition or the presence/absence of the class name.
+ *
+ * @borrows dom:toggleElClass as videojs.toggleClass
+ */
+videojs.toggleClass = Dom.toggleElClass;
+
+/**
+ * Apply attributes to an HTML element.
+ *
+ * @borrows dom:setElAttributes as videojs.setAttribute
+ */
+videojs.setAttributes = Dom.setElAttributes;
+
+/**
+ * Get an element's attribute values, as defined on the HTML tag
+ * Attributes are not the same as properties. They're defined on the tag
+ * or with setAttribute (which shouldn't be used with HTML)
+ * This will return true or false for boolean attributes.
+ *
+ * @borrows dom:getElAttributes as videojs.getAttributes
+ */
+videojs.getAttributes = Dom.getElAttributes;
+
+/**
+ * Empties the contents of an element.
+ *
+ * @borrows dom:emptyEl as videojs.emptyEl
+ */
+videojs.emptyEl = Dom.emptyEl;
+
+/**
+ * Normalizes and appends content to an element.
+ *
+ * The content for an element can be passed in multiple types and
+ * combinations, whose behavior is as follows:
+ *
+ * - String
+ *   Normalized into a text node.
+ *
+ * - Element, TextNode
+ *   Passed through.
+ *
+ * - Array
+ *   A one-dimensional array of strings, elements, nodes, or functions (which
+ *   return single strings, elements, or nodes).
+ *
+ * - Function
+ *   If the sole argument, is expected to produce a string, element,
+ *   node, or array.
+ *
+ * @borrows dom:appendContents as videojs.appendContet
+ */
+videojs.appendContent = Dom.appendContent;
+
+/**
+ * Normalizes and inserts content into an element; this is identical to
+ * `appendContent()`, except it empties the element first.
+ *
+ * The content for an element can be passed in multiple types and
+ * combinations, whose behavior is as follows:
+ *
+ * - String
+ *   Normalized into a text node.
+ *
+ * - Element, TextNode
+ *   Passed through.
+ *
+ * - Array
+ *   A one-dimensional array of strings, elements, nodes, or functions (which
+ *   return single strings, elements, or nodes).
+ *
+ * - Function
+ *   If the sole argument, is expected to produce a string, element,
+ *   node, or array.
+ *
+ * @borrows dom:insertContent as videojs.insertContent
+ */
+videojs.insertContent = Dom.insertContent;
+
+/**
+ * A safe getComputedStyle with an IE8 fallback.
+ *
+ * This is because in Firefox, if the player is loaded in an iframe with `display:none`,
+ * then `getComputedStyle` returns `null`, so, we do a null-check to make sure
+ * that the player doesn't break in these cases.
+ * See https://bugzilla.mozilla.org/show_bug.cgi?id=548397 for more details.
+ *
+ * @borrows computed-style:computedStyle as videojs.computedStyle
+ */
+videojs.computedStyle = _computedStyle2['default'];
+
+/*
+ * Custom Universal Module Definition (UMD)
+ *
+ * Video.js will never be a non-browser lib so we can simplify UMD a bunch and
+ * still support requirejs and browserify. This also needs to be closure
+ * compiler compatible, so string keys are used.
+ */
+if (true) {
+  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+    return videojs;
+  }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+  // checking that module is an object too because of umdjs/umd#35
+} else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object' && (typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object') {
+  module.exports = videojs;
+}
+
+exports['default'] = videojs;
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  scopeId,
+  cssModules
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  // inject cssModules
+  if (cssModules) {
+    var computed = options.computed || (options.computed = {})
+    Object.keys(cssModules).forEach(function (key) {
+      var module = cssModules[key]
+      computed[key] = function () { return module }
+    })
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(164)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction) {
+  isProduction = _isProduction
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -8246,7 +9305,7 @@ n.speed=1;n.running=q;n.remove=function(a){a=M(a);for(var b=q.length;b--;)for(va
 b.duration=0;b.add=function(a){b.children.forEach(function(a){a.began=!0;a.completed=!0});w(a).forEach(function(a){var c=b.duration,d=a.offset;a.autoplay=!1;a.offset=g.und(d)?c:K(d,c);b.seek(a.offset);a=n(a);a.duration>c&&(b.duration=a.duration);a.began=!0;b.children.push(a)});b.reset();b.seek(0);b.autoplay&&b.restart();return b};return b};n.random=function(a,b){return Math.floor(Math.random()*(b-a+1))+a};return n});
 
 /***/ }),
-/* 31 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8257,7 +9316,7 @@ var settle = __webpack_require__(65);
 var buildURL = __webpack_require__(68);
 var parseHeaders = __webpack_require__(74);
 var isURLSameOrigin = __webpack_require__(72);
-var createError = __webpack_require__(34);
+var createError = __webpack_require__(38);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(67);
 
 module.exports = function xhrAdapter(config) {
@@ -8430,7 +9489,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 32 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8456,7 +9515,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 33 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8468,7 +9527,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 34 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8492,7 +9551,7 @@ module.exports = function createError(message, config, code, response) {
 
 
 /***/ }),
-/* 35 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8510,63 +9569,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 36 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function() {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		var result = [];
-		for(var i = 0; i < this.length; i++) {
-			var item = this[i];
-			if(item[2]) {
-				result.push("@media " + item[2] + "{" + item[1] + "}");
-			} else {
-				result.push(item[1]);
-			}
-		}
-		return result.join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-
-/***/ }),
-/* 37 */
+/* 40 */
 /***/ (function(module, exports) {
 
 module.exports = isFunction
@@ -8587,7 +9590,7 @@ function isFunction (fn) {
 
 
 /***/ }),
-/* 38 */
+/* 41 */
 /***/ (function(module, exports) {
 
 function clean (s) {
@@ -8606,7 +9609,7 @@ module.exports = function tsml (sa) {
 }
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8767,7 +9770,7 @@ exports['default'] = MuteToggle;
 
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8775,7 +9778,7 @@ exports['default'] = MuteToggle;
 
 exports.__esModule = true;
 
-var _menuButton = __webpack_require__(43);
+var _menuButton = __webpack_require__(46);
 
 var _menuButton2 = _interopRequireDefault(_menuButton);
 
@@ -8852,7 +9855,7 @@ exports['default'] = TrackButton;
 
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8860,7 +9863,7 @@ exports['default'] = TrackButton;
 
 exports.__esModule = true;
 
-var _slider = __webpack_require__(47);
+var _slider = __webpack_require__(50);
 
 var _slider2 = _interopRequireDefault(_slider);
 
@@ -8872,7 +9875,7 @@ var _fn = __webpack_require__(1);
 
 var Fn = _interopRequireWildcard(_fn);
 
-__webpack_require__(122);
+__webpack_require__(124);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
@@ -9040,7 +10043,7 @@ exports['default'] = VolumeBar;
 
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9258,7 +10261,7 @@ exports['default'] = MediaError;
 
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9274,7 +10277,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _menu = __webpack_require__(44);
+var _menu = __webpack_require__(47);
 
 var _menu2 = _interopRequireDefault(_menu);
 
@@ -9617,7 +10620,7 @@ exports['default'] = MenuButton;
 
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9826,7 +10829,7 @@ exports['default'] = Menu;
 
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10326,7 +11329,7 @@ exports['default'] = ModalDialog;
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10376,21 +11379,21 @@ var _toTitleCase2 = _interopRequireDefault(_toTitleCase);
 
 var _timeRanges = __webpack_require__(17);
 
-var _buffer = __webpack_require__(50);
+var _buffer = __webpack_require__(53);
 
-var _stylesheet = __webpack_require__(51);
+var _stylesheet = __webpack_require__(54);
 
 var stylesheet = _interopRequireWildcard(_stylesheet);
 
-var _fullscreenApi = __webpack_require__(126);
+var _fullscreenApi = __webpack_require__(128);
 
 var _fullscreenApi2 = _interopRequireDefault(_fullscreenApi);
 
-var _mediaError = __webpack_require__(42);
+var _mediaError = __webpack_require__(45);
 
 var _mediaError2 = _interopRequireDefault(_mediaError);
 
-var _tuple = __webpack_require__(90);
+var _tuple = __webpack_require__(92);
 
 var _tuple2 = _interopRequireDefault(_tuple);
 
@@ -10400,11 +11403,11 @@ var _mergeOptions = __webpack_require__(9);
 
 var _mergeOptions2 = _interopRequireDefault(_mergeOptions);
 
-var _textTrackListConverter = __webpack_require__(142);
+var _textTrackListConverter = __webpack_require__(144);
 
 var _textTrackListConverter2 = _interopRequireDefault(_textTrackListConverter);
 
-var _modalDialog = __webpack_require__(45);
+var _modalDialog = __webpack_require__(48);
 
 var _modalDialog2 = _interopRequireDefault(_modalDialog);
 
@@ -10412,35 +11415,35 @@ var _tech = __webpack_require__(16);
 
 var _tech2 = _interopRequireDefault(_tech);
 
-var _audioTrackList = __webpack_require__(48);
+var _audioTrackList = __webpack_require__(51);
 
 var _audioTrackList2 = _interopRequireDefault(_audioTrackList);
 
-var _videoTrackList = __webpack_require__(49);
+var _videoTrackList = __webpack_require__(52);
 
 var _videoTrackList2 = _interopRequireDefault(_videoTrackList);
 
+__webpack_require__(138);
+
 __webpack_require__(136);
 
-__webpack_require__(134);
+__webpack_require__(133);
 
-__webpack_require__(131);
+__webpack_require__(143);
 
-__webpack_require__(141);
+__webpack_require__(129);
 
-__webpack_require__(127);
+__webpack_require__(94);
 
-__webpack_require__(92);
+__webpack_require__(95);
 
-__webpack_require__(93);
+__webpack_require__(98);
 
-__webpack_require__(96);
+__webpack_require__(126);
 
-__webpack_require__(124);
+__webpack_require__(146);
 
-__webpack_require__(144);
-
-__webpack_require__(135);
+__webpack_require__(137);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
@@ -13968,7 +14971,7 @@ exports['default'] = Player;
 
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14328,7 +15331,7 @@ exports['default'] = Slider;
 
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14336,7 +15339,7 @@ exports['default'] = Slider;
 
 exports.__esModule = true;
 
-var _trackList = __webpack_require__(27);
+var _trackList = __webpack_require__(28);
 
 var _trackList2 = _interopRequireDefault(_trackList);
 
@@ -14516,7 +15519,7 @@ exports['default'] = AudioTrackList;
 
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14524,7 +15527,7 @@ exports['default'] = AudioTrackList;
 
 exports.__esModule = true;
 
-var _trackList = __webpack_require__(27);
+var _trackList = __webpack_require__(28);
 
 var _trackList2 = _interopRequireDefault(_trackList);
 
@@ -14716,7 +15719,7 @@ exports['default'] = VideoTrackList;
 
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14772,7 +15775,7 @@ function bufferedPercent(buffered, duration) {
 
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14827,1018 +15830,15 @@ var setTextContent = exports.setTextContent = function setTextContent(el, conten
 
 
 /***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-
-exports.__esModule = true;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
-                                                                                                                                                                                                                                                                               * @file video.js
-                                                                                                                                                                                                                                                                               * @module videojs
-                                                                                                                                                                                                                                                                               */
-
-/* global define */
-
-// Include the built-in techs
-
-
-var _window = __webpack_require__(4);
-
-var _window2 = _interopRequireDefault(_window);
-
-var _document = __webpack_require__(3);
-
-var _document2 = _interopRequireDefault(_document);
-
-var _setup = __webpack_require__(132);
-
-var setup = _interopRequireWildcard(_setup);
-
-var _stylesheet = __webpack_require__(51);
-
-var stylesheet = _interopRequireWildcard(_stylesheet);
-
-var _component = __webpack_require__(0);
-
-var _component2 = _interopRequireDefault(_component);
-
-var _eventTarget = __webpack_require__(19);
-
-var _eventTarget2 = _interopRequireDefault(_eventTarget);
-
-var _events = __webpack_require__(10);
-
-var Events = _interopRequireWildcard(_events);
-
-var _player = __webpack_require__(46);
-
-var _player2 = _interopRequireDefault(_player);
-
-var _plugins = __webpack_require__(128);
-
-var _plugins2 = _interopRequireDefault(_plugins);
-
-var _mergeOptions2 = __webpack_require__(9);
-
-var _mergeOptions3 = _interopRequireDefault(_mergeOptions2);
-
-var _fn = __webpack_require__(1);
-
-var Fn = _interopRequireWildcard(_fn);
-
-var _textTrack = __webpack_require__(25);
-
-var _textTrack2 = _interopRequireDefault(_textTrack);
-
-var _audioTrack = __webpack_require__(137);
-
-var _audioTrack2 = _interopRequireDefault(_audioTrack);
-
-var _videoTrack = __webpack_require__(145);
-
-var _videoTrack2 = _interopRequireDefault(_videoTrack);
-
-var _timeRanges = __webpack_require__(17);
-
-var _formatTime = __webpack_require__(11);
-
-var _formatTime2 = _interopRequireDefault(_formatTime);
-
-var _log = __webpack_require__(7);
-
-var _log2 = _interopRequireDefault(_log);
-
-var _dom = __webpack_require__(2);
-
-var Dom = _interopRequireWildcard(_dom);
-
-var _browser = __webpack_require__(5);
-
-var browser = _interopRequireWildcard(_browser);
-
-var _url = __webpack_require__(21);
-
-var Url = _interopRequireWildcard(_url);
-
-var _obj = __webpack_require__(6);
-
-var _computedStyle = __webpack_require__(29);
-
-var _computedStyle2 = _interopRequireDefault(_computedStyle);
-
-var _extend = __webpack_require__(125);
-
-var _extend2 = _interopRequireDefault(_extend);
-
-var _xhr = __webpack_require__(55);
-
-var _xhr2 = _interopRequireDefault(_xhr);
-
-var _tech = __webpack_require__(16);
-
-var _tech2 = _interopRequireDefault(_tech);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-// HTML5 Element Shim for IE8
-if (typeof HTMLVideoElement === 'undefined' && Dom.isReal()) {
-  _document2['default'].createElement('video');
-  _document2['default'].createElement('audio');
-  _document2['default'].createElement('track');
-}
-
-/**
- * Doubles as the main function for users to create a player instance and also
- * the main library object.
- * The `videojs` function can be used to initialize or retrieve a player.
-  *
- * @param {string|Element} id
- *        Video element or video element ID
- *
- * @param {Object} [options]
- *        Optional options object for config/settings
- *
- * @param {Component~ReadyCallback} [ready]
- *        Optional ready callback
- *
- * @return {Player}
- *         A player instance
- *
- * @mixes videojs
- */
-function videojs(id, options, ready) {
-  var tag = void 0;
-
-  // Allow for element or ID to be passed in
-  // String ID
-  if (typeof id === 'string') {
-
-    // Adjust for jQuery ID syntax
-    if (id.indexOf('#') === 0) {
-      id = id.slice(1);
-    }
-
-    // If a player instance has already been created for this ID return it.
-    if (videojs.getPlayers()[id]) {
-
-      // If options or ready funtion are passed, warn
-      if (options) {
-        _log2['default'].warn('Player "' + id + '" is already initialised. Options will not be applied.');
-      }
-
-      if (ready) {
-        videojs.getPlayers()[id].ready(ready);
-      }
-
-      return videojs.getPlayers()[id];
-    }
-
-    // Otherwise get element for ID
-    tag = Dom.getEl(id);
-
-    // ID is a media element
-  } else {
-    tag = id;
-  }
-
-  // Check for a useable element
-  // re: nodeName, could be a box div also
-  if (!tag || !tag.nodeName) {
-    throw new TypeError('The element or ID supplied is not valid. (videojs)');
-  }
-
-  // Element may have a player attr referring to an already created player instance.
-  // If so return that otherwise set up a new player below
-  if (tag.player || _player2['default'].players[tag.playerId]) {
-    return tag.player || _player2['default'].players[tag.playerId];
-  }
-
-  options = options || {};
-
-  videojs.hooks('beforesetup').forEach(function (hookFunction) {
-    var opts = hookFunction(tag, (0, _mergeOptions3['default'])(options));
-
-    if (!(0, _obj.isObject)(opts) || Array.isArray(opts)) {
-      _log2['default'].error('please return an object in beforesetup hooks');
-      return;
-    }
-
-    options = (0, _mergeOptions3['default'])(options, opts);
-  });
-
-  var PlayerComponent = _component2['default'].getComponent('Player');
-  // If not, set up a new player
-  var player = new PlayerComponent(tag, options, ready);
-
-  videojs.hooks('setup').forEach(function (hookFunction) {
-    return hookFunction(player);
-  });
-
-  return player;
-}
-
-/**
- * An Object that contains lifecycle hooks as keys which point to an array
- * of functions that are run when a lifecycle is triggered
- */
-videojs.hooks_ = {};
-
-/**
- * Get a list of hooks for a specific lifecycle
- *
- * @param {string} type
- *        the lifecyle to get hooks from
- *
- * @param {Function} [fn]
- *        Optionally add a hook to the lifecycle that your are getting.
- *
- * @return {Array}
- *         an array of hooks, or an empty array if there are none.
- */
-videojs.hooks = function (type, fn) {
-  videojs.hooks_[type] = videojs.hooks_[type] || [];
-  if (fn) {
-    videojs.hooks_[type] = videojs.hooks_[type].concat(fn);
-  }
-  return videojs.hooks_[type];
-};
-
-/**
- * Add a function hook to a specific videojs lifecycle.
- *
- * @param {string} type
- *        the lifecycle to hook the function to.
- *
- * @param {Function|Function[]}
- *        The function or array of functions to attach.
- */
-videojs.hook = function (type, fn) {
-  videojs.hooks(type, fn);
-};
-
-/**
- * Remove a hook from a specific videojs lifecycle.
- *
- * @param {string} type
- *        the lifecycle that the function hooked to
- *
- * @param {Function} fn
- *        The hooked function to remove
- *
- * @return {boolean}
- *         The function that was removed or undef
- */
-videojs.removeHook = function (type, fn) {
-  var index = videojs.hooks(type).indexOf(fn);
-
-  if (index <= -1) {
-    return false;
-  }
-
-  videojs.hooks_[type] = videojs.hooks_[type].slice();
-  videojs.hooks_[type].splice(index, 1);
-
-  return true;
-};
-
-// Add default styles
-if (_window2['default'].VIDEOJS_NO_DYNAMIC_STYLE !== true && Dom.isReal()) {
-  var style = Dom.$('.vjs-styles-defaults');
-
-  if (!style) {
-    style = stylesheet.createStyleElement('vjs-styles-defaults');
-    var head = Dom.$('head');
-
-    if (head) {
-      head.insertBefore(style, head.firstChild);
-    }
-    stylesheet.setTextContent(style, '\n      .video-js {\n        width: 300px;\n        height: 150px;\n      }\n\n      .vjs-fluid {\n        padding-top: 56.25%\n      }\n    ');
-  }
-}
-
-// Run Auto-load players
-// You have to wait at least once in case this script is loaded after your
-// video in the DOM (weird behavior only with minified version)
-setup.autoSetupTimeout(1, videojs);
-
-/**
- * Current software version. Follows semver.
- *
- * @type {string}
- */
-videojs.VERSION = '5.19.2';
-
-/**
- * The global options object. These are the settings that take effect
- * if no overrides are specified when the player is created.
- *
- * @type {Object}
- */
-videojs.options = _player2['default'].prototype.options_;
-
-/**
- * Get an object with the currently created players, keyed by player ID
- *
- * @return {Object}
- *         The created players
- */
-videojs.getPlayers = function () {
-  return _player2['default'].players;
-};
-
-/**
- * Expose players object.
- *
- * @memberOf videojs
- * @property {Object} players
- */
-videojs.players = _player2['default'].players;
-
-/**
- * Get a component class object by name
- *
- * @borrows Component.getComponent as videojs.getComponent
- */
-videojs.getComponent = _component2['default'].getComponent;
-
-/**
- * Register a component so it can referred to by name. Used when adding to other
- * components, either through addChild `component.addChild('myComponent')` or through
- * default children options  `{ children: ['myComponent'] }`.
- *
- * > NOTE: You could also just initialize the component before adding.
- * `component.addChild(new MyComponent());`
- *
- * @param {string} name
- *        The class name of the component
- *
- * @param {Component} comp
- *        The component class
- *
- * @return {Component}
- *         The newly registered component
- */
-videojs.registerComponent = function (name, comp) {
-  if (_tech2['default'].isTech(comp)) {
-    _log2['default'].warn('The ' + name + ' tech was registered as a component. It should instead be registered using videojs.registerTech(name, tech)');
-  }
-
-  _component2['default'].registerComponent.call(_component2['default'], name, comp);
-};
-
-/**
- * Get a Tech class object by name
- *
- * @borrows Tech.getTech as videojs.getTech
- */
-videojs.getTech = _tech2['default'].getTech;
-
-/**
- * Register a Tech so it can referred to by name.
- * This is used in the tech order for the player.
- *
- * @borrows Tech.registerTech as videojs.registerTech
- */
-videojs.registerTech = _tech2['default'].registerTech;
-
-/**
- * A suite of browser and device tests from {@link browser}.
- *
- * @type {Object}
- * @private
- */
-videojs.browser = browser;
-
-/**
- * Whether or not the browser supports touch events. Included for backward
- * compatibility with 4.x, but deprecated. Use `videojs.browser.TOUCH_ENABLED`
- * instead going forward.
- *
- * @deprecated since version 5.0
- * @type {boolean}
- */
-videojs.TOUCH_ENABLED = browser.TOUCH_ENABLED;
-
-/**
- * Subclass an existing class
- * Mimics ES6 subclassing with the `extend` keyword
- *
- * @borrows extend:extendFn as videojs.extend
- */
-videojs.extend = _extend2['default'];
-
-/**
- * Merge two options objects recursively
- * Performs a deep merge like lodash.merge but **only merges plain objects**
- * (not arrays, elements, anything else)
- * Other values will be copied directly from the second object.
- *
- * @borrows merge-options:mergeOptions as videojs.mergeOptions
- */
-videojs.mergeOptions = _mergeOptions3['default'];
-
-/**
- * Change the context (this) of a function
- *
- * > NOTE: as of v5.0 we require an ES5 shim, so you should use the native
- * `function() {}.bind(newContext);` instead of this.
- *
- * @borrows fn:bind as videojs.bind
- */
-videojs.bind = Fn.bind;
-
-/**
- * Create a Video.js player plugin.
- * Plugins are only initialized when options for the plugin are included
- * in the player options, or the plugin function on the player instance is
- * called.
- *
- * @borrows plugin:plugin as videojs.plugin
- */
-videojs.plugin = _plugins2['default'];
-
-/**
- * Adding languages so that they're available to all players.
- * Example: `videojs.addLanguage('es', { 'Hello': 'Hola' });`
- *
- * @param {string} code
- *        The language code or dictionary property
- *
- * @param {Object} data
- *        The data values to be translated
- *
- * @return {Object}
- *         The resulting language dictionary object
- */
-videojs.addLanguage = function (code, data) {
-  var _mergeOptions;
-
-  code = ('' + code).toLowerCase();
-
-  videojs.options.languages = (0, _mergeOptions3['default'])(videojs.options.languages, (_mergeOptions = {}, _mergeOptions[code] = data, _mergeOptions));
-
-  return videojs.options.languages[code];
-};
-
-/**
- * Log messages
- *
- * @borrows log:log as videojs.log
- */
-videojs.log = _log2['default'];
-
-/**
- * Creates an emulated TimeRange object.
- *
- * @borrows time-ranges:createTimeRanges as videojs.createTimeRange
- */
-/**
- * @borrows time-ranges:createTimeRanges as videojs.createTimeRanges
- */
-videojs.createTimeRange = videojs.createTimeRanges = _timeRanges.createTimeRanges;
-
-/**
- * Format seconds as a time string, H:MM:SS or M:SS
- * Supplying a guide (in seconds) will force a number of leading zeros
- * to cover the length of the guide
- *
- * @borrows format-time:formatTime as videojs.formatTime
- */
-videojs.formatTime = _formatTime2['default'];
-
-/**
- * Resolve and parse the elements of a URL
- *
- * @borrows url:parseUrl as videojs.parseUrl
- */
-videojs.parseUrl = Url.parseUrl;
-
-/**
- * Returns whether the url passed is a cross domain request or not.
- *
- * @borrows url:isCrossOrigin as videojs.isCrossOrigin
- */
-videojs.isCrossOrigin = Url.isCrossOrigin;
-
-/**
- * Event target class.
- *
- * @borrows EventTarget as videojs.EventTarget
- */
-videojs.EventTarget = _eventTarget2['default'];
-
-/**
- * Add an event listener to element
- * It stores the handler function in a separate cache object
- * and adds a generic handler to the element's event,
- * along with a unique id (guid) to the element.
- *
- * @borrows events:on as videojs.on
- */
-videojs.on = Events.on;
-
-/**
- * Trigger a listener only once for an event
- *
- * @borrows events:one as videojs.one
- */
-videojs.one = Events.one;
-
-/**
- * Removes event listeners from an element
- *
- * @borrows events:off as videojs.off
- */
-videojs.off = Events.off;
-
-/**
- * Trigger an event for an element
- *
- * @borrows events:trigger as videojs.trigger
- */
-videojs.trigger = Events.trigger;
-
-/**
- * A cross-browser XMLHttpRequest wrapper. Here's a simple example:
- *
- * @param {Object} options
- *        settings for the request.
- *
- * @return {XMLHttpRequest|XDomainRequest}
- *         The request object.
- *
- * @see https://github.com/Raynos/xhr
- */
-videojs.xhr = _xhr2['default'];
-
-/**
- * TextTrack class
- *
- * @borrows TextTrack as videojs.TextTrack
- */
-videojs.TextTrack = _textTrack2['default'];
-
-/**
- * export the AudioTrack class so that source handlers can create
- * AudioTracks and then add them to the players AudioTrackList
- *
- * @borrows AudioTrack as videojs.AudioTrack
- */
-videojs.AudioTrack = _audioTrack2['default'];
-
-/**
- * export the VideoTrack class so that source handlers can create
- * VideoTracks and then add them to the players VideoTrackList
- *
- * @borrows VideoTrack as videojs.VideoTrack
- */
-videojs.VideoTrack = _videoTrack2['default'];
-
-/**
- * Determines, via duck typing, whether or not a value is a DOM element.
- *
- * @borrows dom:isEl as videojs.isEl
- */
-videojs.isEl = Dom.isEl;
-
-/**
- * Determines, via duck typing, whether or not a value is a text node.
- *
- * @borrows dom:isTextNode as videojs.isTextNode
- */
-videojs.isTextNode = Dom.isTextNode;
-
-/**
- * Creates an element and applies properties.
- *
- * @borrows dom:createEl as videojs.createEl
- */
-videojs.createEl = Dom.createEl;
-
-/**
- * Check if an element has a CSS class
- *
- * @borrows dom:hasElClass as videojs.hasClass
- */
-videojs.hasClass = Dom.hasElClass;
-
-/**
- * Add a CSS class name to an element
- *
- * @borrows dom:addElClass as videojs.addClass
- */
-videojs.addClass = Dom.addElClass;
-
-/**
- * Remove a CSS class name from an element
- *
- * @borrows dom:removeElClass as videojs.removeClass
- */
-videojs.removeClass = Dom.removeElClass;
-
-/**
- * Adds or removes a CSS class name on an element depending on an optional
- * condition or the presence/absence of the class name.
- *
- * @borrows dom:toggleElClass as videojs.toggleClass
- */
-videojs.toggleClass = Dom.toggleElClass;
-
-/**
- * Apply attributes to an HTML element.
- *
- * @borrows dom:setElAttributes as videojs.setAttribute
- */
-videojs.setAttributes = Dom.setElAttributes;
-
-/**
- * Get an element's attribute values, as defined on the HTML tag
- * Attributes are not the same as properties. They're defined on the tag
- * or with setAttribute (which shouldn't be used with HTML)
- * This will return true or false for boolean attributes.
- *
- * @borrows dom:getElAttributes as videojs.getAttributes
- */
-videojs.getAttributes = Dom.getElAttributes;
-
-/**
- * Empties the contents of an element.
- *
- * @borrows dom:emptyEl as videojs.emptyEl
- */
-videojs.emptyEl = Dom.emptyEl;
-
-/**
- * Normalizes and appends content to an element.
- *
- * The content for an element can be passed in multiple types and
- * combinations, whose behavior is as follows:
- *
- * - String
- *   Normalized into a text node.
- *
- * - Element, TextNode
- *   Passed through.
- *
- * - Array
- *   A one-dimensional array of strings, elements, nodes, or functions (which
- *   return single strings, elements, or nodes).
- *
- * - Function
- *   If the sole argument, is expected to produce a string, element,
- *   node, or array.
- *
- * @borrows dom:appendContents as videojs.appendContet
- */
-videojs.appendContent = Dom.appendContent;
-
-/**
- * Normalizes and inserts content into an element; this is identical to
- * `appendContent()`, except it empties the element first.
- *
- * The content for an element can be passed in multiple types and
- * combinations, whose behavior is as follows:
- *
- * - String
- *   Normalized into a text node.
- *
- * - Element, TextNode
- *   Passed through.
- *
- * - Array
- *   A one-dimensional array of strings, elements, nodes, or functions (which
- *   return single strings, elements, or nodes).
- *
- * - Function
- *   If the sole argument, is expected to produce a string, element,
- *   node, or array.
- *
- * @borrows dom:insertContent as videojs.insertContent
- */
-videojs.insertContent = Dom.insertContent;
-
-/**
- * A safe getComputedStyle with an IE8 fallback.
- *
- * This is because in Firefox, if the player is loaded in an iframe with `display:none`,
- * then `getComputedStyle` returns `null`, so, we do a null-check to make sure
- * that the player doesn't break in these cases.
- * See https://bugzilla.mozilla.org/show_bug.cgi?id=548397 for more details.
- *
- * @borrows computed-style:computedStyle as videojs.computedStyle
- */
-videojs.computedStyle = _computedStyle2['default'];
-
-/*
- * Custom Universal Module Definition (UMD)
- *
- * Video.js will never be a non-browser lib so we can simplify UMD a bunch and
- * still support requirejs and browserify. This also needs to be closure
- * compiler compatible, so string keys are used.
- */
-if (true) {
-  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-    return videojs;
-  }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-  // checking that module is an object too because of umdjs/umd#35
-} else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object' && (typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object') {
-  module.exports = videojs;
-}
-
-exports['default'] = videojs;
-
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports) {
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  scopeId,
-  cssModules
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  // inject cssModules
-  if (cssModules) {
-    var computed = options.computed || (options.computed = {})
-    Object.keys(cssModules).forEach(function (key) {
-      var module = cssModules[key]
-      computed[key] = function () { return module }
-    })
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-  Modified by Evan You @yyx990803
-*/
-
-var hasDocument = typeof document !== 'undefined'
-
-if (typeof DEBUG !== 'undefined' && DEBUG) {
-  if (!hasDocument) {
-    throw new Error(
-    'vue-style-loader cannot be used in a non-browser environment. ' +
-    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
-  ) }
-}
-
-var listToStyles = __webpack_require__(159)
-
-/*
-type StyleObject = {
-  id: number;
-  parts: Array<StyleObjectPart>
-}
-
-type StyleObjectPart = {
-  css: string;
-  media: string;
-  sourceMap: ?string
-}
-*/
-
-var stylesInDom = {/*
-  [id: number]: {
-    id: number,
-    refs: number,
-    parts: Array<(obj?: StyleObjectPart) => void>
-  }
-*/}
-
-var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
-var singletonElement = null
-var singletonCounter = 0
-var isProduction = false
-var noop = function () {}
-
-// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-// tags it will allow on a page
-var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
-
-module.exports = function (parentId, list, _isProduction) {
-  isProduction = _isProduction
-
-  var styles = listToStyles(parentId, list)
-  addStylesToDom(styles)
-
-  return function update (newList) {
-    var mayRemove = []
-    for (var i = 0; i < styles.length; i++) {
-      var item = styles[i]
-      var domStyle = stylesInDom[item.id]
-      domStyle.refs--
-      mayRemove.push(domStyle)
-    }
-    if (newList) {
-      styles = listToStyles(parentId, newList)
-      addStylesToDom(styles)
-    } else {
-      styles = []
-    }
-    for (var i = 0; i < mayRemove.length; i++) {
-      var domStyle = mayRemove[i]
-      if (domStyle.refs === 0) {
-        for (var j = 0; j < domStyle.parts.length; j++) {
-          domStyle.parts[j]()
-        }
-        delete stylesInDom[domStyle.id]
-      }
-    }
-  }
-}
-
-function addStylesToDom (styles /* Array<StyleObject> */) {
-  for (var i = 0; i < styles.length; i++) {
-    var item = styles[i]
-    var domStyle = stylesInDom[item.id]
-    if (domStyle) {
-      domStyle.refs++
-      for (var j = 0; j < domStyle.parts.length; j++) {
-        domStyle.parts[j](item.parts[j])
-      }
-      for (; j < item.parts.length; j++) {
-        domStyle.parts.push(addStyle(item.parts[j]))
-      }
-      if (domStyle.parts.length > item.parts.length) {
-        domStyle.parts.length = item.parts.length
-      }
-    } else {
-      var parts = []
-      for (var j = 0; j < item.parts.length; j++) {
-        parts.push(addStyle(item.parts[j]))
-      }
-      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
-    }
-  }
-}
-
-function createStyleElement () {
-  var styleElement = document.createElement('style')
-  styleElement.type = 'text/css'
-  head.appendChild(styleElement)
-  return styleElement
-}
-
-function addStyle (obj /* StyleObjectPart */) {
-  var update, remove
-  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
-
-  if (styleElement) {
-    if (isProduction) {
-      // has SSR styles and in production mode.
-      // simply do nothing.
-      return noop
-    } else {
-      // has SSR styles but in dev mode.
-      // for some reason Chrome can't handle source map in server-rendered
-      // style tags - source maps in <style> only works if the style tag is
-      // created and inserted dynamically. So we remove the server rendered
-      // styles and inject new ones.
-      styleElement.parentNode.removeChild(styleElement)
-    }
-  }
-
-  if (isOldIE) {
-    // use singleton mode for IE9.
-    var styleIndex = singletonCounter++
-    styleElement = singletonElement || (singletonElement = createStyleElement())
-    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
-    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
-  } else {
-    // use multi-style-tag mode in all other cases
-    styleElement = createStyleElement()
-    update = applyToTag.bind(null, styleElement)
-    remove = function () {
-      styleElement.parentNode.removeChild(styleElement)
-    }
-  }
-
-  update(obj)
-
-  return function updateStyle (newObj /* StyleObjectPart */) {
-    if (newObj) {
-      if (newObj.css === obj.css &&
-          newObj.media === obj.media &&
-          newObj.sourceMap === obj.sourceMap) {
-        return
-      }
-      update(obj = newObj)
-    } else {
-      remove()
-    }
-  }
-}
-
-var replaceText = (function () {
-  var textStore = []
-
-  return function (index, replacement) {
-    textStore[index] = replacement
-    return textStore.filter(Boolean).join('\n')
-  }
-})()
-
-function applyToSingletonTag (styleElement, index, remove, obj) {
-  var css = remove ? '' : obj.css
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = replaceText(index, css)
-  } else {
-    var cssNode = document.createTextNode(css)
-    var childNodes = styleElement.childNodes
-    if (childNodes[index]) styleElement.removeChild(childNodes[index])
-    if (childNodes.length) {
-      styleElement.insertBefore(cssNode, childNodes[index])
-    } else {
-      styleElement.appendChild(cssNode)
-    }
-  }
-}
-
-function applyToTag (styleElement, obj) {
-  var css = obj.css
-  var media = obj.media
-  var sourceMap = obj.sourceMap
-
-  if (media) {
-    styleElement.setAttribute('media', media)
-  }
-
-  if (sourceMap) {
-    // https://developer.chrome.com/devtools/docs/javascript-debugging
-    // this makes source maps inside style tags work properly in Chrome
-    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
-    // http://stackoverflow.com/a/26603875
-    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
-  }
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = css
-  } else {
-    while (styleElement.firstChild) {
-      styleElement.removeChild(styleElement.firstChild)
-    }
-    styleElement.appendChild(document.createTextNode(css))
-  }
-}
-
-
-/***/ }),
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var window = __webpack_require__(4)
-var isFunction = __webpack_require__(37)
-var parseHeaders = __webpack_require__(88)
-var xtend = __webpack_require__(162)
+var isFunction = __webpack_require__(40)
+var parseHeaders = __webpack_require__(90)
+var xtend = __webpack_require__(167)
 
 module.exports = createXHR
 createXHR.XMLHttpRequest = window.XMLHttpRequest || noop
@@ -16077,40 +16077,36 @@ function noop() {}
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_animejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Menu_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_VideoPlayer_vue__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_VideoPlayer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_VideoPlayer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Menu_vue__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Menu_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_VideoPlayer_vue__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_VideoPlayer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_VideoPlayer_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(79);
-window.Vue = __webpack_require__(160);
+__webpack_require__(80);
+window.Vue = __webpack_require__(165);
 
 //Simple Scrollbar downloaded and stored in library here
-var ss = __webpack_require__(80);
+var ss = __webpack_require__(81);
 
-var videojs = __webpack_require__(52);
-var vjsyoutube = __webpack_require__(152);
+var videojs = __webpack_require__(31);
+var vjsyoutube = __webpack_require__(154);
 
 //animejs npm module
+// import anime from 'animejs'
 
-
-//logo animation function
-var lanime = __webpack_require__(81);
 
 // Vue Componant registration
 // Trying to keep it simple this time round
 //
 
 
-Vue.component('MainMenu', __WEBPACK_IMPORTED_MODULE_1__components_Menu_vue___default.a);
+Vue.component('MainMenu', __WEBPACK_IMPORTED_MODULE_0__components_Menu_vue___default.a);
 
-Vue.component('videoPlayer', __WEBPACK_IMPORTED_MODULE_2__components_VideoPlayer_vue___default.a);
+Vue.component('videoPlayer', __WEBPACK_IMPORTED_MODULE_1__components_VideoPlayer_vue___default.a);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16118,11 +16114,14 @@ Vue.component('videoPlayer', __WEBPACK_IMPORTED_MODULE_2__components_VideoPlayer
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(153));
+Vue.component('example', __webpack_require__(155));
 
 var app = new Vue({
   el: '#app-container'
 });
+
+//logo animation function
+var lanime = __webpack_require__(82);
 
 /***/ }),
 /* 57 */
@@ -16144,7 +16143,7 @@ module.exports = __webpack_require__(59);
 
 
 var utils = __webpack_require__(8);
-var bind = __webpack_require__(35);
+var bind = __webpack_require__(39);
 var Axios = __webpack_require__(61);
 var defaults = __webpack_require__(23);
 
@@ -16179,9 +16178,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(32);
+axios.Cancel = __webpack_require__(36);
 axios.CancelToken = __webpack_require__(60);
-axios.isCancel = __webpack_require__(33);
+axios.isCancel = __webpack_require__(37);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -16202,7 +16201,7 @@ module.exports.default = axios;
 "use strict";
 
 
-var Cancel = __webpack_require__(32);
+var Cancel = __webpack_require__(36);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -16419,7 +16418,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(8);
 var transformData = __webpack_require__(66);
-var isCancel = __webpack_require__(33);
+var isCancel = __webpack_require__(37);
 var defaults = __webpack_require__(23);
 
 /**
@@ -16529,7 +16528,7 @@ module.exports = function enhanceError(error, config, code, response) {
 "use strict";
 
 
-var createError = __webpack_require__(34);
+var createError = __webpack_require__(38);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -17005,7 +17004,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bin_menuNorm_js__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bin_menuNorm_js__ = __webpack_require__(79);
 //
 //
 //
@@ -17089,6 +17088,92 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_video_js__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_video_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_video_js__);
+var _this = this;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+// const 
+
+// myPlayer.src("https://www.youtube.com/watch?v=u2WMtua24SY");
+// myPlayer.ready(function() {
+// function call throws an error if we
+// dont add {IWillNotUseThisInPlugins: true}
+//  var tech = myPlayer.tech({IWillNotUseThisInPlugins: true});
+// });
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'VideoPlayerJS',
+  props: ['playerId', 'videoUrl'],
+  data: function data() {
+    return {
+      hworld: "hi planet",
+      myPlayer: {
+        techOrder: ["youtube"],
+        sources: [{
+          type: "video/youtube",
+          src: _this.videoUrl
+        }]
+      }
+    };
+  },
+  methods: {},
+  mounted: function mounted() {
+    _this.hworld = "no";
+    console.log(_this.videoUrl);
+    // const vpid = this.playerId;
+    // const vpurl = this.videoUrl;
+    // videojs( {{this.playerId}}, {
+    //   controls: true,
+    //   autoplay: true,
+    //   preload: 'auto',
+    //   techOrder: ["youtube"],
+    //         sources: [{ 
+    //           type: "video/youtube", 
+    //           src: vpurl
+    //       }] 
+
+    // });
+  }
+});
+
+/***/ }),
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17501,11 +17586,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 }]);
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(87);
+window._ = __webpack_require__(89);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -17514,9 +17599,9 @@ window._ = __webpack_require__(87);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(86);
+  window.$ = window.jQuery = __webpack_require__(88);
 
-  __webpack_require__(82);
+  __webpack_require__(83);
 } catch (e) {}
 
 /**
@@ -17559,7 +17644,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 !function (a, b) {
@@ -17595,56 +17680,54 @@ if (token) {
 }(window, document);
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anime = __webpack_require__(30);
+var anime = __webpack_require__(34);
 
-var colors = ['#16F0F0', '#00FF00', '#FFFF00', '#FF14AB', '#16F0F0'];
+var colors = ['#16F0F0', '#FF14AB', '#00FF00', '#FFFF00', '#16F0F0'];
 var pathEls = document.querySelectorAll('path');
-var colorNumber = anime.random(0, 3);
+var colorNumber = anime.random(0, 2);
 module.exports = function () {
-    for (var i = 0; i < pathEls.length; i++) {
+    var _loop = function _loop() {
         var pathEl = pathEls[i];
-        var offset = anime.setDashoffset(pathEl);
+        console.log(pathEl);
 
-        // pathEl.setAttribute('fill', colors[anime.random(0, 4)]);
+        var offset = anime.setDashoffset(pathEl);
+        console.log(offset);
+
         pathEl.setAttribute('stroke-dashoffset', offset);
-        var timeline = anime.timeline();
-        timeline.add({
-            targets: pathEl,
-            // delay: 4000,
-            duration: 1000, //anime.random(1000, 5000),
-            update: pathEl.setAttribute('fill', '#000'),
-            opacity: 1,
-            //loop: true,
-            direction: 'alternate',
-            easing: 'easeInOutExpo'
-        }).add({
+
+        var logoAJS = anime({
+
             targets: pathEl,
             update: pathEl.setAttribute('stroke', colors[colorNumber]),
+            // pathEl.setAttribute('stroke', colors[anime.random(0, 3)]);
             strokeDashoffset: [offset, 0],
-            duration: 3000, //anime.random(1000, 5000),
-            delay: 1000, //anime.random(0, 2000),
-            easing: 'easeInOutSine',
-            loop: true,
-            direction: 'alternate'
-        }).add({
-            targets: pathEl,
-            delay: 4000,
-            duration: 2000, //anime.random(1000, 5000),
-            backgroundColor: colors[colorNumber + 1],
-            // opacity: 0,
+            duration: 5000,
+            delay: 500,
             // loop: true,
             direction: 'alternate',
-            easing: 'easeInOutExpo'
+            easing: 'easeInOutSine',
+            autoplay: true,
+            complete: function complete(anim) {
+                // console.log('update : ' + anim.update);
+                pathEl.setAttribute('stroke', colors[anime.random(0, 2)]);
+                logoPlay();
+            }
         });
-        //console.log(pathsEls)
+        var logoPlay = function logoPlay() {
+            logoAJS.restart();
+        };
+    };
+
+    for (var i = 0; i < pathEls.length; i++) {
+        _loop();
     }
 }();
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports) {
 
 /*!
@@ -20027,10 +20110,10 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(36)();
+exports = module.exports = __webpack_require__(24)();
 // imports
 
 
@@ -20041,10 +20124,24 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(36)();
+exports = module.exports = __webpack_require__(24)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(24)();
 // imports
 
 
@@ -20055,10 +20152,10 @@ exports.push([module.i, "\n.clickit {\n  top: 5px;\n  left: 5px;\n  padding: 0 1
 
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(37)
+var isFunction = __webpack_require__(40)
 
 module.exports = forEach
 
@@ -20107,7 +20204,7 @@ function forEachObject(object, iterator, context) {
 
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -30367,7 +30464,7 @@ return jQuery;
 
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -47456,14 +47553,14 @@ return jQuery;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22), __webpack_require__(161)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22), __webpack_require__(166)(module)))
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var trim = __webpack_require__(91)
-  , forEach = __webpack_require__(85)
+var trim = __webpack_require__(93)
+  , forEach = __webpack_require__(87)
   , isArray = function(arg) {
       return Object.prototype.toString.call(arg) === '[object Array]';
     }
@@ -47495,7 +47592,7 @@ module.exports = function (headers) {
 }
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -47685,7 +47782,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = SafeParseTuple
@@ -47705,7 +47802,7 @@ function SafeParseTuple(obj, reviver) {
 
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports) {
 
 
@@ -47725,7 +47822,7 @@ exports.right = function(str){
 
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47824,7 +47921,7 @@ exports['default'] = BigPlayButton;
 
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47928,7 +48025,7 @@ exports['default'] = CloseButton;
 
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47936,7 +48033,7 @@ exports['default'] = CloseButton;
 
 exports.__esModule = true;
 
-var _trackButton = __webpack_require__(40);
+var _trackButton = __webpack_require__(43);
 
 var _trackButton2 = _interopRequireDefault(_trackButton);
 
@@ -47944,7 +48041,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _audioTrackMenuItem = __webpack_require__(95);
+var _audioTrackMenuItem = __webpack_require__(97);
 
 var _audioTrackMenuItem2 = _interopRequireDefault(_audioTrackMenuItem);
 
@@ -48054,7 +48151,7 @@ exports['default'] = AudioTrackButton;
 
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48180,7 +48277,7 @@ exports['default'] = AudioTrackMenuItem;
 
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48192,41 +48289,41 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-__webpack_require__(99);
-
-__webpack_require__(117);
-
-__webpack_require__(118);
-
-__webpack_require__(120);
+__webpack_require__(101);
 
 __webpack_require__(119);
 
-__webpack_require__(98);
+__webpack_require__(120);
 
-__webpack_require__(105);
-
-__webpack_require__(97);
+__webpack_require__(122);
 
 __webpack_require__(121);
 
+__webpack_require__(100);
+
+__webpack_require__(107);
+
+__webpack_require__(99);
+
 __webpack_require__(123);
 
-__webpack_require__(39);
+__webpack_require__(125);
 
-__webpack_require__(112);
+__webpack_require__(42);
 
 __webpack_require__(114);
 
 __webpack_require__(116);
 
-__webpack_require__(111);
+__webpack_require__(118);
 
-__webpack_require__(94);
+__webpack_require__(113);
 
-__webpack_require__(100);
+__webpack_require__(96);
 
-__webpack_require__(108);
+__webpack_require__(102);
+
+__webpack_require__(110);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -48292,7 +48389,7 @@ exports['default'] = ControlBar;
 
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48415,7 +48512,7 @@ exports['default'] = FullscreenToggle;
 
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48524,7 +48621,7 @@ exports['default'] = LiveDisplay;
 
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48663,7 +48760,7 @@ exports['default'] = PlayToggle;
 
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48671,15 +48768,15 @@ exports['default'] = PlayToggle;
 
 exports.__esModule = true;
 
-var _menuButton = __webpack_require__(43);
+var _menuButton = __webpack_require__(46);
 
 var _menuButton2 = _interopRequireDefault(_menuButton);
 
-var _menu = __webpack_require__(44);
+var _menu = __webpack_require__(47);
 
 var _menu2 = _interopRequireDefault(_menu);
 
-var _playbackRateMenuItem = __webpack_require__(101);
+var _playbackRateMenuItem = __webpack_require__(103);
 
 var _playbackRateMenuItem2 = _interopRequireDefault(_playbackRateMenuItem);
 
@@ -48905,7 +49002,7 @@ exports['default'] = PlaybackRateMenuButton;
 
 
 /***/ }),
-/* 101 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49019,7 +49116,7 @@ exports['default'] = PlaybackRateMenuItem;
 
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49148,7 +49245,7 @@ exports['default'] = LoadProgressBar;
 
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49172,7 +49269,7 @@ var _formatTime = __webpack_require__(11);
 
 var _formatTime2 = _interopRequireDefault(_formatTime);
 
-var _computedStyle = __webpack_require__(29);
+var _computedStyle = __webpack_require__(30);
 
 var _computedStyle2 = _interopRequireDefault(_computedStyle);
 
@@ -49349,7 +49446,7 @@ exports['default'] = MouseTimeDisplay;
 
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49457,7 +49554,7 @@ exports['default'] = PlayProgressBar;
 
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49469,9 +49566,9 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-__webpack_require__(106);
+__webpack_require__(108);
 
-__webpack_require__(103);
+__webpack_require__(105);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -49531,7 +49628,7 @@ exports['default'] = ProgressControl;
 
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49539,7 +49636,7 @@ exports['default'] = ProgressControl;
 
 exports.__esModule = true;
 
-var _slider = __webpack_require__(47);
+var _slider = __webpack_require__(50);
 
 var _slider2 = _interopRequireDefault(_slider);
 
@@ -49555,15 +49652,15 @@ var _formatTime = __webpack_require__(11);
 
 var _formatTime2 = _interopRequireDefault(_formatTime);
 
-var _computedStyle = __webpack_require__(29);
+var _computedStyle = __webpack_require__(30);
 
 var _computedStyle2 = _interopRequireDefault(_computedStyle);
 
-__webpack_require__(102);
-
 __webpack_require__(104);
 
-__webpack_require__(107);
+__webpack_require__(106);
+
+__webpack_require__(109);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
@@ -49798,7 +49895,7 @@ exports['default'] = SeekBar;
 
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49904,7 +50001,7 @@ exports['default'] = TooltipProgressBar;
 
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49912,7 +50009,7 @@ exports['default'] = TooltipProgressBar;
 
 exports.__esModule = true;
 
-var _spacer = __webpack_require__(109);
+var _spacer = __webpack_require__(111);
 
 var _spacer2 = _interopRequireDefault(_spacer);
 
@@ -49982,7 +50079,7 @@ exports['default'] = CustomControlSpacer;
 
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50053,7 +50150,7 @@ exports['default'] = Spacer;
 
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50061,7 +50158,7 @@ exports['default'] = Spacer;
 
 exports.__esModule = true;
 
-var _textTrackMenuItem = __webpack_require__(24);
+var _textTrackMenuItem = __webpack_require__(25);
 
 var _textTrackMenuItem2 = _interopRequireDefault(_textTrackMenuItem);
 
@@ -50145,7 +50242,7 @@ exports['default'] = CaptionSettingsMenuItem;
 
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50161,7 +50258,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _captionSettingsMenuItem = __webpack_require__(110);
+var _captionSettingsMenuItem = __webpack_require__(112);
 
 var _captionSettingsMenuItem2 = _interopRequireDefault(_captionSettingsMenuItem);
 
@@ -50263,7 +50360,7 @@ exports['default'] = CaptionsButton;
 
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50279,7 +50376,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _chaptersTrackMenuItem = __webpack_require__(113);
+var _chaptersTrackMenuItem = __webpack_require__(115);
 
 var _chaptersTrackMenuItem2 = _interopRequireDefault(_chaptersTrackMenuItem);
 
@@ -50510,7 +50607,7 @@ exports['default'] = ChaptersButton;
 
 
 /***/ }),
-/* 113 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50625,7 +50722,7 @@ exports['default'] = ChaptersTrackMenuItem;
 
 
 /***/ }),
-/* 114 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50768,7 +50865,7 @@ exports['default'] = DescriptionsButton;
 
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50776,7 +50873,7 @@ exports['default'] = DescriptionsButton;
 
 exports.__esModule = true;
 
-var _textTrackMenuItem = __webpack_require__(24);
+var _textTrackMenuItem = __webpack_require__(25);
 
 var _textTrackMenuItem2 = _interopRequireDefault(_textTrackMenuItem);
 
@@ -50866,7 +50963,7 @@ exports['default'] = OffTextTrackMenuItem;
 
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50960,7 +51057,7 @@ exports['default'] = SubtitlesButton;
 
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51075,7 +51172,7 @@ exports['default'] = CurrentTimeDisplay;
 
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51200,7 +51297,7 @@ exports['default'] = DurationDisplay;
 
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51321,7 +51418,7 @@ exports['default'] = RemainingTimeDisplay;
 
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51380,7 +51477,7 @@ exports['default'] = TimeDivider;
 
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51392,7 +51489,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-__webpack_require__(41);
+__webpack_require__(44);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -51478,7 +51575,7 @@ exports['default'] = VolumeControl;
 
 
 /***/ }),
-/* 122 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51536,7 +51633,7 @@ exports['default'] = VolumeLevel;
 
 
 /***/ }),
-/* 123 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51552,19 +51649,19 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _popup = __webpack_require__(130);
+var _popup = __webpack_require__(132);
 
 var _popup2 = _interopRequireDefault(_popup);
 
-var _popupButton = __webpack_require__(129);
+var _popupButton = __webpack_require__(131);
 
 var _popupButton2 = _interopRequireDefault(_popupButton);
 
-var _muteToggle = __webpack_require__(39);
+var _muteToggle = __webpack_require__(42);
 
 var _muteToggle2 = _interopRequireDefault(_muteToggle);
 
-var _volumeBar = __webpack_require__(41);
+var _volumeBar = __webpack_require__(44);
 
 var _volumeBar2 = _interopRequireDefault(_volumeBar);
 
@@ -51786,7 +51883,7 @@ exports['default'] = VolumeMenuButton;
 
 
 /***/ }),
-/* 124 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51798,7 +51895,7 @@ var _component = __webpack_require__(0);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _modalDialog = __webpack_require__(45);
+var _modalDialog = __webpack_require__(48);
 
 var _modalDialog2 = _interopRequireDefault(_modalDialog);
 
@@ -51894,7 +51991,7 @@ exports['default'] = ErrorDisplay;
 
 
 /***/ }),
-/* 125 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52001,7 +52098,7 @@ exports['default'] = extendFn;
 
 
 /***/ }),
-/* 126 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52063,7 +52160,7 @@ exports['default'] = FullscreenApi;
 
 
 /***/ }),
-/* 127 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52121,7 +52218,7 @@ exports['default'] = LoadingSpinner;
 
 
 /***/ }),
-/* 128 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52129,7 +52226,7 @@ exports['default'] = LoadingSpinner;
 
 exports.__esModule = true;
 
-var _player = __webpack_require__(46);
+var _player = __webpack_require__(49);
 
 var _player2 = _interopRequireDefault(_player);
 
@@ -52154,7 +52251,7 @@ exports['default'] = plugin;
 
 
 /***/ }),
-/* 129 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52283,7 +52380,7 @@ exports['default'] = PopupButton;
 
 
 /***/ }),
-/* 130 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52388,7 +52485,7 @@ exports['default'] = Popup;
 
 
 /***/ }),
-/* 131 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52576,7 +52673,7 @@ exports['default'] = PosterImage;
 
 
 /***/ }),
-/* 132 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52727,7 +52824,7 @@ exports.hasLoaded = hasLoaded;
 
 
 /***/ }),
-/* 133 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52936,7 +53033,7 @@ exports['default'] = FlashRtmpDecorator;
 
 
 /***/ }),
-/* 134 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52958,7 +53055,7 @@ var Url = _interopRequireWildcard(_url);
 
 var _timeRanges = __webpack_require__(17);
 
-var _flashRtmp = __webpack_require__(133);
+var _flashRtmp = __webpack_require__(135);
 
 var _flashRtmp2 = _interopRequireDefault(_flashRtmp);
 
@@ -54100,7 +54197,7 @@ exports['default'] = Flash;
 
 
 /***/ }),
-/* 135 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54134,7 +54231,7 @@ var _log = __webpack_require__(7);
 
 var _log2 = _interopRequireDefault(_log);
 
-var _tsml = __webpack_require__(38);
+var _tsml = __webpack_require__(41);
 
 var _tsml2 = _interopRequireDefault(_tsml);
 
@@ -55860,7 +55957,7 @@ exports['default'] = Html5;
 
 
 /***/ }),
-/* 136 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55955,7 +56052,7 @@ exports['default'] = MediaLoader;
 
 
 /***/ }),
-/* 137 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55963,9 +56060,9 @@ exports['default'] = MediaLoader;
 
 exports.__esModule = true;
 
-var _trackEnums = __webpack_require__(26);
+var _trackEnums = __webpack_require__(27);
 
-var _track = __webpack_require__(28);
+var _track = __webpack_require__(29);
 
 var _track2 = _interopRequireDefault(_track);
 
@@ -56091,7 +56188,7 @@ exports['default'] = AudioTrack;
 
 
 /***/ }),
-/* 138 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56246,7 +56343,7 @@ exports['default'] = HtmlTrackElementList;
 
 
 /***/ }),
-/* 139 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56266,7 +56363,7 @@ var _eventTarget = __webpack_require__(19);
 
 var _eventTarget2 = _interopRequireDefault(_eventTarget);
 
-var _textTrack = __webpack_require__(25);
+var _textTrack = __webpack_require__(26);
 
 var _textTrack2 = _interopRequireDefault(_textTrack);
 
@@ -56422,7 +56519,7 @@ exports['default'] = HTMLTrackElement;
 
 
 /***/ }),
-/* 140 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56581,7 +56678,7 @@ exports['default'] = TextTrackCueList;
 
 
 /***/ }),
-/* 141 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56938,7 +57035,7 @@ exports['default'] = TextTrackDisplay;
 
 
 /***/ }),
-/* 142 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57047,7 +57144,7 @@ exports['default'] = { textTracksToJson: textTracksToJson, jsonToTextTracks: jso
 
 
 /***/ }),
-/* 143 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57055,7 +57152,7 @@ exports['default'] = { textTracksToJson: textTracksToJson, jsonToTextTracks: jso
 
 exports.__esModule = true;
 
-var _trackList = __webpack_require__(27);
+var _trackList = __webpack_require__(28);
 
 var _trackList2 = _interopRequireDefault(_trackList);
 
@@ -57158,7 +57255,7 @@ exports['default'] = TextTrackList;
 
 
 /***/ }),
-/* 144 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57766,7 +57863,7 @@ exports['default'] = TextTrackSettings;
 
 
 /***/ }),
-/* 145 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57774,9 +57871,9 @@ exports['default'] = TextTrackSettings;
 
 exports.__esModule = true;
 
-var _trackEnums = __webpack_require__(26);
+var _trackEnums = __webpack_require__(27);
 
-var _track = __webpack_require__(28);
+var _track = __webpack_require__(29);
 
 var _track2 = _interopRequireDefault(_track);
 
@@ -57901,7 +57998,7 @@ exports['default'] = VideoTrack;
 
 
 /***/ }),
-/* 146 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -57925,9 +58022,9 @@ exports['default'] = VideoTrack;
 // forth between JSON. If we don't then it's not that big of a deal since we're
 // off browser.
 var vttjs = module.exports = {
-  WebVTT: __webpack_require__(147).WebVTT,
-  VTTCue: __webpack_require__(148).VTTCue,
-  VTTRegion: __webpack_require__(150).VTTRegion
+  WebVTT: __webpack_require__(149).WebVTT,
+  VTTCue: __webpack_require__(150).VTTCue,
+  VTTRegion: __webpack_require__(152).VTTRegion
 };
 
 window.vttjs = vttjs;
@@ -57954,7 +58051,7 @@ if (!window.VTTCue) {
 
 
 /***/ }),
-/* 147 */
+/* 149 */
 /***/ (function(module, exports) {
 
 /**
@@ -59294,7 +59391,7 @@ if (!window.VTTCue) {
 
 
 /***/ }),
-/* 148 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -59316,7 +59413,7 @@ if (!window.VTTCue) {
 // If we're in Node.js then require VTTCue so we can extend it, otherwise assume
 // VTTCue is on the global.
 if (typeof module !== "undefined" && module.exports) {
-  this.VTTCue = this.VTTCue || __webpack_require__(149).VTTCue;
+  this.VTTCue = this.VTTCue || __webpack_require__(151).VTTCue;
 }
 
 // Extend VTTCue with methods to convert to JSON, from JSON, and construct a
@@ -59360,7 +59457,7 @@ if (typeof module !== "undefined" && module.exports) {
 
 
 /***/ }),
-/* 149 */
+/* 151 */
 /***/ (function(module, exports) {
 
 /**
@@ -59675,7 +59772,7 @@ if (typeof module !== "undefined" && module.exports) {
 
 
 /***/ }),
-/* 150 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -59697,7 +59794,7 @@ if (typeof module !== "undefined" && module.exports) {
 // If we're in Node.js then require VTTRegion so we can extend it, otherwise assume
 // VTTRegion is on the global.
 if (typeof module !== "undefined" && module.exports) {
-  this.VTTRegion = __webpack_require__(151).VTTRegion;
+  this.VTTRegion = __webpack_require__(153).VTTRegion;
 }
 
 // Extend VTTRegion with methods to convert to JSON, from JSON, and construct a
@@ -59724,7 +59821,7 @@ if (typeof module !== "undefined" && module.exports) {
 
 
 /***/ }),
-/* 151 */
+/* 153 */
 /***/ (function(module, exports) {
 
 /**
@@ -59868,7 +59965,7 @@ if (typeof module !== "undefined" && module.exports) {
 
 
 /***/ }),
-/* 152 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* The MIT License (MIT)
@@ -59895,7 +59992,7 @@ THE SOFTWARE. */
 /*global define, YT*/
 (function (root, factory) {
   if(true) {
-    module.exports = factory(__webpack_require__(52));
+    module.exports = factory(__webpack_require__(31));
   } else if(typeof define === 'function' && define.amd) {
     define(['videojs'], function(videojs){
       return (root.Youtube = factory(videojs));
@@ -60623,18 +60720,18 @@ THE SOFTWARE. */
 
 
 /***/ }),
-/* 153 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(157)
+__webpack_require__(162)
 
-var Component = __webpack_require__(53)(
+var Component = __webpack_require__(32)(
   /* script */
   __webpack_require__(76),
   /* template */
-  __webpack_require__(155),
+  __webpack_require__(159),
   /* scopeId */
   null,
   /* cssModules */
@@ -60661,18 +60758,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 154 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(158)
+__webpack_require__(163)
 
-var Component = __webpack_require__(53)(
+var Component = __webpack_require__(32)(
   /* script */
   __webpack_require__(77),
   /* template */
-  __webpack_require__(156),
+  __webpack_require__(160),
   /* scopeId */
   null,
   /* cssModules */
@@ -60699,7 +60796,72 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 155 */
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(161)
+
+var Component = __webpack_require__(32)(
+  /* script */
+  __webpack_require__(78),
+  /* template */
+  __webpack_require__(158),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/natetheaverage/www/natetheaverage/resources/assets/js/components/VideoPlayer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] VideoPlayer.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-01692028", Component.options)
+  } else {
+    hotAPI.reload("data-v-01692028", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container-fluid"
+  }, [_c('div', {
+    staticClass: "video-player"
+  }, [_c('video', {
+    staticClass: "video-js vjs-default-skin",
+    attrs: {
+      "id": _vm.playerId,
+      "width": "640",
+      "height": "360",
+      "data-setup": "{ \n          \"techOrder\": [\"youtube\"],\n            \"sources\": [{ \n              \"type\": \"video/youtube\", \n              \"src\": \"https://www.youtube.com/watch?v=u2WMtua24SY\"\n          }] \n        }"
+    }
+  })])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-01692028", module.exports)
+  }
+}
+
+/***/ }),
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -60718,7 +60880,7 @@ if (false) {
 }
 
 /***/ }),
-/* 156 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -60799,17 +60961,43 @@ if (false) {
 }
 
 /***/ }),
-/* 157 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(83);
+var content = __webpack_require__(84);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(54)("7a5ac761", content, false);
+var update = __webpack_require__(33)("22666e09", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-01692028!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VideoPlayer.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-01692028!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VideoPlayer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(85);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(33)("7a5ac761", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -60825,17 +61013,17 @@ if(false) {
 }
 
 /***/ }),
-/* 158 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(84);
+var content = __webpack_require__(86);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(54)("401a289e", content, false);
+var update = __webpack_require__(33)("401a289e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -60851,7 +61039,7 @@ if(false) {
 }
 
 /***/ }),
-/* 159 */
+/* 164 */
 /***/ (function(module, exports) {
 
 /**
@@ -60884,7 +61072,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 160 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70582,7 +70770,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)))
 
 /***/ }),
-/* 161 */
+/* 166 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -70610,7 +70798,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 162 */
+/* 167 */
 /***/ (function(module, exports) {
 
 module.exports = extend
@@ -70635,216 +70823,18 @@ function extend() {
 
 
 /***/ }),
-/* 163 */
+/* 168 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 164 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(56);
 module.exports = __webpack_require__(57);
 
-
-/***/ }),
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_video_js__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_video_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_video_js__);
-var _this = this;
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-// const 
-
-// myPlayer.src("https://www.youtube.com/watch?v=u2WMtua24SY");
-// myPlayer.ready(function() {
-// function call throws an error if we
-// dont add {IWillNotUseThisInPlugins: true}
-//  var tech = myPlayer.tech({IWillNotUseThisInPlugins: true});
-// });
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'VideoPlayerJS',
-  props: ['playerId', 'videoUrl'],
-  data: function data() {
-    return {
-      hworld: "hi planet",
-      myPlayer: {
-        techOrder: ["youtube"],
-        sources: [{
-          type: "video/youtube",
-          src: _this.videoUrl
-        }]
-      }
-    };
-  },
-  methods: {},
-  mounted: function mounted() {
-    _this.hworld = "no";
-    console.log(_this.videoUrl);
-    // const vpid = this.playerId;
-    // const vpurl = this.videoUrl;
-    // videojs( {{this.playerId}}, {
-    //   controls: true,
-    //   autoplay: true,
-    //   preload: 'auto',
-    //   techOrder: ["youtube"],
-    //         sources: [{ 
-    //           type: "video/youtube", 
-    //           src: vpurl
-    //       }] 
-
-    // });
-  }
-});
-
-/***/ }),
-/* 173 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(36)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(176)
-
-var Component = __webpack_require__(53)(
-  /* script */
-  __webpack_require__(172),
-  /* template */
-  __webpack_require__(175),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/home/natetheaverage/www/natetheaverage/resources/assets/js/components/VideoPlayer.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] VideoPlayer.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-01692028", Component.options)
-  } else {
-    hotAPI.reload("data-v-01692028", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container-fluid"
-  }, [_c('div', {
-    staticClass: "video-player"
-  }, [_c('video', {
-    staticClass: "video-js vjs-default-skin",
-    attrs: {
-      "id": _vm.playerId,
-      "width": "640",
-      "height": "360",
-      "data-setup": "{ \n          \"techOrder\": [\"youtube\"],\n            \"sources\": [{ \n              \"type\": \"video/youtube\", \n              \"src\": \"https://www.youtube.com/watch?v=u2WMtua24SY\"\n          }] \n        }"
-    }
-  })])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-01692028", module.exports)
-  }
-}
-
-/***/ }),
-/* 176 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(173);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(54)("22666e09", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-01692028!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VideoPlayer.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-01692028!../../../../node_modules/stylus-loader/index.js?paths[]=node_modules!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VideoPlayer.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
 
 /***/ })
 /******/ ]);
