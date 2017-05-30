@@ -15,8 +15,10 @@
                 <a href="http://github.com/{{ $socialHeaderIconsUser->github }}" target="_blank" id="social"><i class="fa fa-fw fa-github text-muted" style="font-size: 14px"></i></a>
             @endif
             @if(!empty($socialHeaderIconsUser->linkedin))
-                <a href="http://linkedin.com/in/{{ $socialHeaderIconsUser->linkedin }}" target="_blank" id="social"><i class="fa fa-fw fa-linkedin text-muted" style="font-size: 14px"></i></a>
+              <a href="http://linkedin.com/in/{{ $socialHeaderIconsUser->linkedin }}" target="_blank" id="social"><i class="fa fa-fw fa-linkedin text-muted" style="font-size: 14px"></i></a>
             @endif
+              <a href="https://www.instagram.com/natetheaverage/" target="_blank" id="social"><i class="fa fa-fw fa-instagram text-muted" style="font-size: 14px"></i></a>
+            
         </div>
     </div>
 </div>

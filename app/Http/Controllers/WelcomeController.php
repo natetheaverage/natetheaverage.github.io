@@ -32,4 +32,4 @@ class WelcomeController extends Controller
 
         return view('welcome', $data, compact('css', 'js', 'socialHeaderIconsUser'));
     }
-}
+} 

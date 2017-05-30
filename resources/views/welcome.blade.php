@@ -30,6 +30,7 @@
                   A <a href="https://wikipedia.org/wiki/Polymath" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.
                   You have happened upon my profesinal portfolio. Here you will find documentation of my experience as well an index of my profesinal services.
                 </p>
+                            {{ dd($posts) }}
             </div> 
           </div>
           
