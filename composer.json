@@ -22,7 +22,8 @@
         "predis/predis": "1.1.*",
         "orangehill/iseed": "2.2",
         "socialiteproviders/etsy": "~2.0",
-        "laravel/socialite": "~2.0"
+        "laravel/socialite": "~2.0",
+        "socialiteproviders/generators": "^2.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
@@ -36,7 +37,7 @@
             "database"
         ],
         "psr-4": {
-            "Natetheaverage\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

@@ -9,6 +9,7 @@ use Canvas\Models\User;
 use Canvas\Models\Settings;
 use Illuminate\Http\Request;
 use Canvas\Jobs\BlogIndexData;
+use App\AuthenticateUser;
 
 class WelcomeController extends Controller
 {
@@ -37,12 +38,18 @@ class WelcomeController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function etsyLogin()
+    public function etsyLogin(AuthenticateUser $aUser, Request $request)
     {
+      $url = "https://openapi.etsy.com/v2/shops/6577223/listings/active.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7"
+      
+      $jdata = 
+      
+      
+      return $aUser->execute($request->has('code'));
       // if()
       // {
 
       // }
-      return \Socialite::with('etsy')->redirect();
+      // return \Socialite::with('etsy')->redirect();
     }
 } 

@@ -30,6 +30,7 @@
     26 => 'App\\Providers\\RouteServiceProvider',
     27 => 'Orangehill\\Iseed\\IseedServiceProvider',
     28 => 'SocialiteProviders\\Manager\\ServiceProvider',
+    29 => 'SocialiteProviders\\Generators\\GeneratorsServiceProvider',
   ),
   'eager' => 
   array (
@@ -49,6 +50,7 @@
     13 => 'Canvas\\CanvasServiceProvider',
     14 => 'App\\Providers\\RouteServiceProvider',
     15 => 'Orangehill\\Iseed\\IseedServiceProvider',
+    16 => 'SocialiteProviders\\Generators\\GeneratorsServiceProvider',
   ),
   'deferred' => 
   array (

@@ -171,6 +171,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Orangehill\Iseed\IseedServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
+        SocialiteProviders\Generators\GeneratorsServiceProvider::class,
     ],
 
     /*
