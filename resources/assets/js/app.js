@@ -12,7 +12,7 @@ Vue.use(VueResource)
 
 
 // REQUESTS HEADER
-Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
+//Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
 // document.querySelector('#token').getAttribute('value');
 
 // https://openapi.etsy.com/v2/users/9311200/shops?api_key=ljv61i2bg4wa3s9ho3egqgz7
