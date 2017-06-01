@@ -11,7 +11,7 @@ import Axios from 'axios'
 
 Vue.prototype.$http = Axios;
 
-let instance = Axios.create({
+let etsy = Axios.create({
     baseURL: 'https://openapi.etsy.com/v2',
     headers: { 'Access-Control-Allow-Origin': 'http://natetheaverage.com' }
 });
@@ -95,7 +95,7 @@ const app = new Vue({
     },
 });
 
-axios.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
+etsy.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
     .then(function(response) {
         console.log(response);
     })
