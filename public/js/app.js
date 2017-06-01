@@ -16063,7 +16063,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
 
 
 // REQUESTS HEADER
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.http.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:3000/';
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.http.headers.common['Access-Control-Allow-Origin'] = '*';
 // document.querySelector('#token').getAttribute('value');
 
 // https://openapi.etsy.com/v2/users/9311200/shops?api_key=ljv61i2bg4wa3s9ho3egqgz7
