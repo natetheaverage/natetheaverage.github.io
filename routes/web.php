@@ -17,10 +17,22 @@ Route::get('/', 'WelcomeController@index')->name('nta.welcome');
 
 Route::get('/etsyLogin', 'WelcomeController@etsyLogin')->name('nta.etsy.login');
 
+
+
+Route::group(['prefix' => 'api'], function (){
+    Route::get('store', 'EtsyController@store')->name('nta.etsy.store');
+    Route::get('listings', 'EtsyController@listings')->name('nta.etsy.listings');
+});
+
+Route::get('store', function () {
+        return view('pages.store');
+    })->name('nta.shop');
+
+
 Route::group(['prefix' => 'costume'], function () {
     Route::get('production', function () {
         return view('pages.costume.production');
-    });
+    })->name('nta.shop');
     Route::get('contract', function () {
         return view('pages.costume.contract');
     });

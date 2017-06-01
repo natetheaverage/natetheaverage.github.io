@@ -16108,27 +16108,25 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('videoPlayer', __WEBPACK_I
  */
 / __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('example', __webpack_require__(155));
 
-var etsyUrl = "https://openapi.etsy.com/v2";
-var etsyShopId = '6577223';
-var etsyUserId = '9311200';
-
-var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
-    el: '#app-container',
+// const etsyUrl = "https://openapi.etsy.com/v2";
+// const etsyShopId = '6577223';
+// const etsyUserId = '9311200';
+// https://openapi.etsy.com/v2/users/sparkleprincess.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7
+var app = __WEBPACK_IMPORTED_MODULE_1_vue___default.a.extend({
+    // el: '#app-container',
     data: function data() {
-        return {
-            etsyData: {}
-        };
+        return {};
     },
     mounted: function mounted() {
-        // Call api for collection of each model
-        //console.log(`vue mounted on ${ this }`);
-
-
-        this.$http.get('https://openapi.etsy.com/v2/users/sparkleprincess.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7').then(function getData(data) {
+        this.$http.get('/api/store', {}).then(function getData(data) {
+            console.log(data.body);
+        });
+        this.$http.get('/api/listings', {}).then(function getData(data) {
             console.log(data.body);
         });
     }
 });
+var App = new app({ el: '#app-container' });
 
 // etsy.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
 // .then(function(response) {

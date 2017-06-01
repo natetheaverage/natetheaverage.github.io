@@ -2,7 +2,6 @@
 <html lang="en">
     @include('includes.head')
     <body>
-     
       <div id="app-container">
         <div class="container-fluid">
 
@@ -29,10 +28,23 @@
                 <div class="title text-center">
                     NateTheAverage
                 </div>
-                <p class="description pad-top-x2 pad-btm-x2">
-                  A <a href="https://wikipedia.org/wiki/Polymath" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.
+                <p class="description mgn-top mgn-btm-xlg col-sm-8 col-sm-offset-2 ">
+                  A <a href="https://wikipedia.org/wiki/Polymath" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.<br />
                   You have happened upon my profesinal portfolio. Here you will find documentation of my experience as well an index of my profesinal services.
                 </p>
+                <p class="col-sm-8 col-sm-offset-2 ">
+                <a href="{!! route('nta.shop') !!}" class="page-menu-title">
+                    Shop
+                </a>
+                <a href="{!! route('nta.services') !!}" class="page-menu-title">
+                    Services
+                </a>
+                <a href="{!! route('nta.details') !!}" class="page-menu-title">
+                    Details
+                </a>
+                <a href="{!! route('nta.fun') !!}" class="page-menu-title">
+                    Fun
+                </a></p>
                             
             </div> 
           </div>

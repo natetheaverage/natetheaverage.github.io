@@ -23,7 +23,8 @@
         "orangehill/iseed": "2.2",
         "socialiteproviders/etsy": "~2.0",
         "laravel/socialite": "~2.0",
-        "socialiteproviders/generators": "^2.0"
+        "socialiteproviders/generators": "^2.0",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

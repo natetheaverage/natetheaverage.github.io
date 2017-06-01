@@ -69,32 +69,28 @@ Vue.component('videoPlayer', VideoPlayer)
 
 Vue.component('example', require('./components/Example.vue'));
 
-const etsyUrl = "https://openapi.etsy.com/v2";
-const etsyShopId = '6577223';
-const etsyUserId = '9311200';
-
-const app = new Vue({
-    el: '#app-container',
+// const etsyUrl = "https://openapi.etsy.com/v2";
+// const etsyShopId = '6577223';
+// const etsyUserId = '9311200';
+// https://openapi.etsy.com/v2/users/sparkleprincess.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7
+const app = Vue.extend({
+    // el: '#app-container',
     data() {
         return {
-            etsyData: {},
-            // etsyResource: this.$resource('https://openapi.etsy.com/v2/:path'),
-            // etsyShopResource: this.$resource(etsyUrl + '/shops/:etsyShop' + 'js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7'),
-            // etsyListingsResource: this.$resource(etsyUrl + '/shops/:etsyShop/listings/activejs?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7'),
+
         }
 
     },
     mounted() {
-        // Call api for collection of each model
-        //console.log(`vue mounted on ${ this }`);
-
-
-
-        this.$http.get('https://openapi.etsy.com/v2/users/sparkleprincess.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7').then(function getData(data) {
+        this.$http.get('/api/store', {}).then(function getData(data) {
+            console.log(data.body);
+        })
+        this.$http.get('/api/listings', {}).then(function getData(data) {
             console.log(data.body);
         })
     },
 });
+const App = new app({ el: '#app-container' })
 
 // etsy.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
 // .then(function(response) {
