@@ -91,7 +91,7 @@ const app = new Vue({
 
 
         this.$http.get('https://openapi.etsy.com/v2/users/sparkleprincess.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7').then(function getData(data) {
-            console.log(data);
+            console.log(data.body);
         })
     },
 });
