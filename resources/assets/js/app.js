@@ -3,20 +3,25 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-// import VueResource from 'vue-resource'
+import VueResource from 'vue-resource'
 import Vue from 'vue'
-import Axios from 'axios'
-// Vue.use(VueResource)
+// import Axios from 'axios'
+Vue.use(VueResource)
 
 
-Vue.prototype.$http = Axios;
+// Vue.prototype.$http = Axios;
 
-let etsy = Axios.create({
-    baseURL: 'https://openapi.etsy.com/v2',
-    headers: { 'Access-Control-Allow-Origin': 'http://natetheaverage.com' }
-});
-
-
+// let etsy = Axios.create({
+//     baseURL: 'https://openapi.etsy.com/v2',
+//     headers: {
+//         'Access-Control-Allow-Origin': '*',
+//         'Content-Type': 'application/json;',
+//         'Cross-Origin': 'true'
+//     }
+// });
+// ETSY_KEY=ljv61i2bg4wa3s9ho3egqgz7
+// ETSY_SECRET=fx45swa3gk
+// ETSY_REDIRECT_URI=http://natetheaverage.app/etsyLogin
 
 
 
@@ -73,7 +78,7 @@ const app = new Vue({
     data() {
         return {
             etsyData: {},
-            // etsyUserResource: this.$resource('https://openapi.etsy.com/v2/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7'),
+            // etsyResource: this.$resource('https://openapi.etsy.com/v2/:path'),
             // etsyShopResource: this.$resource(etsyUrl + '/shops/:etsyShop' + 'js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7'),
             // etsyListingsResource: this.$resource(etsyUrl + '/shops/:etsyShop/listings/activejs?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7'),
         }
@@ -85,23 +90,19 @@ const app = new Vue({
 
 
 
-        // this.$http.get(getData => {
-        //         console.log(`app.js@ready - UserInfo ${ getData }`);
-        //         that.etsyData = data;
-        //     },
-        //     (response, status) => {
-        //         console.log(`Err app.js@ready with - %s `, status)
-        //     })
+        this.$http.get('https://openapi.etsy.com/v2/users/sparkleprincess.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7').then(function getData(data) {
+            console.log(data);
+        })
     },
 });
 
-etsy.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
-    .then(function(response) {
-        console.log(response);
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
+// etsy.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
+// .then(function(response) {
+//         console.log(response);
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     });
 
 
 

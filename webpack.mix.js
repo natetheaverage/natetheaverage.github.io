@@ -11,6 +11,7 @@ const anime = require('animejs');
  | file for the application as well as bundling up all the JS files.
  |
  */
+// mix.webpackConfig({ target: 'node' })
 
 mix.js('resources/assets/js/app.js', 'public/js')
     // .css(videojs, 'public/css')
