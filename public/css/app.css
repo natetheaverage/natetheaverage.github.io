@@ -6836,7 +6836,17 @@ body {
 .description {
   font-weight: 200;
 }
+.page-menu-links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
 .page-menu-links {
+  margin: auto;
   font-weight: 600;
   font-size: 30px;
 }
@@ -6863,7 +6873,9 @@ body {
   max-width: 900px;
   text-align: left;
   margin: 200px auto;
-  box-shadow: 3px 3px 3px 3px;
+}
+.vjs-default-skin {
+  box-shadow: 3px 3px 3px Black;
 }
 @media screen and (max-width: 700px) {
   .video-player {

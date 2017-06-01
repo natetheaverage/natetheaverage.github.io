@@ -28,29 +28,24 @@
                 <div class="title text-center">
                     NateTheAverage
                 </div>
-                <p class="description mgn-top mgn-btm-xlg col-sm-8 col-sm-offset-2 ">
+                <p class="description mgn-top mgn-btm-lg col-sm-8 col-sm-offset-2 ">
                   A <a href="https://wikipedia.org/wiki/Polymath" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.<br />
-                  You have happened upon my profesinal portfolio. Here you will find documentation of my experience as well an index of my profesinal services.
+                  You have happened upon my professional portfolio. Here you will find documentation of my life experience, items for sale, as well an index of my professional services.
                 </p>
-                <p class="col-sm-8 col-sm-offset-2 ">
-                <a href="{!! route('nta.shop') !!}" class="page-menu-title">
-                    Shop
-                </a>
-                <a href="{!! route('nta.services') !!}" class="page-menu-title">
-                    Services
-                </a>
-                <a href="{!! route('nta.details') !!}" class="page-menu-title">
-                    Details
-                </a>
-                <a href="{!! route('nta.fun') !!}" class="page-menu-title">
-                    Fun
-                </a></p>
+                <p class="page-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">
+                  @include('parts.main-links')
+                </p>
                             
             </div> 
           </div>
           
           <div class="row video-container">
+          
             <div class="video-player">
+            <div class="pre-title ">
+                My Swarm -  
+                </div>
+                <h4>First Unmaned flight, still handeled by computer sending cordinates.</h4>
               <video
                 id="HomePlayer"
                 class="video-js vjs-default-skin"

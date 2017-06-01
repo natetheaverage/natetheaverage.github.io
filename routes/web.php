@@ -26,7 +26,16 @@ Route::group(['prefix' => 'api'], function (){
 
 Route::get('store', function () {
         return view('pages.store');
-    })->name('nta.shop');
+    })->name('nta.store');
+Route::get('services', function () {
+        return view('pages.services');
+    })->name('nta.services');
+Route::get('details', function () {
+        return view('pages.details');
+    })->name('nta.details');
+Route::get('fun', function () {
+        return view('pages.fun');
+    })->name('nta.fun');
 
 
 Route::group(['prefix' => 'costume'], function () {

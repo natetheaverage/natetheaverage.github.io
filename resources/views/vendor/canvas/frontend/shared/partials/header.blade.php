@@ -5,20 +5,11 @@
               <img src="/storage/site-assets/NTA-logo/NTA-sm-blk-120x90.png">
             </a></h1>
             <h3>{!! \Canvas\Models\Settings::blogSubTitle() !!}</h3>
-            @if (!empty($socialHeaderIconsUser->twitter))
-                <a href="http://twitter.com/{{ $socialHeaderIconsUser->twitter }}" target="_blank" id="social"><i class="fa fa-fw fa-twitter text-muted" style="font-size: 14px"></i></a>
-            @endif
-            @if (!empty($socialHeaderIconsUser->facebook))
-                <a href="http://facebook.com/{{ $socialHeaderIconsUser->facebook }}" target="_blank" id="social"><i class="fa fa-fw fa-facebook text-muted" style="font-size: 14px"></i></a>
-            @endif
-            @if (!empty($socialHeaderIconsUser->github))
-                <a href="http://github.com/{{ $socialHeaderIconsUser->github }}" target="_blank" id="social"><i class="fa fa-fw fa-github text-muted" style="font-size: 14px"></i></a>
-            @endif
-            @if(!empty($socialHeaderIconsUser->linkedin))
-              <a href="http://linkedin.com/in/{{ $socialHeaderIconsUser->linkedin }}" target="_blank" id="social"><i class="fa fa-fw fa-linkedin text-muted" style="font-size: 14px"></i></a>
-            @endif
-              <a href="https://www.instagram.com/natetheaverage/" target="_blank" id="social"><i class="fa fa-fw fa-instagram text-muted" style="font-size: 14px"></i></a>
+
             
         </div>
+        <p class="page-menu-links-container mgn-top mgn-btm col-sm-8 col-sm-offset-2">
+          @include('parts.main-links')
+        </p>
     </div>
 </div>
