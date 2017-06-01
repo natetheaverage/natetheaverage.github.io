@@ -40,10 +40,10 @@ class WelcomeController extends Controller
      */
     public function etsyLogin(AuthenticateUser $aUser, Request $request)
     {
-      $url = "https://openapi.etsy.com/v2/shops/6577223/listings/active.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7"
+      $url = "https://openapi.etsy.com/v2/shops/6577223/listings/active.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7";
       
-      $jdata = 
-      
+      $jdata = 'something';
+
       
       return $aUser->execute($request->has('code'));
       // if()

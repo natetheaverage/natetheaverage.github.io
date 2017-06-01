@@ -24,7 +24,7 @@ class AuthenticateUser
     {
         if( ! $hasCode ) return $this->getAuthorizationFirst();
 
-        $user = $this->socialite->driver('etsy')->user();
+        // $user = $this->socialite->driver('etsy')->user();
 
         dd($user);
 
@@ -33,7 +33,7 @@ class AuthenticateUser
     public function getAuthorizationFirst()
     {
         //dd($this->socialite);
-        return $this->socialite->with('etsy')->redirect();
+        // return $this->socialite->with('etsy')->redirect();
     }
 
 

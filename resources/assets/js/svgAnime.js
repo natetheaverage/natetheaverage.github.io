@@ -7,10 +7,8 @@ let colorNumber = anime.random(0, 2);
 module.exports = (function() {
     for (var i = 0; i < pathEls.length; i++) {
         let pathEl = pathEls[i];
-        console.log(pathEl);
 
         const offset = anime.setDashoffset(pathEl);
-        console.log(offset);
 
         pathEl.setAttribute('stroke-dashoffset', offset);
 
@@ -18,7 +16,7 @@ module.exports = (function() {
 
             targets: pathEl,
             update: pathEl.setAttribute('stroke', colors[colorNumber]),
-            // pathEl.setAttribute('stroke', colors[anime.random(0, 3)]);
+            // pathEl.setAttribute('stroke', colors[anime.random(0, 3)]); 
             strokeDashoffset: [offset, 0],
             duration: 5000,
             delay: 500,
@@ -27,7 +25,6 @@ module.exports = (function() {
             easing: 'easeInOutSine',
             autoplay: true,
             complete: function(anim) {
-                // console.log('update : ' + anim.update);
                 pathEl.setAttribute('stroke', colors[anime.random(0, 2)]);
                 logoPlay();
             }
