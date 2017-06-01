@@ -16079,7 +16079,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
 
 
 // REQUESTS HEADER
-//Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
 // document.querySelector('#token').getAttribute('value');
 
 

@@ -30,7 +30,7 @@ Vue.use(VueResource)
 
 
 // REQUESTS HEADER
-//Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
+Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
 // document.querySelector('#token').getAttribute('value');
 
 
