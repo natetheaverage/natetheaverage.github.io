@@ -16059,7 +16059,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Vue.use(VueResource)
+
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$http = __WEBPACK_IMPORTED_MODULE_1_axios___default.a;
+
+var instance = __WEBPACK_IMPORTED_MODULE_1_axios___default.a.create({
+    baseURL: 'https://openapi.etsy.com/v2',
+    headers: { 'Access-Control-Allow-Origin': 'http://natetheaverage.com' }
+});
 
 // enable @keyup.s
 // Vue.directive('on').keyCodes.s = 83
@@ -16121,7 +16128,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     }
 });
 
-axios.get('https://openapi.etsy.com/v2/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7').then(function (response) {
+axios.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7').then(function (response) {
     console.log(response);
 }).catch(function (error) {
     console.log(error);

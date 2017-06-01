@@ -7,7 +7,18 @@
 import Vue from 'vue'
 import Axios from 'axios'
 // Vue.use(VueResource)
+
+
 Vue.prototype.$http = Axios;
+
+let instance = Axios.create({
+    baseURL: 'https://openapi.etsy.com/v2',
+    headers: { 'Access-Control-Allow-Origin': 'http://natetheaverage.com' }
+});
+
+
+
+
 
 // enable @keyup.s
 // Vue.directive('on').keyCodes.s = 83
@@ -84,7 +95,7 @@ const app = new Vue({
     },
 });
 
-axios.get('https://openapi.etsy.com/v2/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
+axios.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
     .then(function(response) {
         console.log(response);
     })
