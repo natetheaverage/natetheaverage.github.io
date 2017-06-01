@@ -1,107 +1,44 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+/**************************************************************************
+ * Vue and Laravel dependencies
+ **************************************************************************/
 import VueResource from 'vue-resource'
 import Vue from 'vue'
-// import Axios from 'axios'
 Vue.use(VueResource)
 
-
-// Vue.prototype.$http = Axios;
-
-// let etsy = Axios.create({
-//     baseURL: 'https://openapi.etsy.com/v2',
-//     headers: {
-//         'Access-Control-Allow-Origin': '*',
-//         'Content-Type': 'application/json;',
-//         'Cross-Origin': 'true'
-//     }
-// });
-// ETSY_KEY=ljv61i2bg4wa3s9ho3egqgz7
-// ETSY_SECRET=fx45swa3gk
-// ETSY_REDIRECT_URI=http://natetheaverage.app/etsyLogin
-
-
-
-// enable @keyup.s
-// Vue.directive('on').keyCodes.s = 83
-
-
 // REQUESTS HEADER
-Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
+// Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://natetheaverage.com';
 // document.querySelector('#token').getAttribute('value');
 
-
-
-
-
-
 require('./bootstrap');
-//window.Vue = Vue;
+window.Vue = Vue;
 
 //Simple Scrollbar downloaded and stored in library here
 const ss = require('./libs/simple-scrollbar.min.js')
 
-
+//video js
 const videojs = require('video.js')
 const vjsyoutube = require('videojs-youtube')
 
 
-
-// Vue Componant registration
-// Trying to keep it simple this time round
-//
-
+/*******************************************
+ * Vue Component registration
+ * Trying to keep it simple this time round
+ *******************************************/
 import MainMenu from './components/Menu.vue'
 Vue.component('MainMenu', MainMenu)
-import VideoPlayer from './components/VideoPlayer.vue'
-Vue.component('videoPlayer', VideoPlayer)
+import EtsyStore from './components/EtsyStore.vue'
+Vue.component('etsyStore', EtsyStore)
+import EtsyListing from './components/EtsyListing.vue'
+Vue.component('etsyListing', EtsyListing)
 
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-/
-
-Vue.component('example', require('./components/Example.vue'));
-
-// const etsyUrl = "https://openapi.etsy.com/v2";
-// const etsyShopId = '6577223';
-// const etsyUserId = '9311200';
-// https://openapi.etsy.com/v2/users/sparkleprincess.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7
-const app = Vue.extend({
-    // el: '#app-container',
-    data() {
-        return {
-
-        }
-
-    },
-    mounted() {
-        this.$http.get('/api/store', {}).then(function getData(data) {
-            console.log(data.body);
-        })
-        this.$http.get('/api/listings', {}).then(function getData(data) {
-            console.log(data.body);
-        })
-    },
-});
+/****************************************************************************************
+ * Import Core Vue module extend application instance and attach it to the page.
+ * *in case I decide to implement a router later this is scalable*
+ ***************************************************************************************/
+import CoreVueObject from './CoreVue.js'
+const app = Vue.extend(CoreVueObject);
 const App = new app({ el: '#app-container' })
 
-// etsy.get('/shops/6577223.js?callback=getData&api_key=ljv61i2bg4wa3s9ho3egqgz7')
-// .then(function(response) {
-//         console.log(response);
-//     })
-//     .catch(function(error) {
-//         console.log(error);
-//     });
-
-
-
-
 //logo animation function
-const lanime = require("./svgAnime.js")
+const logoAnimate = require("./svgAnime.js")

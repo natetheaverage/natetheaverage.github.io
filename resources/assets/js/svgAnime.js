@@ -2,7 +2,7 @@ const anime = require('animejs')
 
 
 const colors = ['#16F0F0', '#FF14AB', '#00FF00', '#FFFF00', '#16F0F0']
-let pathEls = document.querySelectorAll('path');
+let pathEls = document.querySelectorAll('.logo-path');
 let colorNumber = anime.random(0, 2);
 module.exports = (function() {
     for (var i = 0; i < pathEls.length; i++) {

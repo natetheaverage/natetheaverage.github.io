@@ -38,7 +38,6 @@
                             
             </div> 
           </div>
-          
           <div class="row video-container">
           
             <div class="video-player">
