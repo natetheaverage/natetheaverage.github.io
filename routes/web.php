@@ -22,6 +22,7 @@ Route::get('/etsyLogin', 'WelcomeController@etsyLogin')->name('nta.etsy.login');
 Route::group(['prefix' => 'api'], function (){
     Route::get('store', 'EtsyController@store')->name('nta.etsy.store');
     Route::get('listings', 'EtsyController@listings')->name('nta.etsy.listings');
+    Route::get('images/{listingId}', ['uses' => 'EtsyController@images'] )->name('nta.etsy.images');
 });
 
 Route::get('store', function () {

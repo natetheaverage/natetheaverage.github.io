@@ -36,7 +36,6 @@ class EtsyController extends Controller
       });
       $promise->wait();
 
-      // return 'errrr getting data from etsy @ etsyController';
     }
 
     /**
@@ -53,6 +52,33 @@ class EtsyController extends Controller
       $etsyShopId = '6577223';
       $etsyUserId = '9311200';
       $url = $baseUrl.'/shops/'.$etsyShopId.'/listings/active?callback=getData&api_key='.$etsyKey;
+
+      $client = new Client();
+      $request = new \GuzzleHttp\Psr7\Request('GET', $url);
+      $promise = $client->sendAsync($request)->then(function ($response) {
+          $body = $response->getBody();
+          echo $body;
+          $stringBody = (string) $body;
+          return $body;
+      });
+      $promise->wait();
+
+      // return 'errrr getting data from etsy @ etsyController';
+    }
+
+
+    /**
+     * Api consumption for etsy listing images
+     *
+     * @param  $listingId
+     * @return  json
+     */
+    public function images($listingId)
+    {
+      
+      $etsyKey = env('ETSY_KEY');
+      $baseUrl = "https://openapi.etsy.com/v2";
+      $url = $baseUrl.'/listings/'.$listingId.'/images?api_key='.$etsyKey;
 
       $client = new Client();
       $request = new \GuzzleHttp\Psr7\Request('GET', $url);

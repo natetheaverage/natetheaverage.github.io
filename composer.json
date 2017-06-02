@@ -19,7 +19,7 @@
         "cnvs/paper-dark": "*",
         "doctrine/dbal": "2.5.*",
         "fzaninotto/faker": "~1.4",
-        "predis/predis": "1.1.*",
+        "predis/predis": "^1.1",
         "orangehill/iseed": "2.2",
         "socialiteproviders/etsy": "~2.0",
         "laravel/socialite": "~2.0",
