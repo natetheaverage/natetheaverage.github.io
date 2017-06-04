@@ -17009,6 +17009,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'EtsyItem',
@@ -17018,6 +17020,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       images: {},
       currentImage: {}
     };
+  },
+  computed: function computed() {
+    // console.log(this.borderColor)
+    // return this.borderColor = 'border-color:rgba( ${this.currentImage.red}, ${this.currentImage.green}, ${this.currentImage.blue},0.8)'
   },
   methods: {
     loadImages: function loadImages() {
@@ -17029,6 +17035,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     }
   },
+
   mounted: function mounted() {
     this.loadImages();
 
@@ -17057,6 +17064,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'EtsyStoreContainer',
@@ -17074,6 +17082,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       this.$http.get('/api/listings').then(function (data) {
         _this.listings = data.body.results;
+        console.log(data);
         _this.params = data.params;
         _this.pagination = data.pagination;
       });
@@ -20148,7 +20157,7 @@ exports = module.exports = __webpack_require__(24)();
 
 
 // module
-exports.push([module.i, "\n.product-container{\n  border: 3px solid #bbb;\n  border-radius: 10px;\n  padding: 20px;\n}\n.spotlight-image-container{\n}\n.spotlight-image{\n  max-height:300px;\n}\n.thumb-container{\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height:100px;\n  padding: 12px;\n}\n.thumb-image{\n  margin: auto;\n}\n\n", ""]);
+exports.push([module.i, "\n.product-container{\n  border: 1px solid #aaa;\n  border-radius: 10px;\n  margin: 2px;\n  padding: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: hidden;\n}\n.listing-title{\n  font-weight: 400;\n  font-size: 16px;\n  max-height: 20px;\n  padding: 3px 3px;\n  overflow: hidden;\n}\n.listing-price{\n  font-family: Courier New, Courier, monospace;\n  font-weight: 600;\n  font-size: 14px;\n  padding: 3px 3px;\n}\n.spotlight-image-container{\n  margin: auto;\n}\n.spotlight-image{\n  max-height:250px;\n  border-radius: 5px 5px 0 0;\n}\n.thumb-container{\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  border-top: solid 1px #aaa;\n  border-bottom: solid 3px #aaa;\n}\n.thumb-image{\n  margin: auto;\n}\n\n", ""]);
 
 // exports
 
@@ -20176,7 +20185,7 @@ exports = module.exports = __webpack_require__(24)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -60867,33 +60876,7 @@ module.exports = Component.exports
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "product-container col-xs-6"
-  }, [_c('div', [_vm._v(_vm._s(_vm.item.title))]), _vm._v(" "), _c('div', {
-    staticClass: "spotlight-image-container"
-  }, [_c('img', {
-    staticClass: "spotlight-image",
-    attrs: {
-      "src": _vm.currentImage
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "thumb-container"
-  }, _vm._l((_vm.images), function(image) {
-    return _c('img', {
-      staticClass: "thumb-image",
-      attrs: {
-        "src": image.url_75x75
-      },
-      on: {
-        "click": function($event) {
-          _vm.currentImage = image.url_570xN
-        }
-      }
-    })
-  }))])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
+module.exports={render:function(){},staticRenderFns:[]}
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
@@ -60987,7 +60970,9 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', [_vm._v("Store title")]), _vm._v(" "), _vm._l((_vm.listings), function(item) {
+  return _c('div', [_c('div', {
+    staticClass: "title"
+  }, [_vm._v(_vm._s(_vm.store.section))]), _vm._v(" "), _c('hr'), _vm._v(" "), _vm._l((_vm.listings), function(item) {
     return _c('etsy-listing', {
       attrs: {
         "item": item

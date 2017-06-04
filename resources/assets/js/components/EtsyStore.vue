@@ -1,6 +1,7 @@
 <template>
   <div>
-      <div>Store title</div>
+      <div class="title">{{store.section}}</div>
+      <hr />
       <etsy-listing
         v-for="item in listings"
         :item='item'
@@ -23,6 +24,7 @@ export default {
       loadListings(){
         this.$http.get('/api/listings').then( (data) => {
           this.listings = data.body.results
+          console.log(data)
           this.params = data.params
           this.pagination = data.pagination
         })

@@ -41,7 +41,7 @@ Route::get('fun', function () {
 
 Route::group(['prefix' => 'costume'], function () {
     Route::get('production', function () {
-        return view('pages.costume.production');
+        return view('pages.store');
     })->name('nta.shop');
     Route::get('contract', function () {
         return view('pages.costume.contract');

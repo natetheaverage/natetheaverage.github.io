@@ -23,7 +23,7 @@ class EtsyController extends Controller
       $baseUrl = "https://openapi.etsy.com/v2";
       $etsyShopId = '6577223';
       $etsyUserId = '9311200';
-      $url = $baseUrl.'/shops/'.$etsyShopId.'?callback=getData&api_key='.$etsyKey;
+      $url = $baseUrl.'/shops/'.$etsyShopId.'/sections?callback=getData&api_key='.$etsyKey;
 
       $client = new Client();
       $request = new \GuzzleHttp\Psr7\Request('GET', $url);
