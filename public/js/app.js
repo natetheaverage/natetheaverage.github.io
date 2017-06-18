@@ -60876,7 +60876,44 @@ module.exports = Component.exports
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function(){},staticRenderFns:[]}
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-xs-12 col-sm-6 col-lg-4"
+  }, [_c('div', {
+    staticClass: "product-container",
+    style: (_vm.borderColor)
+  }, [_c('div', {
+    staticClass: "spotlight-image-container"
+  }, [_c('img', {
+    staticClass: "spotlight-image",
+    attrs: {
+      "src": _vm.currentImage
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "thumb-container"
+  }, _vm._l((_vm.images), function(image) {
+    return _c('img', {
+      staticClass: "thumb-image",
+      attrs: {
+        "src": image.url_75x75
+      },
+      on: {
+        "click": function($event) {
+          _vm.currentImage = image.url_570xN
+        }
+      }
+    })
+  })), _vm._v(" "), _c('div', {
+    staticClass: "listing-title"
+  }, [_vm._v(_vm._s(_vm.item.title))]), _vm._v(" "), _c('p'), _c('div', {
+    staticClass: "listing-price"
+  }, [_vm._v("$" + _vm._s(_vm.item.price))]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": _vm.item.url
+    }
+  }, [_vm._v("Click for more or to Purchase!")])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {

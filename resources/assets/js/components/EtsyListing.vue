@@ -21,7 +21,7 @@
         </div> <!--thumb container-->
         <div class="listing-title">{{ item.title }}</div>
         <p><div class="listing-price">${{ item.price }}</div>
-        <a :href="item.">Click for more or to Purchase!</a>
+        <a :href="item.url">Click for more or to Purchase!</a>
     </div> <!--product container-->
   </div><!--Vue container-->
 </template>
