@@ -57,24 +57,17 @@
           </div>
         </div>
       
-    <main-menu></main-menu>
-  </div>
-            
+      <main-menu></main-menu>
+      </div> 
+    </div>
+    @include('canvas::frontend.shared.partials.footer')
     
-        
-        
-       
-        
-        
-      </div>
-      @include('canvas::frontend.shared.partials.footer')
-      
-      <script type="text/javascript" src="js/app.js"></script>
-      {{-- <script src="http://vjs.zencdn.net/5.19.2/video.js"></script> --}}
-      {{-- <script src="../node_modules/video.js/dist/video.js"></script>
-      <script src="../dist/Youtube.js"></script> --}}
+    <script type="text/javascript" src="js/app.js"></script>
+    {{-- <script src="http://vjs.zencdn.net/5.19.2/video.js"></script> --}}
+    {{-- <script src="../node_modules/video.js/dist/video.js"></script>
+    <script src="../dist/Youtube.js"></script> --}}
 
-      {{ dd($posts) }}
-    </body>
+    {{-- dd($posts) --}}
+  </body>
    
 </html>
