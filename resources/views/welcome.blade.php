@@ -65,7 +65,7 @@
       <main-menu></main-menu>
       </div> 
     </div>
-    @include('nta.footer')
+    @include('vendor.canvas.frontend.shared.footer')
     
     <script type="text/javascript" src="js/app.js"></script>
     {{-- <script src="http://vjs.zencdn.net/5.19.2/video.js"></script> --}}
