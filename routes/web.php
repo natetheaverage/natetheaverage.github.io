@@ -25,6 +25,10 @@ Route::group(['prefix' => 'api'], function (){
     Route::get('images/{listingId}', ['uses' => 'EtsyController@images'] )->name('nta.etsy.images');
 });
 
+Route::get('footer', function () {
+    return view('vendor.canvas.frontend.shared.footer');
+})->name('nta.footer');
+
 Route::get('store', function () {
         return view('pages.store');
     })->name('nta.store');
