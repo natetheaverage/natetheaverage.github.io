@@ -40,7 +40,7 @@
           </div>
           
           <div class="row video-container">
-          <div class="title">FEATURED
+          <div class="center title">FEATURED
           </div>
             <div class="video-player">
             <div class="pre-title ">
@@ -59,7 +59,7 @@
           </div>
         </div>
       
-        {{ dd($posts) }}
+        
 
 
       <main-menu></main-menu>
@@ -74,5 +74,5 @@
 
     
   </body>
-   
+  {{ dd($posts) }}
 </html>
