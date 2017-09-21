@@ -1,1 +1,0 @@
-<?php echo JsValidator::formRequest('Canvas\Http\Requests\SearchRequest', '#search'); ?>
