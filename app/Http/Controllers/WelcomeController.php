@@ -21,6 +21,8 @@ class WelcomeController extends Controller
      */
     public function index(Request $request)
     {
+        $minutes = 2000000;
+
         $user = Auth::user();
         $tag = $request->get('tag');
         $data = $this->dispatch(new BlogIndexData($tag));
@@ -28,6 +30,7 @@ class WelcomeController extends Controller
         $socialHeaderIconsUser = User::where('id', Settings::socialHeaderIconsUserId())->first();
         $css = Settings::customCSS();
         $js = Settings::customJS();
+        $cookie = cookie('remembered', 'remembered', $minutes);
 
         return view('welcome', $data, compact('css', 'js', 'socialHeaderIconsUser', 'user'));
     }

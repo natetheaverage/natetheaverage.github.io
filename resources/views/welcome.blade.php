@@ -12,12 +12,14 @@
             @endif
           </div>
             
+           @if (Cookie::get('remembered') != 'remembered') 
           <div class="body-content container-fluid text-center">
             <div class="row">
                 <div class="logo">
                     @include('parts.svg-logo')
                 </div>
             </div>
+            @endif
             <div class="row text-center ">
                 <div class="pre-title ">
                 Hi I'm Nathan Leite
@@ -52,13 +54,13 @@
 
 
           <div class="row video-container">
-          <div class="center title">FEATURED
+          <div class="center title">FEATURED VIDEO
           </div>
             <div class="video-player">
             <div class="pre-title ">
-                My Swarm -  
+                My Quad Swarm -  
                 </div>
-                <h4>First Unmaned flight, still handeled by computer sending cordinates.</h4>
+                <h4>First Unmaned flight, still handeled by computer sending hand coded xyz cordinates.</h4>
               <video
                 id="HomePlayer"
                 class="video-js vjs-default-skin"
