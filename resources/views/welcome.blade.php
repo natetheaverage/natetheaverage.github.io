@@ -39,16 +39,16 @@
             </div> 
           </div>
           
-          <div class="row post">
-          
-          {{--  <div class="post-title"> {!! $posts[0]["title"] !!}</div>  --}}
-          @foreach ($posts as $post)
-              
+          <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-              <p>{{ $post->title }}</p>
-          @endforeach
-          
-          </div>
+                @include('canvas::frontend.blog.partials.tag')
+                @include('canvas::frontend.blog.partials.posts')
+                @include('canvas::frontend.blog.partials.paginate-index')
+            </div>
+        </div>
+    </div>
 
 
           <div class="row video-container">
