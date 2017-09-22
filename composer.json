@@ -15,7 +15,7 @@
     "require": {
         "laravel/framework": "5.3.9",
         "laravel/tinker": "~1.0",
-        "cnvs/easel": "3.3.",
+        "cnvs/easel": "3.4.*",
         "cnvs/paper-dark": "*",
         "doctrine/dbal": "2.5.*",
         "fzaninotto/faker": "~1.4",
@@ -24,7 +24,8 @@
         "socialiteproviders/etsy": "~2.0",
         "laravel/socialite": "~2.0",
         "socialiteproviders/generators": "^2.0",
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~6.0",
+        "barryvdh/laravel-debugbar": "^2.3"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
