@@ -39,6 +39,18 @@
             </div> 
           </div>
           
+          <div class="row post">
+          
+          {{--  <div class="post-title"> {!! $posts[0]["title"] !!}</div>  --}}
+          @foreach ($posts as $post)
+              
+
+              <p>{{ $post->title }}</p>
+          @endforeach
+          
+          </div>
+
+
           <div class="row video-container">
           <div class="center title">FEATURED
           </div>
