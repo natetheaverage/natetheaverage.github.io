@@ -2,7 +2,7 @@
   <div class="col-xs-12 col-sm-6 col-lg-4">
 
 
-      <div class="product-container" :style="borderColor">
+      <div class="product-container" >
 
         <div class="spotlight-image-container">
           <img
