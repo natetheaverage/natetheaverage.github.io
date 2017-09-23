@@ -5,8 +5,7 @@
   <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
   
   <title>NateTheAverage</title>
-
-
+ 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ asset('/assets/images/nta-favicon.png') }}">
   @include('canvas::frontend.shared.partials.meta')
