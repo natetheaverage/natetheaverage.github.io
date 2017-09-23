@@ -16,6 +16,6 @@
   <!-- js video player -->
   <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
   
-  {{--  <link href="/css/app.css" rel="stylesheet" type="text/css">  --}}
+  <link href="/css/app.css" rel="stylesheet" type="text/css">
   <link href="/css/simple-scrollbar.css" rel="stylesheet" type="text/css">
 
