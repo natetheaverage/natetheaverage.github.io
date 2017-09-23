@@ -32,7 +32,7 @@
                     NateTheAverage
                 </div>
                 <p class="description mgn-top mgn-btm-lg col-sm-8 col-sm-offset-2 ">
-                  A <a href="https://wikipedia.org/wiki/Polymath" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.<br />
+                  A <a href="https://wikipedia.org/wiki/Polymath" target="_blank" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.<br />
                   You have happened upon my professional portfolio. Here you will find documentation of my life experience, items for sale, as well an index of my professional services.
                 </p>
                 <p class="page-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">
