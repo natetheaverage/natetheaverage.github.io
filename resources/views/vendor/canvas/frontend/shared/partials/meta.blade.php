@@ -9,9 +9,6 @@
 <meta name="description" content="{{ \Canvas\Models\Settings::blogDescription() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="{{ asset('/assets/images/nta-favicon.png') }}">
-
 <!-- Facebook Open Graph Tags -->
 <meta property="og:title" content="@yield('og-title')">
 <meta property="og:image" content="@yield('og-image')">

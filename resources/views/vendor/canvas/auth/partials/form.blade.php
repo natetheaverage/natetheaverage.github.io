@@ -11,7 +11,7 @@
             <label>
                 <input type="checkbox" name="remember">
                 <i class="input-helper"></i>
-                Remember me
+                Remember me please
             </label>
         </div>
     </div>
