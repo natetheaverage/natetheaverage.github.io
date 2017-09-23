@@ -6849,7 +6849,7 @@ body {
   margin: auto;
   font-weight: 200;
   font-size: 18px;
-}
+} 
 @media screen and (max-width: 600px) {
   .title {
     font-size: 46px;
