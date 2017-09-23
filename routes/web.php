@@ -14,7 +14,7 @@
 
 Route::get('/', 'WelcomeController@index')->name('nta.welcome');
 
-    //return view('welcome', compact('baseUrl'));
+    //return view('welcome', compact('baseUrl')); 
 
 Route::get('/etsyLogin', 'WelcomeController@etsyLogin')->name('nta.etsy.login');
 
@@ -40,17 +40,14 @@ Route::get('fun', function () {
     })->name('nta.fun');
 
 
-Route::group(['prefix' => 'costume'], function () {
-    Route::get('production', function () {
-        return view('pages.store');
-    })->name('nta.shop');
-    Route::get('contract', function () {
-        return view('pages.costume.contract');
-    });
-    Route::get('alacart', function () {
-        return view('pages.costume.alacart');
-    });
-});
+
+Route::get('costumery', function () {
+    return view('pages.costume.costumery');
+})->name('nta.costumery');
+Route::get('puppetry', function () {
+    return view('pages.costume.puppetry');
+})->name('nta.puppetry');
+
 
 Route::group(['prefix' => 'clothing'], function () {
     Route::get('design', function () {
@@ -67,7 +64,7 @@ Route::group(['prefix' => 'clothing'], function () {
 Route::group(['prefix' => 'performance'], function () {
     Route::get('for-hire', function () {
         return view('pages.performance.for-hire');
-    });
+    })->name('nta.for-hire');;
     Route::get('wardrobe', function () {
         return view('pages.performance.wardrobe');
     });
@@ -95,9 +92,9 @@ Route::group(['prefix' => 'technology'], function () {
     Route::get('machine', function () {
         return view('pages.technology.machine');
     });
-    Route::get('prototype', function () {
+    Route::get('prototyping', function () {
         return view('pages.technology.prototype');
-    });
+    })->name('nta.prototyping');
     Route::get('quadrocopters', function () {
         return view('pages.technology.quadrocopters');
     });
