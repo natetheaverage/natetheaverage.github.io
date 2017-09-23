@@ -13,6 +13,8 @@
 
 
 Route::get('/', 'WelcomeController@index')->name('nta.welcome');
+Route::get('/index', 'WelcomeController@index');
+
     //return view('welcome', compact('baseUrl'));
 
 Route::get('/etsyLogin', 'WelcomeController@etsyLogin')->name('nta.etsy.login');
