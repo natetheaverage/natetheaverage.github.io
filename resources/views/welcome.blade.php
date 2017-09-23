@@ -12,7 +12,7 @@
             @endif
           </div>
             
-           @if (Cookie::get('remembered') != 'remembered') 
+           @if (Cookie::get('average_session') == "") 
           <div class="body-content container-fluid text-center">
             <div class="row">
                 <div class="logo">
