@@ -12,8 +12,9 @@
             @endif
           </div>
             
-           @if (Cookie::get('average_session') == "") 
+           
           <div class="body-content container-fluid text-center">
+            @if (Cookie::get('average_session') == "") 
             <div class="row">
                 <div class="logo">
                     @include('parts.svg-logo')
