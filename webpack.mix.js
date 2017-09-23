@@ -1,4 +1,5 @@
 const { mix } = require('laravel-mix');
+require('laravel-mix-stylus');
 const anime = require('animejs');
 // const videoj = require('!style-loader!css-loader!video.js/dist/video-js.css');
 /*
@@ -13,7 +14,7 @@ const anime = require('animejs');
  */
 // mix.webpackConfig({ target: 'node' })
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix.js('resources/assets/js/app.js', 'public/js');
     // .css(videojs, 'public/css')
-    .stylus('resources/assets/styl/app.styl', 'public/css')
-    .browserSync('natetheaverage.app');
+    mix.stylus('resources/assets/styl/app.styl', 'public/css');
+    mix.browserSync('natetheaverage.app');
