@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         @include('includes.head')
-        <link href="css/app.css" rel="stylesheet" type="text/css">
+        
     </head>
     <body>
       <div id="app-container">

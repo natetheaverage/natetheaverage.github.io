@@ -22,7 +22,7 @@ elixir(function (mix) {
     
     mix.webpack('resources/assets/js/app.js', 'public/js')
     // .css(videojs, 'public/css')
-    .stylus('./resources/assets/styl/app.styl', 'public/css')
+    .stylus('app.styl', 'public/css')
     .browserSync({ proxy: 'natetheaverage.app' });
 
 });

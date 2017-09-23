@@ -1,4 +1,4 @@
-<head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +16,6 @@
   <!-- js video player -->
   <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
   
-  <link href="css/app.css" rel="stylesheet" type="text/css">
-  <link href="css/simple-scrollbar.css" rel="stylesheet" type="text/css">
-</head>
+  {{--  <link href="/css/app.css" rel="stylesheet" type="text/css">  --}}
+  <link href="/css/simple-scrollbar.css" rel="stylesheet" type="text/css">
+

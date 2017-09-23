@@ -1,7 +1,7 @@
-@if( ! Request::is('performance/for-hire'))
+@if( ! Request::is('services/for-hire'))
 <a href="{!! route('nta.for-hire') !!}" class="page-sub-menu-links">Performance Art</a>
 @endif
-@if( ! Request::is('costumery'))
+@if( ! Request::is('services/costumery'))
 <a href="{!! route('nta.costumery') !!}" class="page-sub-menu-links">Costume Design</a>
 @endif
 @if( ! Request::is('services/prototyping'))

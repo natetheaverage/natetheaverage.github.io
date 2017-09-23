@@ -39,15 +39,20 @@ Route::get('fun', function () {
         return view('pages.fun');
     })->name('nta.fun');
 
-
-
-Route::get('costumery', function () {
-    return view('pages.costume.costumery');
-})->name('nta.costumery');
-Route::get('puppetry', function () {
-    return view('pages.costume.puppetry');
-})->name('nta.puppetry');
-
+Route::group(['prefix' => 'services'], function () {
+    Route::get('costumery', function () {
+        return view('pages.costume.costumery');
+    })->name('nta.costumery');
+    Route::get('puppetry', function () {
+        return view('pages.costume.puppetry');
+    })->name('nta.puppetry');
+    Route::get('for-hire', function () {
+        return view('pages.performance.for-hire');
+    })->name('nta.for-hire');;
+    Route::get('prototyping', function () {
+        return view('pages.technology.prototype');
+    })->name('nta.prototyping');
+});
 
 Route::group(['prefix' => 'clothing'], function () {
     Route::get('design', function () {
@@ -62,9 +67,7 @@ Route::group(['prefix' => 'clothing'], function () {
 });
 
 Route::group(['prefix' => 'performance'], function () {
-    Route::get('for-hire', function () {
-        return view('pages.performance.for-hire');
-    })->name('nta.for-hire');;
+    
     Route::get('wardrobe', function () {
         return view('pages.performance.wardrobe');
     });
@@ -92,9 +95,7 @@ Route::group(['prefix' => 'technology'], function () {
     Route::get('machine', function () {
         return view('pages.technology.machine');
     });
-    Route::get('prototyping', function () {
-        return view('pages.technology.prototype');
-    })->name('nta.prototyping');
+    
     Route::get('quadrocopters', function () {
         return view('pages.technology.quadrocopters');
     });

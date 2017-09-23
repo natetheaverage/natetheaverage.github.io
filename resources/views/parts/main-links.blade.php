@@ -4,7 +4,7 @@
 @if( ! Request::is('store'))
 <a href="{!! route('nta.store') !!}" class="page-menu-links">Shop</a>
 @endif
-@if( ! Request::is('services'))
+@if( ! Request::is('services/*'))
 <a href="{!! route('nta.services') !!}" class="page-menu-links">Services</a>
 @endif
 @if( ! Request::is('details'))
