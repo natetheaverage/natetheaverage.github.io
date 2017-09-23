@@ -10,7 +10,7 @@
             :src="currentImage"  
           />
         </div>
-
+ 
         <div class="thumb-container">
           <img 
             @click="currentImage=image.url_570xN"
