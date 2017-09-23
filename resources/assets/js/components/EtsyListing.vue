@@ -36,10 +36,6 @@ export default {
           currentImage:{},
         }
     },
-    computed: () => {
-      // console.log(this.borderColor)
-      // return this.borderColor = 'border-color:rgba( ${this.currentImage.red}, ${this.currentImage.green}, ${this.currentImage.blue},0.8)'
-    },
     methods: {
       loadImages(){
         this.$http.get(`/api/images/${this.item.listing_id}`).then( (data) => {
