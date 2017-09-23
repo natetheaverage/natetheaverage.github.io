@@ -13,7 +13,6 @@
 
 
 Route::get('/', 'WelcomeController@index')->name('nta.welcome');
-Route::get('/index', 'WelcomeController@index');
 
     //return view('welcome', compact('baseUrl'));
 
