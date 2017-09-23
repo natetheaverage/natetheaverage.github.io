@@ -54,7 +54,7 @@
 
 
           <div class="row video-container">
-          <div class="center title">FEATURED VIDEO
+          <div class="center title">FEATURED VIDEO 
           </div>
             <div class="video-player">
             <div class="pre-title ">
