@@ -16,10 +16,10 @@ window.Vue = Vue;
 const ss = require('./libs/simple-scrollbar.min.js')
 
 //video js
-const videojs = require('video.js')
-const vjsyoutube = require('videojs-youtube')
-const vjsyoutube = require('videojs-chromecast')
 
+const vjsyoutube = require('videojs-youtube')
+const vjschromecast = require('videojs-chromecast')
+const videojs = require('video.js')  // Must be after plugins
 
 /*******************************************
  * Vue Component registration

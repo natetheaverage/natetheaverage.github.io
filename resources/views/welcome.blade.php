@@ -91,10 +91,10 @@
     @include('includes.footer')
     
     <script type="text/javascript" src="js/app.js"></script>
-    {{-- <script src="http://vjs.zencdn.net/5.19.2/video.js"></script> --}}
+    {{-- <script src="http://vjs.zencdn.net/5.19.2/video.js"></script>
     <script src="../node_modules/video.js/dist/video.min.js"></script>
-    <script src="../node_modules/videojs-youtube/dist/Youtube.min.js"></script>
-    <script src="../node_modules/videojs-chromecast/dist/videojs-chromecast.js"></script>
+    <script src="../node_modulesdist/Youtube.min.js"></script>
+    <script src="../node_modules/videojs-chromecast/dist/videojs-chromecast.js"></script> --}}
 
     
   </body>
