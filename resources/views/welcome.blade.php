@@ -16,7 +16,7 @@
         <p class="page-menu-links-container mgn-top-lg col-sm-8 col-sm-offset-2">
           @include('parts.main-links')
         </p>
-
+        @endif
           <div class="body-content container-fluid text-center">
             @if (Cookie::get('average_session') == "") 
             <div class="row">
