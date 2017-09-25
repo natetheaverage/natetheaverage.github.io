@@ -75,7 +75,7 @@
       
         
 
-
+      {{--  removed menu cause it is full of crud   --}}
       {{--  <main-menu></main-menu>  --}}
       </div> 
     </div>
