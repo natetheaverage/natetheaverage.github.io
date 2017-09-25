@@ -13,12 +13,12 @@
 
 
         @if (Cookie::get('average_session'))
-        <p class="page-menu-links-container mgn-top-lg col-sm-8 col-sm-offset-2">
+        <p class="page-menu-links-container mgn-top-md mgn-btm col-sm-8 col-sm-offset-2">
           @include('parts.main-links')
         </p>
         @endif
 
-          <div class="body-content container-fluid text-center">
+          <div class="body-content container-fluid text-center col-sm-12">
             @if (Cookie::get('average_session') == "") 
             <div class="row">
                 <div class="logo">

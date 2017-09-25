@@ -1,6 +1,4 @@
-@if( Request::is('/'))
-<a href="{!! route('nta.welcome') !!}" class="page-menu-links active">Home</a>
-@else
+@if( ! Request::is('/'))
 <a href="{!! route('nta.welcome') !!}" class="page-menu-links">Home</a>
 @endif
 @if( Request::is('store'))

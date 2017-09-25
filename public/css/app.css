@@ -6765,6 +6765,9 @@ button.close {
 .mgn-top {
   margin-top: 20px;
 }
+.mgn-top-md {
+  margin-top: 75px;
+}
 .mgn-btm {
   margin-bottom: 20px;
 }
@@ -6868,14 +6871,14 @@ body {
   }
 }
 .video-container {
-  background-color: #b8b89f;
+  background-color: #b1c7da;
   border-top: solid 1px #ff14ab;
   border-bottom: solid 1px #ff14ab;
 }
 .video-player {
   max-width: 900px;
   text-align: left;
-  margin: 200px auto;
+  margin: 100px auto;
 }
 .vjs-default-skin {
   box-shadow: 3px 3px 3px Black;
