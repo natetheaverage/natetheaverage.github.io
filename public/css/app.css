@@ -6851,10 +6851,17 @@ body {
   font-weight: 600;
   font-size: 30px;
 }
+.page-menu-links-container .active {
+  color: #52656b !important;
+  text-decoration: underline !important;
+}
 .page-menu-links-container .page-sub-menu-links {
   margin: auto;
   font-weight: 400;
   font-size: 18px;
+}
+.page-menu-links-container .page-sub-menu-links .active {
+  color: #52656b;
 }
 @media screen and (max-width: 600px) {
   .title {
@@ -6878,7 +6885,7 @@ body {
 .video-player {
   max-width: 900px;
   text-align: left;
-  margin: 100px auto;
+  margin: 50px auto;
 }
 .vjs-default-skin {
   box-shadow: 3px 3px 3px Black;
