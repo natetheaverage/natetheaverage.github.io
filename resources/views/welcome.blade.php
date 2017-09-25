@@ -21,7 +21,7 @@
                 </div>
             </div>
             @endif
-            <div class="row text-center ">
+            <div class="row pad-top-md text-center ">
                 <div class="pre-title ">
                 Hi I'm Nathan Leite
                 </div>
@@ -43,15 +43,14 @@
           </div>
           
           <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-                @include('canvas::frontend.blog.partials.tag')
-                @include('canvas::frontend.blog.partials.posts')
-                @include('canvas::frontend.blog.partials.paginate-index')
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    @include('canvas::frontend.blog.partials.tag')
+                    @include('canvas::frontend.blog.partials.posts')
+                    @include('canvas::frontend.blog.partials.paginate-index')
+                </div>
             </div>
         </div>
-    </div>
 
 
           <div class="row video-container">
@@ -77,7 +76,7 @@
         
 
 
-      <main-menu></main-menu>
+      {{--  <main-menu></main-menu>  --}}
       </div> 
     </div>
     @include('includes.footer')
@@ -89,5 +88,4 @@
 
     
   </body>
-  {{ dd($posts) }}
 </html>

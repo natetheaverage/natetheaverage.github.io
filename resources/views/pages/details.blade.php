@@ -1,8 +1,6 @@
 @extends('canvas::frontend.layout')
 
-    <p class="page-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">
-        @include('parts.main-links')
-    </p>
+    
     
 @section('content')
 

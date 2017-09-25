@@ -7,9 +7,11 @@
   <title>NateTheAverage</title>
  
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{{ asset('/assets/images/nta-favicon.png') }}">
+  
   @include('canvas::frontend.shared.partials.meta')
   @include('canvas::frontend.shared.partials.css')
+
+  <link rel="icon" type="image/png" href="{{ asset('/assets/images/nta-favicon.png') }}">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,200" rel="stylesheet" type="text/css">
 
