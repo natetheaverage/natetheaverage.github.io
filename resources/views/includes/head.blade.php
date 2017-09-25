@@ -15,7 +15,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,200" rel="stylesheet" type="text/css">
 
   <!-- js video player   -->
-  <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+  {{--  <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+  <script src="path/to/videojs-chromecast/dist/videojs-chromecast.js"></script>  --}}
    
    <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ asset('/assets/images/nta-favicon.png') }}">
