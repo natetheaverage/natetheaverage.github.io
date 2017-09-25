@@ -49,15 +49,17 @@
             </div> 
           </div>
           
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    @include('canvas::frontend.blog.partials.tag')
-                    @include('canvas::frontend.blog.partials.posts')
-                    @include('canvas::frontend.blog.partials.paginate-index')
-                </div>
+          <div class="row">
+            <div class="container-fluid col-sm-12">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      @include('canvas::frontend.blog.partials.tag')
+                      @include('canvas::frontend.blog.partials.posts')
+                      @include('canvas::frontend.blog.partials.paginate-index')
+                  </div>
+              </div>
             </div>
-        </div>
+          </div>
 
 
           <div class="row video-container">

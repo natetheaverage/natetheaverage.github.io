@@ -18,6 +18,7 @@ const ss = require('./libs/simple-scrollbar.min.js')
 //video js
 const videojs = require('video.js')
 const vjsyoutube = require('videojs-youtube')
+const vjsyoutube = require('videojs-chromecast')
 
 
 /*******************************************
