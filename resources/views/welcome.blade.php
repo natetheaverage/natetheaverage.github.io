@@ -4,15 +4,19 @@
     <body>
       <div id="app-container">
         <div class="container-fluid">
-
           <div class="top-right">
             @if($user)
               <a href="{!! route('canvas.admin') !!}" class="btn btn-default">Controls</a>
               <a href="{!! route('canvas.blog.post.index') !!}" class="btn btn-default">List All Pages</a>
             @endif
           </div>
-            
-           
+
+
+        @if (Cookie::get('average_session'))
+        <p class="page-menu-links-container mgn-top-lg col-sm-8 col-sm-offset-2">
+          @include('parts.main-links')
+        </p>
+
           <div class="body-content container-fluid text-center">
             @if (Cookie::get('average_session') == "") 
             <div class="row">
@@ -35,9 +39,11 @@
                   A <a href="https://wikipedia.org/wiki/Polymath" target="_blank" title="a person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems.">Polymath</a> in training.<br />
                   You have happened upon my professional portfolio. Here you will find documentation of my life experience, items for sale, as well an index of my professional services.
                 </p>
+                @if (Cookie::get('average_session') == "")
                 <p class="page-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">
                   @include('parts.main-links')
                 </p>
+                @if (Cookie::get('average_session') == "")
                             
             </div> 
           </div>
