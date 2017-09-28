@@ -1,4 +1,21 @@
 /*menu.styl*/
+.page-menu-links-container
+  display flex
+  flex-direction row
+  // justify-content space-between
+  .page-menu-links
+    margin auto
+    font-weight 600
+    font-size 30px
+  .active
+    color brand-low!important
+    text-decoration underline!important
+  .page-sub-menu-links
+    margin auto
+    font-weight 400
+    font-size 18px
+    .active
+      color brand-low
 .menu 
   text-align center
   height 90%
@@ -29,7 +46,6 @@
     display flex
     justify-content center
     font-family monospace
-    
 @media screen and (max-width: 1000px)
   .menu 
     // margin-top 35%
@@ -45,9 +61,19 @@
     text-align left
     font-family monospace
 @media screen and (max-width: 800px)
-   .menu 
+  .page-menu-links-container
+    .page-menu-links
+      font-size 28px
+    .page-sub-menu-links
+      font-size 14px
+  .menu 
     width 100%
 @media screen and (max-width: 600px)
+  .page-menu-links-container
+    .page-menu-links
+      font-size 24px
+    .page-sub-menu-links
+      font-size 12px
   .menu 
     // margin-top 25%
     .mm-title
@@ -64,6 +90,7 @@
   .filters
     font-size 14px
     font-family monospace
-@media screen and (max-width: 400px)
-  .menu 
-    // margin-top 75%
+// @media screen and (max-width: 400px)
+//   .page-menu-links-container
+//     .page-menu-links
+//     .page-sub-menu-links

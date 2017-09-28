@@ -1,7 +1,7 @@
 <div class="container-fluid">
     @if(!empty(\Canvas\Models\Settings::disqus()))
         @include('canvas::frontend.blog.partials.disqus')
-    @endif
+    @endif 
     <div style="text-align:center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
