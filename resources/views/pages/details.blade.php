@@ -4,6 +4,10 @@
     
 @section('content')
 
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <p >
+        
 ​Skill Set
 This is a rated resume based on a five star rating one star representing absolute beginner, five stars representing perfection.
  
@@ -74,5 +78,10 @@ Notes: Carnival de Fuego evening fire show. Stilt walker on articulating & four 
 - Kevin Larson Presents 2006- 2011
 - Burning Man (art community festival) 2008 - 2010
 - Street Performer (nationwide) 2011 -Present﻿
+
+    
+        </p>
+    </div>
+</div>
 
 @stop
