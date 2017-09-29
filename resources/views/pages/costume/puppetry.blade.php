@@ -1,13 +1,3 @@
-@extends('canvas::frontend.layout')
-
-@section('content')
-
-<div class="row">
-    <p class="page-sub-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">
-        @include('parts.service-links')
-    </p>
-</div>
-
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
         <p >
@@ -18,4 +8,3 @@
         </p>
     </div>
 </div>
-@stop
