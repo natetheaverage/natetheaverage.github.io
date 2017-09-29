@@ -22,7 +22,7 @@
 <a href="{!! route('nta.fun') !!}" class="page-menu-links">Fun</a>
 @endif
 @if( Request::is('services'))
-<main-menu></main-menu>
+
 {{--  <div class="container-fluid" id="head-c">
     <div class="row">
         <p class="page-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">

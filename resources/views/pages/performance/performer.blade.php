@@ -1,16 +1,4 @@
-@extends('canvas::frontend.layout')
 
-@section('content')
-<div class="container-fluid" id="head-c">
-
-    <div class="row">
-        <p class="page-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">
-            @include('parts.service-links')
-        </p>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
             <p >
                 “Mirror Man, exactly what he sounds like and a festival staple” – Billboard Magazine​
             </p>
@@ -18,8 +6,7 @@
             Day Rate – $500
             Hourly Rate – $200 the ﬁrst hour ($100/each additional hour)
             </p>
-        </div>
-    ​</div>
+
 
     ​<div class="row">
         ​Stilt Walking
@@ -39,5 +26,3 @@
         Hourly Rate - $200 first hour
         $100 each additional 
     </div>
-</div>
-@stop

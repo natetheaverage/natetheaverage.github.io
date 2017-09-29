@@ -29,7 +29,7 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript" src="/js/app.js"></script>
 
 @if (!empty(\Canvas\Models\Settings::gaId()))
     @include('canvas::frontend.blog.partials.analytics')

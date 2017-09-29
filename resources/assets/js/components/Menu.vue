@@ -13,18 +13,18 @@ v-on:after-enter="ssinit">
     v-if="menuOpen"
     >
     
-        <div class="mm-title">How confusing would you<br /> like your menu?</div>
+        <div class="mm-title">NateTheAverage</div>
         <!--<span></span>-->
-        <div class="filters btn-group">
+        <!-- <div class="filters btn-group">
             <button class="btn btn-default"  @click="visibility='norm'">Normal</button>
             <button class="btn btn-default"  @click="visibility='nerdy'">Nerdy</button>
             <button class="btn btn-default" @click="visibility='fantastical'">Fantastical</button>
-        </div>
+        </div> -->
         
          <transition-group name="list-complete" tag="div">
             <div 
             v-for="item in MenuOptions"
-            :key="item"
+            :key="1"
             class="m-title list-complete-item">
             {{item.title}}
                 <div class="btn-group-vertical" role="group">
@@ -88,7 +88,7 @@ export default {
   left: 5px;
   padding: 0 10px 5px;
   font-size: 26px;
-  position: fixed;
+
   z-index: 999999999;
 .theMenu
   position fixed

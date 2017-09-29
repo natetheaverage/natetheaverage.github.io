@@ -1,16 +1,4 @@
-@extends('canvas::frontend.layout')
-
-@section('content')
-
-<div class="row">
-    <p class="page-menu-links-container mgn-btm-lg col-sm-8 col-sm-offset-2">
-        @include('parts.service-links')
-    </p>
-</div>
-
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <p>
+<p>
 Contract​ed COSTUME (Design, Fabrication)
  
 As a costume designer, NateTheAverage is able to take your concept, idea or inspiration and make it a reality.
@@ -37,7 +25,3 @@ Fur
 Feathers
 Specialty Designs
 </p>
-</div>
-</div>
-
-@stop

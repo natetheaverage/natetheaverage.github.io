@@ -6794,6 +6794,10 @@ body {
 .logo {
   margin: 0px auto;
 }
+#app-container {
+  display: -webkit-box;
+  display: flex;
+}
 .body-content {
   width: 100%;
 }
@@ -6919,16 +6923,7 @@ body .post-preview .post-title {
   color: #52656b;
 }
 .menu {
-  text-align: center;
-  height: 90%;
-  width: 50%;
-  position: fixed;
-  top: 5%;
   left: 0px;
-  padding: 20px 0;
-  background-color: rgba(205,255,0,0.9);
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
 }
 .menu .mm-title {
   font-size: 34px;

@@ -3,140 +3,88 @@ export default [{
         norm: {
             title: "Shop",
             contents: [{
-                name: "Masks and props produced in short runs",
-                url: "costume/production",
+                name: "Masks and Props",
+                url: "#masks",
                 info: "data lists etc..."
             }, {
-                name: "Hire me to make you a custom costume",
-                url: "costume/contract",
+                name: "Costumes",
+                url: "#costumes",
                 info: "blaaaaaa"
             }, {
-                name: "Prop building and small alacart services",
-                url: "costume/alacart",
+                name: "Fashion Line",
+                url: "#fashion",
+                info: "bladsbhjsh"
+            }, {
+                name: "Everything Else",
+                url: "#everything",
                 info: "bladsbhjsh"
             }]
         }
     }, {
         norm: {
-            title: "Clothing Design and Printing services",
+            title: "Services",
             contents: [{
-                name: "T-shirt digital design",
-                url: "clothing/design",
+                name: "Performer",
+                url: "#performer",
                 info: "ikjsdhfu"
             }, {
-                name: "Professinal in house fabric printing",
-                url: "clothing/print",
+                name: "Custom Costume",
+                url: "#costumery",
                 info: "ikjsdhfu"
             }, {
-                name: "Hand made garments",
-                url: "clothing/handmade",
+                name: "Prototyping",
+                url: "#prototype",
                 info: "ikjsdhfu"
+            }, {
+                name: "Puppets",
+                url: "#puppetry",
+                info: "bladsbhjsh"
+            }, {
+                name: "Education Services",
+                url: "#education",
+                info: "bladsbhjsh"
             }]
         }
     }, {
         norm: {
-            title: "Performance Arts",
+            title: "Details",
             contents: [{
-                name: "Hire me to perform a characture for you",
+                name: "Skills",
                 info: "blankity",
                 url: "performance/for-hire",
             }, {
-                name: "Wardrobe services",
+                name: "Work Experiance",
                 info: "blankity",
                 url: "performance/wardrobe",
             }, {
-                name: "SFX makeup design and application",
+                name: "Short Bio",
                 info: "blankity",
                 url: "performance/makeup",
             }, {
-                name: "Talent acquisition for events",
+                name: "Resume",
                 info: "blankity",
                 url: "performance/talent",
-            }, {
-                name: "Theatrical design, direction & management",
-                info: "blankity",
-                url: "performance/direction",
-            }, {
-                name: "Performance workshops and review",
-                info: "blankity",
-                url: "performance/workshops",
-            }, {
-                name: "I just gota dance",
-                info: "blankity",
-                url: "performance/dance",
             }]
         }
     }, {
         norm: {
-            title: "Technology Services",
+            title: "Fun",
             contents: [{
-                name: "App development (software for many platforms)",
+                name: "Link Bank ",
                 url: "technology/app-development",
-                info: "fdsgh675"
+                info: "Places you should know"
             }, {
-                name: "Machine development",
+                name: "Downloads",
                 url: "technology/machine",
-                info: "fdsgh675"
+                info: "Who knows"
             }, {
-                name: "Prototype creation",
+                name: "Fun Project I",
                 url: "technology/prototype",
                 info: "fdsgh675"
             }, {
-                name: "My autonomus flying robot projects",
+                name: "Quadcopters",
                 url: "technology/quadrocopters",
                 info: "fdsgh675"
-            }, {
-                name: "Fun internet stuff I create and like",
-                url: "technology/fuckery",
-                info: "fdsgh675"
-            }]
-        }
-    }, {
-        norm: {
-            title: "Instalation Art & Other Large Builds",
-            contents: [{
-                name: "Installation art",
-                url: "large/installation",
-                info: "jkfhg987"
-            }, {
-                name: "Large scale treehouse design and build",
-                url: "large/treehouse",
-                info: "jkfhg987"
-            }, {
-                name: "PopUp things project",
-                url: "large/pop-ups",
-                info: "jkfhg987"
-            }, {
-                name: "Art car design and development",
-                url: "large/art-cars",
-                info: "jkfhg987"
-            }, {
-                name: "Theatrical set design & scene building ",
-                url: "large/set-design",
-                info: "jkfhg987"
-            }]
-        }
-
-    },
-    {
-        norm: {
-            title: "*-*Sensored*-*",
-            contents: [{
-                name: "*-*Sensored1*-*",
-                url: "fuckshitstack/shirt-cocking",
-                info: "kjhbdvfs897"
-            }, {
-                name: "*-*Sensored2*-*",
-                url: "fuckshitstack/naked-not-the-drink-more-like-no-cloths",
-                info: "kjhbdvfs897"
-            }, {
-                name: "*-*Sensored3*-*",
-                url: "fuckshitstack/no-touching-policy",
-                info: "kjhbdvfs897"
-            }, {
-                name: "*-*Sensored4*-*",
-                url: "fuckshitstack/learn-stuff-from-a-naked-guy",
-                info: "kjhbdvfs897"
             }]
         }
     }
