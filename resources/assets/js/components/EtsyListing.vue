@@ -3,7 +3,8 @@
 
 
       <div class="product-container" >
-
+      <div class="listing-title">{{ item.title }}</div>
+      </br>
         <div class="spotlight-image-container">
           <img
             class="spotlight-image"
@@ -19,9 +20,10 @@
             class="thumb-image" 
           />
         </div> <!--thumb container-->
-        <div class="listing-title">{{ item.title }}</div>
+        
         <p><div class="listing-price">${{ item.price }}</div>
-        <a :href="item.url">Click for more or to Purchase!</a>
+        <p><div class="listing-description">${{ item.description }}</div>
+        <a :href="item.url">More on Etsy!</a>
     </div> <!--product container-->
   </div><!--Vue container-->
 </template>
@@ -63,12 +65,12 @@ export default {
 
 <style>
 .product-container{
-  border: 1px solid #aaa;
-  border-radius: 10px;
+  /* border: 1px solid #aaa; */
+  /* border-radius: 10px; */
   margin: 2px;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   overflow: hidden;
   
 }
@@ -77,7 +79,7 @@ export default {
   font-size: 16px;
   max-height: 20px;
   padding: 3px 3px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .listing-price{
   font-family: Courier New, Courier, monospace;
@@ -94,9 +96,10 @@ export default {
 }
 .thumb-container{
   display: flex;
-  flex-direction: row;
-  border-top: solid 1px #aaa;
-  border-bottom: solid 3px #aaa;
+  max-height:250px;
+  flex-direction: column;
+  /* border-top: solid 1px #aaa;
+  border-bottom: solid 3px #aaa; */
 }
 .thumb-image{
   margin: auto;
