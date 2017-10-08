@@ -25,15 +25,15 @@ export default [{
             title: "Services",
             contents: [{
                 name: "Performer",
-                url: "#performer",
+                url: "/services#performer",
                 info: "ikjsdhfu"
             }, {
                 name: "Custom Costume",
-                url: "#costumery",
+                url: "/services#costumery",
                 info: "ikjsdhfu"
             }, {
                 name: "Prototyping",
-                url: "#prototype",
+                url: "/services#prototype",
                 info: "ikjsdhfu"
             }, {
                 name: "Puppets",

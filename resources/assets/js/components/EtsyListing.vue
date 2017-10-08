@@ -1,7 +1,5 @@
 <template>
   <div class="col-xs-12">
-
-
       <div class="product-container" >
       <div class="listing-title">{{ item.title }}</div>
       </br>
