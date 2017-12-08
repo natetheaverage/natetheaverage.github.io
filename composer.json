@@ -42,7 +42,7 @@
             "App\\": "app/"
         },
         "files": [
-            "public/assets/repos/average-kodi"
+            "public/assets/repos/average-kodi/"
     ]
     },
     "autoload-dev": {
